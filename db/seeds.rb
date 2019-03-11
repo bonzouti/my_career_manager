@@ -1,7 +1,73 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+User.destroy_all
+puts('Old users destroyed')
+
+    bere = User.create!(email: "berenice@yopmail.com", password: "azerty2020")
+    mathieu = User.create!(email: "mathieu@yopmail.com", password: "azerty2020")
+    elo = User.create!(email: "elo@yopmail.com", password: "azerty2020")
+    lionel = User.create!(email: "lionel@yopmail.com", password: "azerty2020")
+    gauthier = User.create!(email: "gauthier@yopmail.com", password: "azerty2020")
+
+puts('New users seeded')
+
+status = ["identified", "applied", "in_progress", "archived"]
+categories = ["interview", "phone interview", "application sent", "follow-up"]
+
+Application.destroy_all
+puts('Old applications destroyed')
+30.times do |i|
+    application = Application.create!(company_name: Faker::Company.unique.name, position: ["Front-end Developer", "Ruby Developer", "Fullstack Developer", "RoR Developer"].sample, user: User.all.sample, status: "identified" )
+end 
+puts('New applications created')
+
+Contact.destroy_all
+puts('Old contacts destroyed')
+10.times do |i|
+    contact = Contact.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, application: Application.all.sample, position: ["HR Manager", "CEO", "Talent Acquisition Specialist"].sample )
+end 
+puts('New contacts created')
+
+Note.destroy_all
+puts('Old notes destroyed')
+10.times do |i|
+    note = Note.create!(content: Faker::Lorem.paragraph(3), application: Application.all.sample )
+end 
+puts('New notes created')
+
+JobOffer.destroy_all
+puts('Old job offers destroyed')
+10.times do |i|
+    joboffer = JobOffer.create!(link: Faker::Internet.url, description: Faker::Company.bs, application: Application.all.sample )
+end 
+puts('New job offers created')
+
+Step.destroy_all
+puts('Old steps destroyed')
+15.times do |i|
+    step = Step.create!(category: categories.sample, title: Faker::Company.buzzword, description: Faker::Company.bs, status: [true, false].sample, application: Application.all.sample )
+end 
+puts('New steps created')
+
+
+Step.all.each do |step| 
+    if step.category == "interview" 
+        step.application.status = "in_progress" 
+
+    elsif step.category == "application sent" 
+        step.application.status = "applied" 
+    end
+
+    step.application.save
+
+end 
+
+
+
+2.times do
+    application = Application.all.sample
+    application.status = "archived"
+    application.save
+end 
+
+puts "Steps status updated considering steps"
