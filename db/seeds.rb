@@ -16,45 +16,45 @@ categories = ["interview", "phone interview", "application sent", "follow-up"]
 
 Application.destroy_all
 puts('Old applications destroyed')
-30.times do |i|
+30.times do
     application = Application.create!(company_name: Faker::Company.unique.name, position: ["Front-end Developer", "Ruby Developer", "Fullstack Developer", "RoR Developer"].sample, user: User.all.sample, status: "identified" )
 end 
 puts('New applications created')
 
 Contact.destroy_all
 puts('Old contacts destroyed')
-10.times do |i|
+10.times do
     contact = Contact.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, application: Application.all.sample, position: ["HR Manager", "CEO", "Talent Acquisition Specialist"].sample )
 end 
 puts('New contacts created')
 
 Note.destroy_all
 puts('Old notes destroyed')
-10.times do |i|
+10.times do
     note = Note.create!(content: Faker::Lorem.paragraph(3), application: Application.all.sample )
 end 
 puts('New notes created')
 
 JobOffer.destroy_all
 puts('Old job offers destroyed')
-10.times do |i|
+10.times do
     joboffer = JobOffer.create!(link: Faker::Internet.url, description: Faker::Company.bs, application: Application.all.sample )
 end 
 puts('New job offers created')
 
 Step.destroy_all
 puts('Old steps destroyed')
-15.times do |i|
+15.times do
     step = Step.create!(category: categories.sample, title: Faker::Company.buzzword, description: Faker::Company.bs, status: [true, false].sample, application: Application.all.sample )
 end 
 puts('New steps created')
 
 
 Step.all.each do |step| 
-    if step.category == "interview" 
+    if (step.category == "interview" || step.category == "follow-up" || step.category == "phone interview")
         step.application.status = "in_progress" 
 
-    elsif step.category == "application sent" 
+    elsif(step.category == "application sent" && step.application.status != "in_progress")
         step.application.status = "applied" 
     end
 
