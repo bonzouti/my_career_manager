@@ -15,3 +15,8 @@
  *= require assets/css/app.min
  *= require assets/css/icons.min
  */
+
+ body {
+    font-family: 'Nunito', sans-serif;
+ }
+ 
