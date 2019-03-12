@@ -17,64 +17,7 @@
 
   <body>
 
- <div class="navbar-custom d-flex align-items-center justify-content-end container-fluid" style="margin: 0px;">
-
-                          <ul class="nav col-10"  >
-
-                            <li>
-                              <%= link_to applications_path, style:"color:grey" do %>
-                              <i class="fas fa-user-circle fa-3x"></i>
-                              <%end %>
-                            </li>
-
-                            <li> <%= link_to "Create an application", new_application_path, class: "nav-link", style:"color:grey;" %>
-                            </li>
-
-
-                        </ul>
-
-                        <ul class="list-unstyled topbar-right-menu mb-0">
-
-
-                            <li class="dropdown notification-list">
-                                <a class="nav-link dropdown-toggle nav-user arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                                    aria-expanded="false" style="border: 0px solid; background-color: white; margin: 0px">
-                                    <span class="account-user-avatar"> 
-                                        <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="user-image" class="rounded-circle">
-                                    </span>
-                                    <span>
-                                        <span class="account-user-name">Dominic Keller</span>
-                                        <span class="account-position">Founder</span>
-                                    </span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                                    <!-- item-->
-                                    <div class=" dropdown-header noti-title">
-                                        <h6 class="text-overflow m-0">Welcome !</h6>
-                                    </div>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="fas fa-user-circle"></i>
-                                        <span>My Account</span>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                        <span>Logout</span>
-                                    </a>
-
-                                </div>
-                            </li>
-
-                        </ul>
-
-
-
-                    </div>
-                    <!-- end Topbar -->
-
+    <%= render "layouts/navbar" %>
 
     <%= yield %>
   </body>
