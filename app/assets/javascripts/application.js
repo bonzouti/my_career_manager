@@ -15,4 +15,3 @@
 //= require_tree .
 
 //= require assets/js/app.min
-//= require assets/dragula.min
