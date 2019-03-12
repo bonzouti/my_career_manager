@@ -8,11 +8,11 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">My career</a>
+      <%= link_to "My career", applications_path, class:"navbar-brand" %>
 
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item moving-link">
-          <a class="nav-link"> Create an application</a>
+        <li class="nav-item movinglink">
+            <%= link_to "Create an application", new_application_path, class:"nav-link" %>
         </li>
     </ul>
     </div>
@@ -20,23 +20,22 @@
     <div class="row justify-content-end">
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
 
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mr-auto togglelist">
             
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My actions
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Login</a>
-                <a class="dropdown-item" href="#">Sign-up</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <%= link_to "Login", user_session_path, class:"dropdown-item" %>
+                <%= link_to "Sign-up", new_user_registration_path, class:"dropdown-item" %>
               </div>
             </li>
 
           </ul>
 
         </div>
+    
     </div>
 </div>
 </nav>
