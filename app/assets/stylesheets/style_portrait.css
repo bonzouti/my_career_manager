@@ -1,0 +1,6 @@
+@media all and (orientation: portrait)
+{
+  .tasks.tasks:not(:last-child) {
+    margin-right: 0rem;
+    width: 100%; }
+}
