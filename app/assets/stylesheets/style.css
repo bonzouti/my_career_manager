@@ -1,0 +1,17 @@
+.content-page {
+  display: flex;
+  justify-content: center;
+  margin-left: 0px;
+}
+
+.text-body {
+  font-size: 20px;
+}
+
+.badge {
+  font-size: 14px;
+}
+
+.float-right {
+  font-size: 14px;
+}
