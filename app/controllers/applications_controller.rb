@@ -3,22 +3,14 @@ class ApplicationsController < ApplicationController
     @applications = Application.all
 
     @identified = []
-    @applications.each do |application|
-      if application.status == "identified"
-        @identified << application
-      end
-    end
-
     @applied = []
-    @applications.each do |application|
-      if application.status == "applied"
-        @applied << application
-      end
-    end
-
     @in_progress = []
     @applications.each do |application|
       if application.status == "identified"
+        @identified << application
+      elsif application.status == "applied"
+        @applied << application
+      elsif application.status == "in_progress"
         @in_progress << application
       end
     end
