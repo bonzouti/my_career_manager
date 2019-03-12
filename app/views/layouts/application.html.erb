@@ -7,9 +7,68 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <!--Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
   </head>
 
   <body>
+
+ <div class="navbar-custom d-flex align-items-center justify-content-end" style="border: solid blue 1px">
+                          <ul class="nav col-10" style="border: solid red 1px;" >
+
+                          <li class="">
+                            <i class="fas fa-user-circle fa-3x"></i>
+                          </li>
+
+                          <li class="nav-link"> Create an application</li>
+
+
+                        </ul>
+                        <ul class="list-unstyled topbar-right-menu mb-0"
+
+
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                    aria-expanded="false" style="border: 0px solid; background-color: white;">
+                                    <span class="account-user-avatar"> 
+                                        <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="user-image" class="rounded-circle">
+                                    </span>
+                                    <span>
+                                        <span class="account-user-name">Dominic Keller</span>
+                                        <span class="account-position">Founder</span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                    <!-- item-->
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Welcome !</h6>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="fas fa-user-circle"></i>
+                                        <span>My Account</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Logout</span>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                        </ul>
+
+
+
+                    </div>
+                    <!-- end Topbar -->
+
+
     <%= yield %>
   </body>
 </html>
