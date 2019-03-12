@@ -45,7 +45,7 @@ puts('New job offers created')
 Step.destroy_all
 puts('Old steps destroyed')
 15.times do
-    step = Step.create!(category: categories.sample, title: Faker::Company.buzzword, description: Faker::Company.bs, status: [true, false].sample, application: Application.all.sample )
+    step = Step.create!(category: categories.sample, title: Faker::Company.buzzword, description: Faker::Company.bs, status: [true, false].sample, application: Application.all.sample, date: Faker::Date.forward(60) )
 end 
 puts('New steps created')
 
