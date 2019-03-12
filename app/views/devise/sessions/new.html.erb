@@ -1,26 +1,44 @@
-<h2>Log in</h2>
+<!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title text-center">Log in</h4>
+                                </div>
+                            </div>
+                        </div>     
+ <!-- end page title --> 
+<div class="container pt-lg">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow zindex-100">
+        <div class="card-body px-md-5 py-5">
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Your Email" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Your Password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="form-group">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in to your account", class: "btn btn-primary" %>
   </div>
 <% end %>
-
+<br />
 <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
