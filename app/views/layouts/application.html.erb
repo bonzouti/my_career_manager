@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <!--Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -15,23 +17,28 @@
 
   <body>
 
- <div class="navbar-custom d-flex align-items-center justify-content-end" style="border: solid blue 1px">
-                          <ul class="nav col-10" style="border: solid red 1px;" >
+ <div class="navbar-custom d-flex align-items-center justify-content-end container-fluid" style="margin: 0px;">
 
-                          <li class="">
-                            <i class="fas fa-user-circle fa-3x"></i>
-                          </li>
+                          <ul class="nav col-10"  >
 
-                          <li class="nav-link"> Create an application</li>
+                            <li>
+                              <%= link_to applications_path, style:"color:grey" do %>
+                              <i class="fas fa-user-circle fa-3x"></i>
+                              <%end %>
+                            </li>
+
+                            <li> <%= link_to "Create an application", new_application_path, class: "nav-link", style:"color:grey;" %>
+                            </li>
 
 
                         </ul>
-                        <ul class="list-unstyled topbar-right-menu mb-0"
+
+                        <ul class="list-unstyled topbar-right-menu mb-0">
 
 
                             <li class="dropdown notification-list">
-                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                                    aria-expanded="false" style="border: 0px solid; background-color: white;">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                    aria-expanded="false" style="border: 0px solid; background-color: white; margin: 0px">
                                     <span class="account-user-avatar"> 
                                         <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="user-image" class="rounded-circle">
                                     </span>
