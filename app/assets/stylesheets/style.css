@@ -46,3 +46,8 @@
 .d-lg-block {
   display: block !important;
 }
+
+/* make the email and phone icon disappear for large screens on index_contacts*/
+   i.link-icon-sm{
+    display: none;
+  }

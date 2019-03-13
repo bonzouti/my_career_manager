@@ -46,16 +46,21 @@
         							<% @contacts.each do |contact| %>
 
                                         <tr>
-                                            <td> <%= contact.first_name %> <br> <%= contact.last_name %> </td>
+                                            <td> <%= contact.first_name %> <%= contact.last_name %> </td>
                                             <td> <%= contact.position %></td>
                                             <td>
                                             	<%= link_to contact.phone do %>
-        											<i class="fas fa-phone"></i>
-                                            	<% end %>
-                                        	</td>
-                                            <td> <%= mail_to(contact.email, class: "link-mail") do %>
 
-                                            	<i class="fas fa-envelope"></i>  
+        										    <i class="fas fa-phone link-icon-sm"></i>
+                                                    <p class="link-text-lg"> <%= contact.phone %></p> 
+                                                   
+                                            	<% end %>
+
+                                        	</td>
+                                            <td> <%= mail_to(contact.email) do %>
+
+                                            	<i class="fas fa-envelope link-icon-sm"></i> 
+                                                <p class="link-text-lg"> <%= contact.email %></p> 
                                             	<% end %>
                                             </td>
                                         </tr>
