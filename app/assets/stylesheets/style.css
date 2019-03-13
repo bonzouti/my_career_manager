@@ -1,3 +1,5 @@
+/* index ************************************************/
+
 .content-page {
   display: flex;
   justify-content: center;
@@ -31,6 +33,14 @@
 .next-step-header {
   background-color: rgb(209, 182, 60)!important;
 }
+
+.create-application-button {
+  border-radius: 2rem;
+}
+
+
+
+/*******************************************************/
 
 /* fixed screen size for show_application*/
 .d-lg-block {
