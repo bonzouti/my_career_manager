@@ -14,6 +14,7 @@ puts('New users seeded')
 status = ["identified", "applied", "in_progress", "archived"]
 categories = ["interview", "phone interview", "application sent", "follow-up"]
 
+
 Application.destroy_all
 puts('Old applications destroyed')
 20.times do
