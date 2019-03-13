@@ -15,7 +15,7 @@
                                     <%= form_tag url_for(action: 'create'), method: "post" do %>
                                         <div class="form-group">
                                             <%= label_tag 'Company *' %><br/>
-                                            <%= text_field_tag :company, "", class: 'form-control', placeholder: 'Enter company name' %>
+                                            <%= text_field_tag :company_name, @application.company_name, class: 'form-control', placeholder: 'Enter company name' %>
                                         </div>
                                     <div class="form-group">
                                             <%= label_tag 'Job title *' %><br/>
@@ -23,7 +23,7 @@
                                         </div> 
                                     <div class="form-group">
                                             <%= label_tag 'Status *' %><br/>
-                                            <%= select_tag "status", "<option>Identified</option><option>Applied</option><option>In progress</option>".html_safe, class: 'custom-select' %>
+                                            <%= select_tag "status", "<option>identified</option><option>applied</option><option>in_progress</option>".html_safe, class: 'custom-select' %>
                                     </div>  
                                     <div class="form-group">
                                             <%= label_tag 'Link to job offer' %><br/>
