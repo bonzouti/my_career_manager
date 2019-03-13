@@ -22,8 +22,19 @@ class ApplicationsController < ApplicationController
   end
 
   def new
+    @application = Application.new
+  end
 
-  end 
+  def create
+    @application = Application.new(company_name: params[:company_name], position: params[:position], status: params[:status], joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
+    @application.user = User.all.sample
+    puts @application
+    if @application.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
 
   
 end
