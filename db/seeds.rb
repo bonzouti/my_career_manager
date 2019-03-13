@@ -28,7 +28,7 @@ puts('New applications created')
 
 Contact.destroy_all
 puts('Old contacts destroyed')
-10.times do
+20.times do
     contact = Contact.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, application: Application.all.sample, position: ["HR Manager", "CEO", "Talent Acquisition Specialist"].sample )
 end 
 puts('New contacts created')
