@@ -1,19 +1,22 @@
-<!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title text-center">Log in</h4>
-                                </div>
-                            </div>
-                        </div>     
- <!-- end page title --> 
-<div class="container pt-lg">
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-8 col-lg-6">
-      <div class="card shadow zindex-100">
-        <div class="card-body px-md-5 py-5">
+<div class="auth-fluid">
+    <!--Auth fluid left content -->
+    <div class="auth-fluid-form-box">
+        <div class="align-items-center d-flex h-100">
+            <div class="card-body">
 
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <!-- Logo -->
+                <div class="auth-brand text-center text-lg-left">
+                    <a href="index.html">
+                        <span><img src="assets/images/logo-light.png" alt="" height="18"></span>
+                    </a>
+                </div>
+
+                <!-- title-->
+                <h4 class="mt-0">Sign In</h4>
+                <p class="text-muted mb-4">Enter your email address and password to access account.</p>
+
+                <!-- form -->
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-group">
               <%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Your Email" %>
@@ -37,9 +40,29 @@
           <% end %>
           <br />
           <%= render "devise/shared/links" %>
-          
-        </div>
-      </div>
+                <!-- end form-->
+
+                <!-- Footer-->
+                <footer class="footer footer-alt">
+                    <p class="text-muted">Don't have an account? <a href="pages-register-2.html" class="text-muted ml-1"><b>Sign Up</b></a></p>
+                </footer>
+
+            </div> <!-- end .card-body -->
+        </div> <!-- end .align-items-center.d-flex.h-100-->
     </div>
-  </div>
+    <!-- end auth-fluid-form-box-->
+
+    <!-- Auth fluid right content -->
+    <div class="auth-fluid-right text-center">
+        <div class="auth-user-testimonial">
+            <h2 class="mb-3">Never miss a professional opportunity anymore!</h2>
+            <p class="lead"> Your job search. Hands on. Designed for hard workers.
+            </p>
+            <p>
+            - THP  2019 -
+            </p>
+        </div> <!-- end auth-user-testimonial-->
+    </div>
+    <!-- end Auth fluid right content -->
 </div>
+<!-- end auth-fluid-->
