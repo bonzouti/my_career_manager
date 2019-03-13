@@ -38,6 +38,7 @@
 
                             <h5 class="mt-2 mb-2">
                               <a href="#" data-toggle="modal" data-target="#task-detail-modal" class="text-body"><%= application.company_name %></a>
+                              <%= link_to application.company_name, application_path(application), class: "text-body", data-toggle: "modal", data-target: "#task-detail-modal" %>
                             </h5>
                   
                           </div> <!-- end card-body -->
