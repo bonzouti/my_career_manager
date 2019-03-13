@@ -17,10 +17,14 @@
   }
 
   .create-index-portrait {
-    display: block
+    display: block;
+    display: flex;
+    justify-content: center;
   }
 
-
+  .create-application-button {
+    border-radius: 2rem;
+  }
 
 
 

@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   get 'contacts/index'
   resources :applications do
-  	resources :contacts, only: [:index]
+    resources :contacts, only: [:index]
+    resources :steps
   end
-  resources :steps
+  
 
   devise_for :users
 
