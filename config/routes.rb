@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  resources :applications 
+
+  get 'contacts/index'
+  resources :applications do
+  	resources :contacts, only: [:index]
+  end
   resources :steps
 
   devise_for :users
 
   root "applications#index"
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
 
 end
