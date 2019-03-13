@@ -47,7 +47,18 @@
   display: block !important;
 }
 
+/********************INDEX_CONTACTS********************/
+
+
 /* make the email and phone icon disappear for large screens on index_contacts*/
    i.link-icon-sm{
     display: none;
+  }
+
+  .link-text-lg{
+    margin-bottom: 0px;
+  }
+
+   i.link-icon-sm{
+    margin-bottom: 0px;
   }
