@@ -22,6 +22,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -93,5 +94,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Devise 
-  onfig.action_mailer.default_url_options = { :host => 'mycareermanager.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'mycareermanager.herokuapp.com' }
 end
