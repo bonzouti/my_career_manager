@@ -16,7 +16,24 @@
   font-size: 14px;
 }
 
+<<<<<<< HEAD
+.tasks {
+  width: 23%; 
+}
+
+.mt-2 {
+  margin-bottom: 0rem!important;
+}
+
+.create-index-portrait {
+  display: none
+}
+
+.next-step-header {
+  background-color: rgb(209, 182, 60)!important;
+}
+
 /* fixed screen size for show_application*/
-  .d-lg-block {
-    display: block !important;
-  }
+.d-lg-block {
+  display: block !important;
+}
