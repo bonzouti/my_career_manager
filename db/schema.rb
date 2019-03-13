@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2019_03_11_172910) do
     t.string "company_name"
     t.string "position"
     t.string "status"
+    t.string "joboffer_link"
+    t.text "joboffer_description"
+    t.text "notes"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,23 +38,6 @@ ActiveRecord::Schema.define(version: 2019_03_11_172910) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["application_id"], name: "index_contacts_on_application_id"
-  end
-
-  create_table "job_offers", force: :cascade do |t|
-    t.string "link"
-    t.text "description"
-    t.bigint "application_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["application_id"], name: "index_job_offers_on_application_id"
-  end
-
-  create_table "notes", force: :cascade do |t|
-    t.text "content"
-    t.bigint "application_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["application_id"], name: "index_notes_on_application_id"
   end
 
   create_table "steps", force: :cascade do |t|

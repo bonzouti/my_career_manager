@@ -1,0 +1,35 @@
+
+                                        <div class="table-responsive-sm">
+                                            <table class="table table-sm table-centered mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Position</th>
+                                                        <th>Phone number</th>
+                                                        <th>Email</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+													<% @contacts.each do |contact| %>
+
+	                                                    <tr>
+	                                                        <td> <%= contact.first_name %> <br> <%= contact.last_name %> </td>
+	                                                        <td> <%= contact.position %></td>
+	                                                        <td>
+	                                                        	<%= link_to contact.phone do %>
+																	<i class="fas fa-phone"></i>
+	                                                        	<% end %>
+                                                        	</td>
+	                                                        <td> <%= mail_to(contact.email) do %>
+
+	                                                        	<i class="fas fa-envelope"></i>  
+	                                                        	<% end %>
+	                                                        </td>
+	                                                    </tr>
+
+													<% end %>
+
+                                                </tbody>
+                                            </table>
+                                        </div> <!-- end table-responsive-->
