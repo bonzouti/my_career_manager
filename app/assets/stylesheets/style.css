@@ -15,3 +15,8 @@
 .float-right {
   font-size: 14px;
 }
+
+/* fixed screen size for show_application*/
+  .d-lg-block {
+    display: block !important;
+  }
