@@ -47,7 +47,10 @@
                       </span>
 
                       <small class="float-right badge <%= 'badge-success-lighten' if categories.last == 'interview' %><%= 'badge-warning-lighten' if categories.last == 'phone interview' %><%= 'badge-danger-lighten' if categories.last == 'follow-up' %>">
-                        <%= step.date.strftime '%a %m/%d' %></small>
+                        <% unless step.date == nil %>
+                        <%= step.date.strftime '%a %m/%d' %>
+                        <% end %>
+                      </small>
 
                       <h5 class="mt-2 mb-2">
                         <%= link_to application.company_name, application_path(application), class: "text-body", toggle: "modal" %>
@@ -162,7 +165,9 @@
                         <% application.steps.each do |step| %>
                         <% dates << step.date %>
                         <% end %>
+                        <% unless dates.last == nil %>
                         <%= dates.last.strftime '%a %m/%d' %>
+                        <% end %>
                       </small>
 
 
