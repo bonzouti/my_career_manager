@@ -26,16 +26,27 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My actions
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to "Login", user_session_path, class:"dropdown-item" %>
-                <%= link_to "Sign-up", new_user_registration_path, class:"dropdown-item" %>
-              </div>
+              <% if user_signed_in? %>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to "My profile", applications_path, class:"dropdown-item" %>
+                </div>  
+
+ 
+              <% else %>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to "Login", user_session_path, class:"dropdown-item" %>
+                  <%= link_to "Sign-up", new_user_registration_path, class:"dropdown-item" %>
+                </div>    
+
+              <% end %>
             </li>
 
           </ul>
 
         </div>
-    
+
     </div>
 </div>
 </nav>
