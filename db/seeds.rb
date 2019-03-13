@@ -16,8 +16,13 @@ categories = ["interview", "phone interview", "application sent", "follow-up"]
 
 Application.destroy_all
 puts('Old applications destroyed')
-30.times do
-    application = Application.create!(company_name: Faker::Company.unique.name, position: ["Front-end Developer", "Ruby Developer", "Fullstack Developer", "RoR Developer"].sample, user: User.all.sample, status: "identified" )
+20.times do
+    application = Application.create!(company_name: Faker::Company.unique.name, 
+        position: ["Front-end Developer", "Ruby Developer", "Fullstack Developer", "RoR Developer"].sample, 
+        user: User.all.sample, status: "identified",
+        notes: Faker::Lorem.paragraph(3),
+        joboffer_link: Faker::Internet.url, 
+        joboffer_description: Faker::Company.bs )
 end 
 puts('New applications created')
 
@@ -28,19 +33,6 @@ puts('Old contacts destroyed')
 end 
 puts('New contacts created')
 
-Note.destroy_all
-puts('Old notes destroyed')
-10.times do
-    note = Note.create!(content: Faker::Lorem.paragraph(3), application: Application.all.sample )
-end 
-puts('New notes created')
-
-JobOffer.destroy_all
-puts('Old job offers destroyed')
-10.times do
-    joboffer = JobOffer.create!(link: Faker::Internet.url, description: Faker::Company.bs, application: Application.all.sample )
-end 
-puts('New job offers created')
 
 Step.destroy_all
 puts('Old steps destroyed')

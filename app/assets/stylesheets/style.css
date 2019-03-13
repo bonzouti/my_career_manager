@@ -16,6 +16,7 @@
   font-size: 14px;
 }
 
+<<<<<<< HEAD
 .tasks {
   width: 23%; 
 }
@@ -30,4 +31,9 @@
 
 .next-step-header {
   background-color: rgb(209, 182, 60)!important;
+}
+
+/* fixed screen size for show_application*/
+.d-lg-block {
+  display: block !important;
 }
