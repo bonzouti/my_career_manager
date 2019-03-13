@@ -1,35 +1,72 @@
 
-                                        <div class="table-responsive-sm">
-                                            <table class="table table-sm table-centered mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Name</th>
-                                                        <th>Position</th>
-                                                        <th>Phone number</th>
-                                                        <th>Email</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+            <!--Start part of btn application && contact-->
+                <div class="container p-3">
+                    <div class="row">
+                        <div class="col text-center">
 
-													<% @contacts.each do |contact| %>
+                            <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
 
-	                                                    <tr>
-	                                                        <td> <%= contact.first_name %> <br> <%= contact.last_name %> </td>
-	                                                        <td> <%= contact.position %></td>
-	                                                        <td>
-	                                                        	<%= link_to contact.phone do %>
-																	<i class="fas fa-phone"></i>
-	                                                        	<% end %>
-                                                        	</td>
-	                                                        <td> <%= mail_to(contact.email) do %>
+                                <li class="nav-item">
+                                    <%= link_to application_path(@application), class: 'nav-link rounded-0', data: { 'data-toggle' => 'tab'} do %>
+                                        <span class="d-none d-lg-block">Application</span>
+                                    <% end %>
+                                </li>
 
-	                                                        	<i class="fas fa-envelope"></i>  
-	                                                        	<% end %>
-	                                                        </td>
-	                                                    </tr>
+                                <li class="nav-item">
+                                        <%= link_to application_contacts_path, class: 'nav-link rounded-0 active', data: { 'data-toggle' => 'tab'} do %>
+                                        <span class="d-none d-lg-block">Contact</span>
+                                        <% end %>
+                                    <!--</a> -->
+                                </li>
 
-													<% end %>
+                            </ul>
 
-                                                </tbody>
-                                            </table>
-                                        </div> <!-- end table-responsive-->
+                        </div>
+                    </div>
+                </div>
+
+            <!--Start part of btn application && contact-->
+        <div class="container" >
+            <div class="col">
+                <div class="card">
+                     <div class="card-body">
+                        <div class="table-sm">
+
+                            <table class="table table-sm table-centered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Phone number</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+        							<% @contacts.each do |contact| %>
+
+                                        <tr>
+                                            <td> <%= contact.first_name %> <br> <%= contact.last_name %> </td>
+                                            <td> <%= contact.position %></td>
+                                            <td>
+                                            	<%= link_to contact.phone do %>
+        											<i class="fas fa-phone"></i>
+                                            	<% end %>
+                                        	</td>
+                                            <td> <%= mail_to(contact.email) do %>
+
+                                            	<i class="fas fa-envelope"></i>  
+                                            	<% end %>
+                                            </td>
+                                        </tr>
+
+        							<% end %>
+
+                                </tbody>
+                            </table>
+
+                    </div> <!-- end table-responsive-->
+                </div> <!-- end card body-->
+            </div> <!-- end card -->
+        </div>
+    </div>
