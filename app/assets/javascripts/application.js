@@ -16,6 +16,8 @@
 //= require_tree .
 
 //= require assets/js/app.min
+//= require assets/js/dragula.min
+//= require assets/js/component.dragula
 
 $(document).ready(function() {
 
