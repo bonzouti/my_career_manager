@@ -1,89 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <title>My carrer management</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Coderthemes" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-    
-
-    <!-- App css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Roboto" rel="stylesheet">
-
-</head>
-
 <body>
-    <div class="container p-3">
-        <div class="row">
-            <div class="col text-center">
-                <button class="btn btn-primary">Application</button>
-                <button class="btn btn-secondary">Contact</button>
-            </div>
-        </div>
+<!--Start part of btn application && contact-->
+	<div class="container p-3">
+		<div class="row">
+			<div class="col text-center">
+				<ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+					<li class="nav-item">
+						<a href="#home1" data-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+							<span class="d-none d-lg-block">Application</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#profile1" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+							<span class="d-none d-lg-block">Contact</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+    <!--End part of btn application && contact-->
+    <!--Start part of Step-->
+	<section>
+		<div class="container">
+			<div class="card mb-0 bg-dragula shadow-sm mb-4">
+				<div class="card-body p-3">
+					<p class="mb-0 text-success">: Interview with Donald Trump</p>
+				</div>
+				<!-- end card-body -->
+			</div>
+		</div>
+	</section>
+         <!--End part of step-->
+    <!--Start part of btn add step-->
+	<div class="container text-center p-3">
+		<a href="#" data-toggle="modal" data-target="#add-new-task-modal" class="btn btn-dark btn-sm ml-3">Add Step</a>
     </div>
-    
-    <section>
-        <div class="container">
-            <div class="card mb-0 bg-dragula shadow-sm mb-4">
-                <div class="card-body p-3">
-                  <p class="mb-0 text-success">20/04 : EInterview with Donald Trump</p>
-                </div>
-                <!-- end card-body -->
-            </div>
-        </div>
-        <div class="container">
-            <div class="card mb-0 bg-dragula shadow-sm mb-4">
-                <div class="card-body p-3">
-                  <p class="mb-0 text-danger">26/06 : Interview with Emmanuel Macron</p>
-                </div>
-                <!-- end card-body -->
-            </div>
-        </div>
-    </section>
-    <div class="container text-center p-3">
-      <a href="#" data-toggle="modal" data-target="#add-new-task-modal" class="btn btn-dark btn-sm ml-3">Add Step</a></h4>
-  </div>
-   <div class="container">
-   <div class="row">
-  <div class="col">
-                                <div class="card bg-dragula text-xs-center">
-                                    <div class="card-body">
-                                        <blockquote class="card-bodyquote">
-                                            <p>Relax—a cheat sheet is not really cheating. It's a checklist to make sure you stay focused before, during, and after the interview.</p>
-                                        </blockquote>
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-                        </div>
-
- </div>
- </div>
-    <!-- Footer Start -->
-    <footer class="footer">
-        <div class="container-fluid ">
-            <div class="row">
-                <div class="col-md-6">
-                    2019 © My Career Manager
-                </div>
-                <div class="col-md-6">
-                    <div class="text-md-right footer-links d-none d-md-block">
-                        <a href="javascript: void(0);">About</a>
-                        <a href="javascript: void(0);">Support</a>
-                        <a href="javascript: void(0);">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- end Footer -->
-<script src="assets/js/vendor/dragula.min.js"></script>
-<script src="assets/js/ui/component.dragula.js"></script>
-</body>
-
+          <!--End part of btn add step-->
+<!--Start part of Notes-->
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div id="accordion" class="custom-accordion mb-4">
+				<div class="card mb-0 shadow-sm">
+					<div class="card-header bg-dragula" id="headingOne">
+						<h5 class="m-0 text-center">
+							<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                 <h4>Notes</h4>
+								<span class="float-right">
+								</a>
+							</h5>
+						</div>
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+							<div class="card-body">
+								<h4>
+                                12/03 : Interview with CEO Google
+                                </h4>
+								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin</p>
+								<h4>
+                                15/03 : Call phone with Mr Sandrine B.
+                                </h4>
+								<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin</p>
+							</div>
+						</div>
+					</div>
+					<!-- end card-->
+				</div>
+			</div>
+		</div>
+	</div>
+    <!--End part of Notes-->
+    <!--Start part of Application details-->
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div id="accordion" class="custom-accordion mb-4">
+					<div class="card mb-0 shadow-sm">
+						<div class="card-header bg-dragula" id="headingOne">
+							<h5 class="m-0 text-center">
+								<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                 <h4>Application details</h4>
+									<span class="float-right">
+									</a>
+								</h5>
+							</div>
+							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+							</div>
+						</div>
+						<!-- end card-->
+					</div>
+				</div>
+			</div>
+		</div>
+        <!--End part of Application details-->
+		<!-- App js -->
+		<script src="assets/js/vendor/dragula.min.js"></script>
+		<script src="assets/js/ui/component.dragula.js"></script>
+	</body>
 </html>
