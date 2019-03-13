@@ -1,6 +1,6 @@
 @media all and (orientation: portrait)
 {
-  .tasks.tasks:not(:last-child) {
+  .tasks {
     margin-right: 0rem;
     width: 100%; }
 
@@ -12,7 +12,13 @@
     padding: 0.5rem!important;
   }
 
+  .create-index-landscape {
+    display: none
+  }
 
+  .create-index-portrait {
+    display: block
+  }
 
 
 
