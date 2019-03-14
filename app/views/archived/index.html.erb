@@ -1,0 +1,200 @@
+<!-- Begin page -->
+<div class="wrapper">
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div class="content-page">
+    <div class="content">
+
+
+      <!-- Start Content-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3">
+          </div>
+          <div class="col-9">
+            <h1 class="create-index-landscape">
+              <span>My applications</span>
+              <%= link_to "Create an application", new_application_path, class: "btn btn-primary" %>
+            </h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div>
+              <div class="tasks" data-plugin="dragula" data-containers='["task-list-one", "task-list-two", "task-list-three", "task-list-four"]'>
+                <h5 class="mt-0 task-header next-step-header">Next Steps coming soon</h5>
+
+                <div id="task-list-one">
+
+                  <!-- Task Item -->
+                  <% @applications.each do |application| %>
+                  <% application.steps.each do |step| %>
+                  <% if step.date < DateTime.now + 14 %>
+
+                  <div class="card mb-0">
+                    <div class="card-body p-3">
+
+                      <% categories = [] %>
+                      <% application.steps.each do |step| %>
+                      <% categories << step.category %>
+                      <% end %>
+                      <span class="badge <%= 'badge-success' if categories.last == 'interview' %><%= 'badge-warning' if categories.last == 'phone interview' %><%= 'badge-danger' if categories.last == 'follow-up' %>">
+                        <%= categories.last %>
+                      </span>
+
+                      <small class="float-right badge <%= 'badge-success-lighten' if categories.last == 'interview' %><%= 'badge-warning-lighten' if categories.last == 'phone interview' %><%= 'badge-danger-lighten' if categories.last == 'follow-up' %>">
+                        <% unless step.date == nil %>
+                        <%= step.date.strftime '%a %m/%d' %>
+                        <% end %>
+                      </small>
+
+                      <h5 class="mt-2 mb-2">
+                        <%= link_to application.company_name, application_path(application), class: "text-body", toggle: "modal" %>
+                      </h5>
+
+                    </div> <!-- end card-body -->
+                  </div>
+
+                  <% end %>
+                  <% end %>
+                  <% end %>
+                  <!-- Task Item End -->
+
+                </div> <!-- end company-list-1-->
+              </div>
+              <div class="create-index-portrait">
+                <h3>Applications
+                  <%= link_to "+", new_application_path, class: "btn btn-primary create-application-button" %>
+                </h3>
+              </div>
+              <div class="tasks">
+                <h5 class="mt-0 task-header text-uppercase">Identified (
+                  <%= @identified.length %> )</h5>
+
+                <div id="task-list-two" class="task-list-items">
+
+                  <!-- Task Item -->
+                  <% @applications.each do |application| %>
+                  <% if application.status == "identified" %>
+                  <div class="card mb-0">
+                    <div class="card-body p-3">
+
+                      <h5 class="mt-2 mb-2">
+                        <%= link_to application.company_name, application_path(application), class: "text-body", toggle: "modal" %>
+                      </h5>
+
+                      <p class="mb-0">
+                        <span class="align-middle">
+                          <%= application.position %></span>
+                      </p>
+                    </div> <!-- end card-body -->
+                  </div>
+                  <% end %>
+                  <% end %>
+                  <!-- Task Item End -->
+
+
+                </div> <!-- end company-list-2-->
+              </div>
+
+
+              <div class="tasks">
+                <h5 class="mt-0 task-header text-uppercase">Applied (
+                  <%= @applied.length %> )</h5>
+                <div id="task-list-three" class="task-list-items">
+
+                  <!-- Task Item -->
+                  <% @applications.each do |application| %>
+                  <% if application.status == "applied" %>
+                  <div class="card mb-0">
+                    <div class="card-body p-3">
+
+                      <h5 class="mt-2 mb-2">
+                        <%= link_to application.company_name, application_path(application), class: "text-body", toggle: "modal" %>
+                      </h5>
+
+                      <p class="mb-0">
+                        <span class="pr-2 text-nowrap mb-2 d-inline-block">
+                          <%= application.position %></span>
+                      </p>
+
+                    </div> <!-- end card-body -->
+                  </div>
+                  <% end %>
+                  <% end %>
+                  <!-- Task Item End -->
+
+                </div> <!-- end company-list-3-->
+              </div>
+
+              <div class="tasks">
+                <h5 class="mt-0 task-header text-uppercase">In progress (
+                  <%= @in_progress.length %> )</h5>
+                <div id="task-list-four" class="task-list-items">
+
+                  <!-- Task Item -->
+                  <% @applications.each do |application| %>
+                  <% if application.status == "in_progress" %>
+                  <div class="card mb-0">
+                    <div class="card-body p-3">
+
+                      <h5 class="mt-2 mb-2">
+                        <%= link_to application.company_name, application_path(application), class: "text-body", toggle: "modal" %>
+                      </h5>
+
+                      <p class="mb-0">
+                        <span class="pr-2 text-nowrap mb-2 d-inline-block">
+                          <%= application.position %>
+                        </span>
+                      </p>
+
+                      <% categories = [] %>
+                      <% application.steps.each do |step| %>
+                      <% categories << step.category %>
+                      <% end %>
+                      <span class="badge <%= 'badge-success' if categories.last == 'interview' %><%= 'badge-warning' if categories.last == 'phone interview' %><%= 'badge-danger' if categories.last == 'follow-up' %>">
+                        <%= categories.last %>
+                      </span>
+
+                      <small class="float-right badge <%= 'badge-success-lighten' if categories.last == 'interview' %><%= 'badge-warning-lighten' if categories.last == 'phone interview' %><%= 'badge-danger-lighten' if categories.last == 'follow-up' %>">
+                        <% dates = [] %>
+                        <% application.steps.each do |step| %>
+                        <% dates << step.date %>
+                        <% end %>
+                        <% unless dates.last == nil %>
+                        <%= dates.last.strftime '%a %m/%d' %>
+                        <% end %>
+                      </small>
+
+
+
+                    </div> <!-- end card-body -->
+                  </div>
+                  <% end %>
+                  <% end %>
+                  <!-- Task Item End -->
+
+                </div> <!-- end company-list-4-->
+              </div>
+
+            </div> <!-- end .board-->
+          </div> <!-- end col -->
+        </div>
+        <!-- end row-->
+
+      </div> <!-- container -->
+
+    </div> <!-- content -->
+
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+
+
+</div>
