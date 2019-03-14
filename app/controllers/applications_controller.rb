@@ -29,7 +29,10 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
 
     if @application.update(joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
-      redirect_to application_path(@application)
+      respond_to do |format|
+        format.html {redirect_to application_path(@application)}
+        format.js
+      end
     else
       render :edit
     end
