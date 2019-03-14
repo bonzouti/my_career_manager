@@ -2,7 +2,8 @@ class ApplicationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @applications = Application.all
+    
+    @applications = current_user.applications
 
     @identified = []
     @applied = []
@@ -21,6 +22,7 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
+    
 
   end
 
