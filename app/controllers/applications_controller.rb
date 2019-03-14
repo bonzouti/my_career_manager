@@ -21,11 +21,11 @@ class ApplicationsController < ApplicationController
 
   end
   
-  def edit_application_details
+  def edit_job_offer
     @application = Application.find(params[:id])
   end
 
-  def update_application_details
+  def update_job_offer
     @application = Application.find(params[:id])
 
     if @application.update(joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])

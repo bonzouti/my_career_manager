@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     resources :steps
     
     member do
-      get 'edit_application_details'
-      put 'update_application_details'
+      get 'edit_job_offer'
+      put 'update_job_offer'
     end
 
   end

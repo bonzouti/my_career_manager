@@ -10,7 +10,7 @@
 
                     <div class="card-body p-4">
 
-                        <%= form_tag url_for(action: 'update_application_details'), method: "put" do %>
+                        <%= form_tag url_for(action: 'update_job_offer'), method: "put" do %>
                         <div class="form-group">
                             <%= label_tag 'Link to job offer' %><br />
                             <%= url_field_tag :joboffer_link, @application.joboffer_link, class: 'form-control', placeholder: 'Enter link' %>
