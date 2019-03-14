@@ -14,6 +14,10 @@
         <li class="nav-item movinglink">
             <%= link_to "Create an application", new_application_path, class:"nav-link" %>
         </li>
+          <li class="nav-item movinglink">
+            <%  if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link" %> <%end%>
+        </li>
+       
     </ul>
     </div>
 

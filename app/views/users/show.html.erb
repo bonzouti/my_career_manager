@@ -17,7 +17,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Profile</h4>
+                                    <h4 class="page-title">
+                                    <%  if current_user.is_admin == true %>
+                                        <span class="badge-danger"> Admin</span> 
+                                    <% end %>
+                                    Profile
+                                    </h4> 
                                 </div>
                             </div>
                         </div>     
