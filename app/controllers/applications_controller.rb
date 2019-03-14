@@ -59,7 +59,9 @@ class ApplicationsController < ApplicationController
 
 
   def create
-    @application = Application.new(company_name: params[:company_name], position: params[:position], status: params[:status], joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
+    @application = Application.new(company_name: params[:company_name], 
+      position: params[:position], status: params[:status], 
+      joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
     @application.user = current_user
     if @application.save
       redirect_to root_path
