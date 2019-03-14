@@ -8,7 +8,7 @@ class ApplicationsController < ApplicationController
 
     @next_steps = []
     @steps.each do |step|
-      if step.date > (Date.today + 14) 
+      if step.date > Date.today
         @next_steps << step
       end
     end 
@@ -60,7 +60,7 @@ class ApplicationsController < ApplicationController
 
   def create
     @application = Application.new(company_name: params[:company_name], position: params[:position], status: params[:status], joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
-    @application.user = User.all.sample
+    @application.user = current_user
     if @application.save
       redirect_to root_path
     else
