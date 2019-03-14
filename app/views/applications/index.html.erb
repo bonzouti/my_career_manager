@@ -11,22 +11,23 @@
 
       <!-- Start Content-->
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-3">
-          </div>
-          <div class="col-9">
-            <h1 class="create-index-landscape">
-              <span>My applications</span>
-              <%= link_to "Create an application", new_application_path, class: "btn btn-primary" %>
-            </h1>
-          </div>
-        </div>
+
+
+                               <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h1 class="page-title text-center">MY APPLICATIONS<%= link_to "Create an application", new_application_path, class: "btn btn-primary" %> </h1>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
 
         <div class="row">
           <div class="col-12">
             <div>
               <div class="tasks" data-plugin="dragula" data-containers='["task-list-one", "task-list-two", "task-list-three", "task-list-four"]'>
-                <h5 class="mt-0 task-header next-step-header">Next Steps - coming soon- </h5>
+                <h5 class="mt-0 task-header next-step-header">MY NEXT STEPS </h5>
 
                 <div id="task-list-one">
 
@@ -65,8 +66,7 @@
                 </h3>
               </div>
               <div class="tasks">
-                <h5 class="mt-0 task-header text-uppercase">Identified (
-                  <%= @identified.length %> )</h5>
+                <h5 class="mt-0 task-header text-uppercase">Identified (<%= @identified.length %>)</h5>
 
                 <div id="task-list-two" class="task-list-items">
 
@@ -96,8 +96,7 @@
 
 
               <div class="tasks">
-                <h5 class="mt-0 task-header text-uppercase">Applied (
-                  <%= @applied.length %> )</h5>
+                <h5 class="mt-0 task-header text-uppercase">Applied (<%= @applied.length %>)</h5>
                 <div id="task-list-three" class="task-list-items">
 
                   <!-- Task Item -->
@@ -125,8 +124,7 @@
               </div>
 
               <div class="tasks">
-                <h5 class="mt-0 task-header text-uppercase">In progress (
-                  <%= @in_progress.length %> )</h5>
+                <h5 class="mt-0 task-header text-uppercase">In progress (<%= @in_progress.length %>)</h5>
                 <div id="task-list-four" class="task-list-items">
 
                   <!-- Task Item -->
