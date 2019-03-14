@@ -64,7 +64,66 @@
                                                 <p class="link-text-lg"> <%= contact.email %></p> 
                                             	<% end %>
                                             </td>
+                                            <td>
+                                              <i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i>
+                                            </td>
                                         </tr>
+
+    <!---------------------------------- MODAL UPDATE CONTACT----------------------------------->
+
+
+    <div id="update-contact-modal-<%= contact.id %>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <div class="text-center mt-2 mb-4">
+                                                        <h1> Update this contact</h1>
+                                                        <i class="fas fa-user-tie fa-3x"></i>
+                                                        </div>
+
+                                                        <%= form_tag(application_contact_path(@application, contact), method: "put", class: 'pl-3 pr-3') do %>
+
+                                                            <div class="form-group">
+                                                              <%= label_tag(:first_name, "First name") %>
+                                                              <%= text_field_tag :first_name, contact.first_name, class: 'form-control', placeholder: 'Enter the first name' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:last_name, "Last name") %>
+                                                              <%= text_field_tag :last_name, contact.last_name, class: 'form-control', placeholder: 'Enter your last name' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                              <%= label_tag(:position, "Position") %>
+                                                              <%= text_field_tag :position, contact.position, class: 'form-control', placeholder: 'Enter your position'%>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:email, "Email") %>
+                                                              <%= text_field_tag :email, contact.email, class: 'form-control', placeholder: 'Enter your email' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:phone, "Phone") %>
+                                                              <%= text_field_tag :phone, contact.phone, class: 'form-control', placeholder: 'Enter your phone' %>
+                                                            </div>
+
+                                                        <div class="form-group text-center">
+                                                          <%= submit_tag "Update", class: "btn btn-primary" %>
+                                                        </div>
+
+                                                        <div class="form-group text-center">
+                                                            <%= link_to 'Delete', application_contact_path(@application, contact), method: :delete %> 
+                                                        </div>
+
+                                                        <% end %>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+
+
+<!------------------------------------------------------------------------------------------------------------>
 
         							<% end %>
 
@@ -73,7 +132,7 @@
                         </div> <!-- end table-responsive-->
                     </div> <!-- end card body-->
            <div class="row justify-content-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal" style="margin-bottom: 20px;">Create a contact</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-contact-modal" style="margin-bottom: 20px;">Create a contact</button>
         </div>
                 </div> <!-- end card -->
              </div> <!-- end col -->
@@ -82,7 +141,11 @@
  
     </div>  <!-- end container  -->
 
-    <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+    <!---------------------------------- MODAL CREATION CONTACT----------------------------------->
+
+    <div id="create-contact-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-body">
@@ -126,3 +189,6 @@
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->
                                         </div><!-- /.modal -->
+
+
+
