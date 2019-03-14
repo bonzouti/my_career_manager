@@ -4,6 +4,15 @@ class ApplicationsController < ApplicationController
   def index
     
     @applications = current_user.applications
+    @steps = current_user.steps
+
+    @next_steps = []
+    @steps.each do |step|
+      if step.date > (Date.today + 14) 
+        @next_steps << step
+      end
+    end 
+    @next_steps = @next_steps.sort_by &:date
 
     @identified = []
     @applied = []

@@ -58,13 +58,6 @@ end
     application: Application.all[i],
     date: Faker::Date.forward(60) )
 
-    step = Step.create!(category: ["interview", "phone interview", "follow-up"].sample, 
-    title: Faker::Company.buzzword, 
-    description: Faker::Company.bs, 
-    status: [true, false].sample, 
-    application: Application.all[i],
-    date: Faker::Date.forward(60) )
-
     step.application.status = "in_progress"
     step.application.save
 end 
