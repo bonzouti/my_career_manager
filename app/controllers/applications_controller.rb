@@ -20,16 +20,34 @@ class ApplicationsController < ApplicationController
 
 
   end
+  
+  def edit_job_offer
+    @application = Application.find(params[:id])
+  end
+
+  def update_job_offer
+    @application = Application.find(params[:id])
+
+    if @application.update(joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
+      respond_to do |format|
+        format.html {redirect_to application_path(@application)}
+        format.js
+      end
+    else
+      render :edit
+    end
+  end
+
 
   def show
     @application = Application.find(params[:id])
-    
-
   end
+
 
   def new
     @application = Application.new
   end
+
 
   def create
     @application = Application.new(company_name: params[:company_name], position: params[:position], status: params[:status], joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
