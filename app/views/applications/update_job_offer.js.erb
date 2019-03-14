@@ -1,2 +1,4 @@
-$("div.modal-backdrop").hide()
+$("div.modal-backdrop").remove()
+$(".modal-open").removeClass()
+$("body").css("padding", "0px")
 $("#collapseTwo").replaceWith("<%= j render 'job_offer', application: @application %>")
