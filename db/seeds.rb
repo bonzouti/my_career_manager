@@ -3,11 +3,11 @@ require 'faker'
 User.destroy_all
 puts('Old users destroyed')
 
-    bere = User.create!(email: "berenice@yopmail.com", password: "azerty2020")
-    mathieu = User.create!(email: "mathieu@yopmail.com", password: "azerty2020")
-    elo = User.create!(email: "elo@yopmail.com", password: "azerty2020")
-    lionel = User.create!(email: "lionel@yopmail.com", password: "azerty2020")
-    gauthier = User.create!(email: "gauthier@yopmail.com", password: "azerty2020")
+    bere = User.create!(email: "berenice@yopmail.com", password: "azerty2020", is_admin: true, country: "France", full_name: "Bérénice")
+    mathieu = User.create!(email: "mathieu@yopmail.com", password: "azerty2020", is_admin: true, country: "France", full_name: "Matt")
+    elo = User.create!(email: "elo@yopmail.com", password: "azerty2020", is_admin: true, country: "France", full_name: "Elo")
+    lionel = User.create!(email: "lionel@yopmail.com", password: "azerty2020", is_admin: true, country: "France", full_name: "Lion")
+    gauthier = User.create!(email: "gauthier@yopmail.com", password: "azerty2020", is_admin: true, country: "France", full_name: "Gauthier")
 
 puts('New users seeded')
 
