@@ -8,7 +8,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <%= link_to "My career", applications_path, class:"navbar-brand" %>
+      <%= link_to "My Career Manager", applications_path, class:"navbar-brand" %>
 
       <ul class="navbar-nav mr-auto">
         <li class="nav-item movinglink">
@@ -24,8 +24,9 @@
             
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                My actions
-              </a>
+               <% if user_signed_in? %> <%=current_user.email%> <%end%> <i class="material-icons">account_circle</i>
+              </a> 
+
               <% if user_signed_in? %>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
