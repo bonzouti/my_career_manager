@@ -18,6 +18,7 @@ class ApplicationsController < ApplicationController
       end
     end
 
+
   end
 
   def show

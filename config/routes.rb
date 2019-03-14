@@ -10,7 +10,14 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+<<<<<<< HEAD
   resources :archived, :only => [:index]
+=======
+  namespace :admin do
+    root 'dashboards#index'
+    resources :users
+  end
+>>>>>>> development
 
   root "applications#index"
 
