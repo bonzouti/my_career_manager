@@ -8,12 +8,16 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <%= link_to "My career", applications_path, class:"navbar-brand" %>
+      <%= link_to "My Career Manager", applications_path, class:"navbar-brand" %>
 
       <ul class="navbar-nav mr-auto">
         <li class="nav-item movinglink">
             <%= link_to "Create an application", new_application_path, class:"nav-link" %>
         </li>
+          <li class="nav-item movinglink">
+            <%  if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link" %> <%end%>
+        </li>
+       
     </ul>
     </div>
 
@@ -24,12 +28,13 @@
             
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                My actions
-              </a>
+               <% if user_signed_in? %> <%=current_user.email%> <%end%> <i class="material-icons">account_circle</i>
+              </a> 
+
               <% if user_signed_in? %>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <%= link_to "My profile", applications_path, class:"dropdown-item" %>
+                  <%= link_to "My profile", user_path(current_user), class:"dropdown-item" %>
                   <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
                 </div>  
 

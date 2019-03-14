@@ -1,59 +1,115 @@
-<body>
-	<!--Start part of btn application && contact-->
-	<div class="container p-3">
-		<div class="row">
-			<div class="col text-center">
-				<ul class="nav nav-pills bg-nav-pills nav-justified mb-4">
-					<li class="nav-item">
-						<a href="#home1" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
-							<span class="d-none d-lg-block">Application</span>
-						</a>
-					</li>
-					<li class="nav-item"><%= link_to application_contacts_path(@application), class: 'nav-link rounded-0 ', data: { 'data-toggle' => 'tab'} do %>
-						<span class="d-none d-lg-block">Contact</span><% end %>
-					</li>
-				</ul>
+<!--Start part of btn application && contact-->
+<div class="container p-3">
+	<div class="row">
+		<div class="col text-center">
+			<ul class="nav nav-pills bg-nav-pills nav-justified mb-4">
+				<li class="nav-item">
+					<a href="#home1" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+						<span class="d-none d-lg-block">Application</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<%= link_to application_contacts_path(@application), class: 'nav-link rounded-0 ', data: { 'data-toggle' => 'tab'} do %>
+					<span class="d-none d-lg-block">Contact</span>
+					<% end %>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="container text-center">
+	<h2>
+		<%= @application.position %> at
+		<%= @application.company_name%>
+	</h2>
+</div>
+<!--End part of btn application && contact-->
+<!--Start part of Step-->
+<div class="container p-3">
+	<div class="card-header bg-dragula shadow-sm mb-4">
+		<div class="card-body ">
+			<% application = Application.find(params[:id])%>
+			<% application.steps.each do |step| %>
+			<ol>
+				<span class="badge-success-lighten mr-2">
+					<%= step.date.strftime '%a %m/%d' %> :
+				</span>
+				<small class="badge badge-success ">
+					<%= step.category %>
+				</small>
+			</ol>
+			<% end %>
+		</div>
+		<!-- end card-body -->
+	</div>
+</div>
+<!--End part of step-->
+<!--Start part of btn add step-->
+<div class="container text-center p-3">
+	<%= link_to "Add step", new_application_step_path(@application), class: 'btn btn-dark btn-sm ml-3' %>
+</div>
+<!--End part of btn add step-->
+<!--Start part of Notes-->
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div id="accordion" class="custom-accordion mb-4">
+				<div class="card mb-0 shadow-sm">
+					<div class="card-header bg-dragula" id="headingOne">
+						<h5 class="m-0 text-center">
+							<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+							 aria-controls="collapseOne">
+								<h4>Notes</h4>
+							</a>
+						</h5>
+					</div>
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<% application = Application.find(params[:id])%>
+							<% application.steps.each do|step| %>
+							<span class="badge-success-lighten mr-2">
+								<%= step.date.strftime '%a %m/%d' %>
+							</span>
+							<small class="badge badge-success ">
+								<%= step.category %>
+							</small>
+							<p class="mt-2">Description :
+								<%= step.description %>
+							</p>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<!-- end card-->
 			</div>
 		</div>
 	</div>
-	<div class="container text-center">
-		<h2><%= @application.position %> at <%= @application.company_name%>
-		</h2>
-	</div>
-	<!--End part of btn application && contact-->
-	<!--Start part of Step-->
-	<div class="container p-3">
-		<div class="card-header bg-dragula shadow-sm mb-4">
-			<div class="card-body "><% application = Application.find(params[:id])%><% application.steps.each do |step| %>
-				<ol>
-					<span class="badge-success-lighten mr-2"><%= step.date.strftime '%a %m/%d' %> : 
-                           
-                              
-					</span>
-					<small class="badge badge-success "><%= step.category %>
-					</small>
-				</ol><% end %>
-			</div>
-			<!-- end card-body -->
-		</div>
-	</div>
-	<!--End part of step-->
-	<!--Start part of btn add step-->
-	<div class="container text-center p-3"><%= link_to "Add step", new_application_step_path(@application), class: 'btn btn-dark btn-sm ml-3' %>
-	</div>
-	<!--End part of btn add step-->
-	<!--Start part of Notes-->
+</div>
+<!--End part of Notes-->
+<!--Start part of Application details-->
+<section>
 	<div class="container">
 		<div class="row">
 			<div class="col">
 				<div id="accordion" class="custom-accordion mb-4">
 					<div class="card mb-0 shadow-sm">
-						<div class="card-header bg-dragula" id="headingOne">
+						<div class="card-header bg-dragula" id="headingTwo">
 							<h5 class="m-0 text-center">
-								<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-									<h4>Notes</h4>	
+								<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseTwo" aria-expanded="true"
+								 aria-controls="collapseTwo">
+									<h4>Job Offer details</h4>
 								</a>
 							</h5>
+						</div>
+						<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+							<div class="card-body">
+								<h5 class="text-primary">
+									<a href=' <%=application.joboffer_link%>'>Link of application
+									</a>
+								</h5>
+								<%= @application.joboffer_link %>
+								<h5 class="text-primary"> Description </h5>
+								<%=application.joboffer_description%>
 							</div>
                             
 							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
@@ -68,55 +124,56 @@
 									<p class="mt-2">Description : <%= step.description %>
 									</p><% end %>
 								</div>
+
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Edit</button>
+							
+							<!-- beginning modal -->	
+							<div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+
+										<div class="card">
+											<!-- Logo-->
+											<div class="card-header pt-4 pb-4 text-center bg-primary">
+												<h4 style="color:white">Edit Application</h4>
+											</div>
+
+											<div class="card-body p-4">
+
+												<%= form_tag url_for(action: 'update_job_offer'), method: "put", remote: true do %>
+												<div class="form-group">
+													<%= label_tag 'Link to job offer' %><br />
+													<%= url_field_tag :joboffer_link, @application.joboffer_link, class: 'form-control', placeholder: 'Enter link' %>
+												</div>
+												<div class="form-group">
+													<%= label_tag 'Job offer description' %><br />
+													<%= text_area_tag :joboffer_description, @application.joboffer_description, class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+												</div>
+												<div class="form-group">
+													<%= submit_tag "Edit application", class:"btn btn-primary" %>
+												</div>
+												<% end %>
+											</div> <!-- end card-body -->
+										</div>
+
+									</div><!-- /.modal-content -->
+								</div><!-- /.modal-dialog -->
 							</div>
+							<!--end modal -->
+							
 						</div>
-						<!-- end card-->
 					</div>
+					<!-- end card-->
 				</div>
 			</div>
 		</div>
-		<!--End part of Notes-->
-		<!--Start part of Application details-->
-		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div id="accordion" class="custom-accordion mb-4">
-							<div class="card mb-0 shadow-sm">
-								<div class="card-header bg-dragula" id="headingTwo">
-                                
-									<h5 class="m-0 text-center">
-										<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-											<h4>Job Offer details</h4>
-										</a>
-									</h5>
-									</div>
-									<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-										<div class="card-body">
-                                        <i class="fa fa-edit" style="font-size:24px;"></i>
 
-											<h5 class="text-primary">
-												<a href=' <%=application.joboffer_link%>'>Link of application 
-												</a>
-											</h5>
-											<h5 class="text-primary"> Position  </h5><%= application.position%>
-											<h5 class="text-primary"> Description </h5><%=application.joboffer_description%>
-										</div>
-									</div>
-								</div>
-								<!-- end card-->
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--End part of Application details-->
-			<!--Start part button archive-->
-				<div class="container text-center p-3">
-				<%= link_to "Archive", archive_application_path(@application), method: 'GET', class: 'btn btn-dark btn-sm ml-3' %>
-				</div>
-			<!--Start part button archive-->	
-	</body>
-</html>
-		</body>
-	</html>
+	</div>
+</section>
+<!--End part of Application details-->
+<!--Start part button archive-->
+<div class="container text-center p-3">
+	<%= link_to "Archive", archive_application_path(@application), method: 'GET', class: 'btn btn-dark btn-sm ml-3' %>
+	</div>
+<!--Start part button archive-->
+
