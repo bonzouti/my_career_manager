@@ -8,10 +8,13 @@ class ApplicationsController < ApplicationController
 
     @next_steps = []
     @steps.each do |step|
-      if step.date > Date.today
-        @next_steps << step
+      if step.date != nil
+        if step.date > Date.today
+          @next_steps << step
+        end
       end
     end 
+
     @next_steps = @next_steps.sort_by &:date
 
     @identified = []

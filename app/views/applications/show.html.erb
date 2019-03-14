@@ -33,7 +33,7 @@
 			<% application.steps.each do |step| %>
 			<ol>
 				<span class="badge-success-lighten mr-2">
-					<%= step.date.strftime '%a %m/%d' %> :
+					
 				</span>
 				<small class="badge badge-success ">
 					<%= step.category %>
@@ -71,7 +71,7 @@
 							<% application = Application.find(params[:id])%>
 							<% application.steps.each do|step| %>
 							<span class="badge-success-lighten mr-2">
-								<%= step.date.strftime '%a %m/%d' %>
+								
 							</span>
 							<small class="badge badge-success ">
 								<%= step.category %>
