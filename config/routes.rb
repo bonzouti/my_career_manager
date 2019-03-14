@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :applications do
-    resources :contacts, only: [:index]
+    resources :contacts, only: [:index, :create]
     resources :steps
   end
   
