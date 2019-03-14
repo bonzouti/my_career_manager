@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    resources :dashboard, only: [:index]
+    root 'dashboards#index'
+    resources :users
   end
 
   root "applications#index"
