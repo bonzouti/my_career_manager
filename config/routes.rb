@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+  namespace :admin do
+    root 'dashboards#index'
+    resources :users
+  end
+
   root "applications#index"
 
 end
