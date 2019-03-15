@@ -73,7 +73,7 @@
 							<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'write notes', rows: 8 %>
 						</div>
 						<div class="form-group">
-							<%= submit_tag "Save changes", class:"btn btn-primary" %>
+							<%= submit_tag "Save changes", class:"btn btn-primary btn-alert-success" %>
 						</div>
 						<% end %>
 					</div>
@@ -137,7 +137,7 @@
 													<%= text_area_tag :joboffer_description, @application.joboffer_description, class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
 												</div>
 												<div class="form-group">
-													<%= submit_tag "Edit application", class:"btn btn-primary" %>
+													<%= submit_tag "Edit application", class:"btn btn-primary btn-alert-success" %>
 												</div>
 												<% end %>
 											</div> <!-- end card-body -->
@@ -164,3 +164,16 @@
 	<%= link_to "Archive", archive_application_path(@application), method: 'GET', class: 'btn btn-dark btn-sm ml-3' %>
 	</div>
 <!--Start part button archive-->
+
+
+
+<!--------------- NOTIFICATION SUCCESSS FOR AJAX ACTIONS TRIGERRED WITH THE CLASS BTN-ALERT-SUCCESS ------------------>
+
+					<div class="jq-toast-wrap top-right">
+						<div class="jq-toast-single jq-has-icon jq-icon-success" style="text-align: left; display: none;">
+							<span class="close-jq-toast-single">×</span>
+							<h2 class="jq-toast-heading">Well Done!</h2>Your action has been successful
+						</div>
+					</div>
+
+<!------------------------------------------------------------------------------- ----------------------------------->
