@@ -12,7 +12,7 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-                                           <!-- start page title -->
+                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
@@ -105,11 +105,10 @@
                                                             <h5 class="font-15 mb-1 font-weight-normal"><%=user.email%></h5>
                                                             <span class="text-muted font-13">Looking for a job as... <%=user.applications.last.position%></span>
                                                         </td>
-                                                        <td><%=user.applications.count%> applications</td>
-                                                        <td><%=user.steps.count%> steps</td>
+                                                        <td><%=user.applications.count%> </td>
+                                                        <td><%=user.steps.count%> </td>
                                                         <td> <%= link_to "View", admin_user_path(user), class: "btn btn-primary" %> 
-                                                            <%= link_to "Edit", edit_admin_user_path(user), class: "btn btn-light" %>
-                                                            <%= link_to "Delete", root_path, class: "btn btn-danger" %> 
+                                                            <%= link_to "Delete", user_registration_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %> 
                                                         </td>
                                                     </tr>
                                                     <%end%>
