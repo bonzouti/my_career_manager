@@ -14,9 +14,6 @@ Rails.application.routes.draw do
 
   end
 
-  #get 'new_identified_application', controller: "applications", action: "new_identified"
-  #post 'create_identified_application', controller: "applications", action: "create_identified"
-  
   devise_for :users
 
   resources :users, only: [:show]
