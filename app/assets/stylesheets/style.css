@@ -1,4 +1,4 @@
-/* index ************************************************/
+/* index application ************************************************/
 
 .content-page {
   display: flex;
@@ -19,7 +19,7 @@
 }
 
 .tasks {
-  width: 23%; 
+  width: 23%;
 }
 
 .mt-2 {
@@ -31,7 +31,11 @@
 }
 
 .next-step-header {
-  background-color: rgb(209, 182, 60)!important;
+  background-color: rgb(214, 161, 62)!important;
+}
+
+.next-step-background {
+  background-color: rgb(224, 217, 207);
 }
 
 .content {
@@ -42,6 +46,21 @@
   content: "No Application";
 }
 
+.next-step {
+  text-align: center;
+  margin-bottom: 0.75rem!important;
+}
+
+.break-word {
+  word-wrap: break-word;
+}
+
+.task-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 
 
 
