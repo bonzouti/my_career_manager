@@ -23,7 +23,6 @@
 //= require assets/js/handlebars.min
 //= require assets/js/typeahead.bundle.min
 
-
 $(document).ready(function() {
 
 })

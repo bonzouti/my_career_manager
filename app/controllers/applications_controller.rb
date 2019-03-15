@@ -63,6 +63,21 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
+
+    @steps = @application.steps
+
+    @next_steps = []
+    @steps.each do |step|
+      if step.date != nil
+        if step.date > Date.today
+          @next_steps << step
+        end
+      end
+    end 
+
+    @next_steps = @next_steps.sort_by &:date
+
+
   end
 
 
@@ -77,7 +92,8 @@ class ApplicationsController < ApplicationController
       joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
     @application.user = current_user
     if @application.save
-      redirect_to root_path
+      flash[:success] = "Your application for the position '#{@application.position}' has been created"
+      redirect_to application_path(@application)
     else
       render :new
     end
@@ -88,6 +104,7 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
       @application.status = "archived"
       if @application.save
+        flash[:alert] = "The application for the position '#{@application.position}' has been archived"
         redirect_to root_path
       end
   end
