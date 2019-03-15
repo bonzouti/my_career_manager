@@ -9,6 +9,7 @@ class StepsController < ApplicationController
         @application = Application.find(params[:application_id])
         @step.application = @application
     if @step.save
+      @application.update_status
       redirect_to application_path(@application)
     else
       render :new
