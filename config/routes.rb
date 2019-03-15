@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'archive'
     end
 
-    resources :steps
+    resources :steps, only: [:new, :create, :update]
     
     member do
       put 'update_job_offer'
