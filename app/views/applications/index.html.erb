@@ -71,7 +71,7 @@
               <div class="tasks">
                 <h5 class="mt-0 task-header text-uppercase">
                   <span>Identified (<%= @identified.length %>)</span>
-                  <span><%= link_to "+", new_application_path(status: "identified"), class: "btn btn-primary create-application-button" %></span>
+                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-identified">+</button></span>
                 </h5>
 
                 <div id="task-list-two" class="task-list-items">
@@ -104,7 +104,7 @@
               <div class="tasks">
                 <h5 class="mt-0 task-header text-uppercase">
                   <span>Applied (<%= @applied.length %>)</span>
-                  <span><%= link_to "+", new_application_path(status: "applied"), class: "btn btn-primary create-application-button" %></span>
+                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-applied">+</button></span>
                 </h5>
 
                 <div id="task-list-three" class="task-list-items">
@@ -136,7 +136,7 @@
               <div class="tasks">
                 <h5 class="mt-0 task-header text-uppercase">
                   <span>Applied (<%= @applied.length %>)</span>
-                  <span><%= link_to "+", new_application_path(status: "in_progress"), class: "btn btn-primary create-application-button" %></span>
+                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-in_progress">+</button></span>
                 </h5>
                 <div id="task-list-four" class="task-list-items">
 
@@ -202,3 +202,154 @@
 
 
 </div>
+
+
+
+<!-- beginning modal -->
+<div id="new-modal-identified" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="card">
+              <!-- Logo-->
+              <div class="card-header pt-4 pb-4 text-center bg-primary">
+                  <h4 style="color:white">New Application</h4>
+              </div>
+
+              <div class="card-body p-4">
+
+                  <%= form_tag url_for(action: 'create'), method: "post" do %>
+                  <div class="form-group">
+                      <%= label_tag 'Company *' %><br />
+                      <%= text_field_tag :company_name, "", class: 'form-control', placeholder: 'Enter company name' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Job title *' %><br />
+                      <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
+                  </div>
+                  <div class="form-group hidden-form">
+                      <%= label_tag 'Status *' %><br />
+                      <%= text_field_tag :status, "identified", class: 'form-control' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Link to job offer' %><br />
+                      <%= url_field_tag :joboffer_link, "", class: 'form-control', placeholder: 'Enter link' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Job offer description' %><br />
+                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag '' %><br />
+                      <%= submit_tag "Add new application", class:"btn btn-primary" %>
+                  </div>
+                  <% end %>
+              </div> <!-- end card-body -->
+          </div>
+          <!-- end card-body -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!--end modal -->
+  <!-- beginning modal -->
+<div id="new-modal-applied" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="card">
+              <!-- Logo-->
+              <div class="card-header pt-4 pb-4 text-center bg-primary">
+                  <h4 style="color:white">New Application</h4>
+              </div>
+
+              <div class="card-body p-4">
+
+                  <%= form_tag url_for(action: 'create'), method: "post" do %>
+                  <div class="form-group">
+                      <%= label_tag 'Company *' %><br />
+                      <%= text_field_tag :company_name, "", class: 'form-control', placeholder: 'Enter company name' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Job title *' %><br />
+                      <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
+                  </div>
+
+                  <div class="form-group hidden-form">
+                      <%= label_tag 'Status *' %><br />
+                      <%= text_field_tag :status, "applied", class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group">
+                      <%= label_tag 'Link to job offer' %><br />
+                      <%= url_field_tag :joboffer_link, "", class: 'form-control', placeholder: 'Enter link' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Job offer description' %><br />
+                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag '' %><br />
+                      <%= submit_tag "Add new application", class:"btn btn-primary" %>
+                  </div>
+                  <% end %>
+              </div> <!-- end card-body -->
+          </div>
+          <!-- end card-body -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!--end modal -->
+  <!-- beginning modal -->
+<div id="new-modal-in_progress" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="card">
+              <!-- Logo-->
+              <div class="card-header pt-4 pb-4 text-center bg-primary">
+                  <h4 style="color:white">New Application</h4>
+              </div>
+
+              <div class="card-body p-4">
+
+                  <%= form_tag url_for(action: 'create'), method: "post" do %>
+                  <div class="form-group">
+                      <%= label_tag 'Company *' %><br />
+                      <%= text_field_tag :company_name, "", class: 'form-control', placeholder: 'Enter company name' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Job title *' %><br />
+                      <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
+                  </div>
+
+                  <div class="form-group hidden-form">
+                      <%= label_tag 'Status *' %><br />
+                      <%= text_field_tag :status, "in_progress", class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group">
+                      <%= label_tag 'Link to job offer' %><br />
+                      <%= url_field_tag :joboffer_link, "", class: 'form-control', placeholder: 'Enter link' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Job offer description' %><br />
+                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag '' %><br />
+                      <%= submit_tag "Add new application", class:"btn btn-primary" %>
+                  </div>
+                  <% end %>
+              </div> <!-- end card-body -->
+          </div>
+          <!-- end card-body -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!--end modal -->
