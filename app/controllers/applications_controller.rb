@@ -84,7 +84,7 @@ class ApplicationsController < ApplicationController
   def destroy
     @application = Application.find(params[:id])
     @application.destroy
-    redirect_to applications_path
+    redirect_to archived_index_path
 end
 
 end
