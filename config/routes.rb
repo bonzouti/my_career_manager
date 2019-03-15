@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
 
   resources :applications do
+  	
+    resources :contacts, only: [:index, :create, :update, :destroy]
+
     member do
       get 'archive'
     end
-    resources :contacts, only: [:index]
+
     resources :steps
     
     member do
-      get 'edit_job_offer'
       put 'update_job_offer'
+      put 'update_notes'
     end
 
   end
