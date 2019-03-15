@@ -67,10 +67,17 @@
 				<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
 						<div class="row align-items-center">
-							
-								<h5 class="text-muted font-weight-normal">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum lorem eget lectus sollicitudin, at posuere quam mattis. Quisque lobortis eu arcu at malesuada. In quam mauris, fermentum eget nunc et, lobortis tristique nibh. Donec facilisis neque non nisi iaculis, nec accumsan eros efficitur. Aliquam tellus ante, vestibulum quis diam ac, commodo cursus nisi. In pharetra, est sed vehicula lobortis, eros libero vulputate nunc, vitae hendrerit justo sem id ante. Integer molestie diam ut odio suscipit mollis. Fusce faucibus augue ligula, at sollicitudin augue vestibulum quis. Nullam gravida, magna non ullamcorper efficitur, tellus ex euismod odio, sit amet ultricies massa massa in quam. Vestibulum odio tellus, egestas nec semper eget, placerat at nunc. Donec rutrum placerat commodo. Sed id convallis elit. Vivamus iaculis sed neque nec fermentum. Proin venenatis quis nunc at efficitur.
-								</h5>
+
+							<div class="edit-notes">
+								<%= form_tag url_for(action: 'update_notes'), method: "put", remote: true do %>
+								<div class="form-group text-edit-notes">
+									<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'write notes', rows: 8  %>
+								</div>
+								<div class="form-group">
+									<%= submit_tag "Save changes", class:"btn btn-primary" %>
+								</div>
+								<% end %>
+							</div>
 							
 							<!-- end card-->
 						</div>
