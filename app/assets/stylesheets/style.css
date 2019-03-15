@@ -93,3 +93,27 @@
    i.link-icon-sm{
     margin-bottom: 0px;
   }
+
+/********************LANDING PAGE IMAGE********************/ 
+.bg-image-lp{
+  background: url("/assets/atrium.jpg");
+  background-size: 50%;
+    background-position: right;
+}
+
+
+
+
+
+ /********************FORMS********************/ 
+
+  .bg-formsandothers{
+    background-image: url("/assets/painting.jpg");
+    background-size: 100%;
+    background-position: center;
+  }
+
+  .bg-formsandothers.bigger, .auth-fluid-pages.bigger {
+    min-height: 100px; }
+
+
