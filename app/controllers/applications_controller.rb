@@ -77,6 +77,7 @@ class ApplicationsController < ApplicationController
       joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
     @application.user = current_user
     if @application.save
+      flash[:success] = "Your application for the position '#{@application.position}' has been created"
       redirect_to root_path
     else
       render :new
@@ -88,6 +89,7 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
       @application.status = "archived"
       if @application.save
+        flash[:alert] = "The application for the position '#{@application.position}' has been archived"
         redirect_to root_path
       end
   end
