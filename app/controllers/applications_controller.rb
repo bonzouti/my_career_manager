@@ -93,29 +93,11 @@ class ApplicationsController < ApplicationController
     @application.user = current_user
     if @application.save
       flash[:success] = "Your application for the position '#{@application.position}' has been created"
-      redirect_to root_path
+      redirect_to application_path(@application)
     else
       render :new
     end
   end
-
-=begin
-  def create_identified
-    @application = Application.new(company_name: params[:company_name], 
-    position: params[:position], status: "identified",
-    joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
-    @application.user = current_user
-    if @application.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
-
-  def new_identified
-    @application = Application.new
-  end
-=end
 
 
   def archive

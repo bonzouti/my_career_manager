@@ -1,55 +1,69 @@
- <body>
+<div class="account-pages mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card">
+                    <!-- Logo-->
+                    <div class="card-header pt-4 pb-4 text-center bg-primary">
+                        <h4 style="color:white">New Application</h4>
+                    </div>
 
-        <div class="account-pages mt-5 mb-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5">
-                        <div class="card">
-                            <!-- Logo-->
-                            <div class="card-header pt-4 pb-4 text-center bg-primary">
-                                <h4 style="color:white">New Application</h4>
-                            </div>
+                    <div class="card-body p-4">
 
-                            <div class="card-body p-4">
-
-                                    <%= form_tag url_for(action: 'create'), method: "post" do %>
-                                        <div class="form-group">
-                                            <%= label_tag 'Company *' %><br/>
-                                            <%= text_field_tag :company_name, @application.company_name, class: 'form-control', placeholder: 'Enter company name' %>
-                                        </div>
-                                    <div class="form-group">
-                                            <%= label_tag 'Job title *' %><br/>
-                                            <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
-                                        </div> 
-                                    <div class="form-group">
-                                            <%= label_tag 'Status *' %><br/>
-                                            <%= select_tag "status", "<option>identified</option><option>applied</option><option>in_progress</option>".html_safe, class: 'custom-select' %>
-                                    </div>  
-                                    <div class="form-group">
-                                            <%= label_tag 'Link to job offer' %><br/>
-                                            <%= url_field_tag :joboffer_link, "", class: 'form-control', placeholder: 'Enter link' %>
-                                    </div>     
-                                    <div class="form-group">
-                                            <%= label_tag 'Job offer description' %><br/>
-                                            <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
-                                    </div>
-                                    <div class="form-group">
-                                            <%= label_tag '' %><br/>
-                                            <%= submit_tag "Add new application", class:"btn btn-primary" %>
-                                    </div>
-                                    <% end %>
-                            </div> <!-- end card-body -->
+                        <%= form_tag url_for(action: 'create'), method: "post" do %>
+                        <div class="form-group">
+                            <%= label_tag 'Company *' %><br />
+                            <%= text_field_tag :company_name, "", class: 'form-control', placeholder: 'Enter company name' %>
                         </div>
-                        <!-- end card -->
-                        <!-- end row -->
+                        <div class="form-group">
+                            <%= label_tag 'Job title *' %><br />
+                            <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
+                        </div>
 
-                    </div> <!-- end col -->
+                        <% if params[:status] == "identified" %>
+                        <div class="form-group hidden-form">
+                            <%= label_tag 'Status *' %><br />
+                            <%= text_field_tag :status, "identified", class: 'form-control' %>
+                        </div>
+                        <% elsif params[:status] == "applied" %>
+                        <div class="form-group hidden-form">
+                            <%= label_tag 'Status *' %><br />
+                            <%= text_field_tag :status, "applied", class: 'form-control' %>
+                        </div>
+                        <% elsif params[:status] == "in_progress" %>
+                        <div class="form-group hidden-form">
+                            <%= label_tag 'Status *' %><br />
+                            <%= text_field_tag :status, "in_progress", class: 'form-control' %>
+                        </div>
+                        <% else %>
+                        <div class="form-group">
+                            <%= label_tag 'Status *' %><br />
+                            <%= select_tag "status", "<option>identified</option><option>applied</option><option>in_progress</option>".html_safe, class: 'custom-select' %>
+                        </div>
+                        <% end %>
+
+                        <div class="form-group">
+                            <%= label_tag 'Link to job offer' %><br />
+                            <%= url_field_tag :joboffer_link, "", class: 'form-control', placeholder: 'Enter link' %>
+                        </div>
+                        <div class="form-group">
+                            <%= label_tag 'Job offer description' %><br />
+                            <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+                        </div>
+                        <div class="form-group">
+                            <%= label_tag '' %><br />
+                            <%= submit_tag "Add new application", class:"btn btn-primary" %>
+                        </div>
+                        <% end %>
+                    </div> <!-- end card-body -->
                 </div>
+                <!-- end card -->
                 <!-- end row -->
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end page -->
 
-                
-              
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end page -->
