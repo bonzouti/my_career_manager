@@ -19,29 +19,10 @@
                             <%= label_tag 'Job title *' %><br />
                             <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
                         </div>
-
-                        <% if params[:status] == "identified" %>
-                        <div class="form-group hidden-form">
-                            <%= label_tag 'Status *' %><br />
-                            <%= text_field_tag :status, "identified", class: 'form-control' %>
-                        </div>
-                        <% elsif params[:status] == "applied" %>
-                        <div class="form-group hidden-form">
-                            <%= label_tag 'Status *' %><br />
-                            <%= text_field_tag :status, "applied", class: 'form-control' %>
-                        </div>
-                        <% elsif params[:status] == "in_progress" %>
-                        <div class="form-group hidden-form">
-                            <%= label_tag 'Status *' %><br />
-                            <%= text_field_tag :status, "in_progress", class: 'form-control' %>
-                        </div>
-                        <% else %>
                         <div class="form-group">
                             <%= label_tag 'Status *' %><br />
                             <%= select_tag "status", "<option>identified</option><option>applied</option><option>in_progress</option>".html_safe, class: 'custom-select' %>
                         </div>
-                        <% end %>
-
                         <div class="form-group">
                             <%= label_tag 'Link to job offer' %><br />
                             <%= url_field_tag :joboffer_link, "", class: 'form-control', placeholder: 'Enter link' %>
