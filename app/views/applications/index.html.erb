@@ -33,9 +33,7 @@
 
                 <div id="task-list-one">
 
-                  <!-- Task Item -->
-                  <% @next_steps.each do |next_step| %>
-
+                  <!-- Task Item --><% @next_steps.each do |next_step| %>
                   <div class="card mb-0">
                     <div class="card-body p-3">
 
@@ -52,13 +50,12 @@
                         <% unless next_step.date == nil %>
                         <%= next_step.date.strftime '%a %m/%d' %>
                         <% end %>
-                      </small>
-
-                      
+                      </small>     
 
                     </div> <!-- end card-body -->
+            
                   </div>
-
+                  <!-- end card-body -->
                   <% end %>
                   <!-- Task Item End -->
 

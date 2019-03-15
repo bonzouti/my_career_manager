@@ -12,10 +12,12 @@ class ContactsController < ApplicationController
 
   	@application = Application.find(params[:application_id])
 
-  	@contact = Contact.new(application: @application, first_name: params[:first_name], last_name: params[:last_name], position: params[:position], email: params[:email], phone: params[:phone])
+  	@contact = Contact.new(application: @application, first_name: params[:first_name], last_name: params[:last_name],
+     position: params[:position], email: params[:email], phone: params[:phone])
 
   	if @contact.save
 
+      flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
   		redirect_to application_contacts_path(@application)
 
   	end
@@ -28,7 +30,10 @@ class ContactsController < ApplicationController
 
   	@contact = Contact.find(params[:id])
 
-  	@contact.update(first_name: params[:first_name], last_name: params[:last_name], position: params[:position], email: params[:email], phone: params[:phone])
+  	@contact.update(first_name: params[:first_name], last_name: params[:last_name], position: params[:position],
+     email: params[:email], phone: params[:phone])
+
+    flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
 
   	redirect_to application_contacts_path
 
@@ -42,6 +47,8 @@ class ContactsController < ApplicationController
   	puts "$" * 60
   	puts params
   	@contact.destroy
+
+    flash[:error] = "Your contact #{@contact.first_name} #{@contact.last_name} has been deleted"
   	redirect_to application_contacts_path
 
   end

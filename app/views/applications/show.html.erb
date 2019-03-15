@@ -8,159 +8,172 @@
 						<span class="d-none d-lg-block">Application</span>
 					</a>
 				</li>
-				<li class="nav-item">
-					<%= link_to application_contacts_path(@application), class: 'nav-link rounded-0 ', data: { 'data-toggle' => 'tab'} do %>
-					<span class="d-none d-lg-block">Contact</span>
-					<% end %>
+				<li class="nav-item"><%= link_to application_contacts_path(@application), class: 'nav-link rounded-0 ', data: { 'data-toggle' => 'tab'} do %>
+					<span class="d-none d-lg-block">Contact</span><% end %>
 				</li>
 			</ul>
 		</div>
 	</div>
 </div>
 <div class="container text-center">
-	<h2>
-		<%= @application.position %> at
+	<h2><%= @application.position %> at
 		<%= @application.company_name%>
 	</h2>
 </div>
 <!--End part of btn application && contact-->
 
-<!--Start part of Step-->
-<div class="container p-3">
-	<div class="card-header bg-dragula shadow-sm mb-4">
-		<div class="card-body ">
-			<% application = Application.find(params[:id])%>
-			<% application.steps.each do |step| %>
-			<ol>
-				<span class="badge-success-lighten mr-2">
-					
-				</span>
-				<small class="badge badge-success ">
-					<%= step.category %>
-				</small>
-			</ol>
-			<% end %>
-		</div>
-		<!-- end card-body -->
-	</div>
-</div>
-<!--End part of step-->
 
-<!--Start part of btn add step-->
-<div class="container text-center p-3">
-	<%= link_to "Add step", new_application_step_path(@application), class: 'btn btn-dark btn-sm ml-3' %>
-</div>
-<!--End part of btn add step-->
-
-<!--Start part of Notes-->
+<!--Start part NEXT STEPS-->
 <div class="container">
 	<div class="row">
-		<div class="col">
-			<div id="accordion" class="custom-accordion mb-4">
-				<div class="card mb-0 shadow-sm">
-					<div class="card-header bg-dragula" id="headingOne">
-						<h5 class="m-0 text-center">
-							<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
-							 aria-controls="collapseOne">
-								<h4>Notes</h4>
-							</a>
-						</h5>
+		<div class="col-4">
+			<div class="tasks nextsteps-userview">
+				<h5 class="mt-0 task-header next-step-header">MY NEXT STEPS </h5>
+				<div id="task-list-one">
+					<!-- Task Item --><% @next_steps.each do |next_step| %>
+					<div class="card mb-0">
+						<div class="card-body p-3">
+							<span class="badge <%= 'badge-success' if next_step.category == 'interview' %><%= 'badge-warning' if next_step.category == 'phone interview' %><%= 'badge-danger' if next_step.category == 'follow-up' %>"><%= next_step.category %>
+							</span>
+							<small class="float-right badge <%= 'badge-success-lighten' if next_step.category == 'interview' %><%= 'badge-warning-lighten' if next_step.category == 'phone interview' %><%= 'badge-danger-lighten' if next_step.category == 'follow-up' %>"><% unless next_step.date == nil %><%= next_step.date.strftime '%a %m/%d' %><% end %>
+							</small>
+							<h5 class="mt-2 mb-2"><%= link_to next_step.application.company_name, application_path(next_step.application), class: "text-body", toggle: "modal" %>
+							</h5>
+						</div>
+						<!-- end card-body -->
 					</div>
+					<!-- end card-body --><% end %>
+					<!-- Task Item End -->
+					<div class="container text-center"><%= link_to "Add step", new_application_step_path(@application), class: 'btn btn-primary btn-sm mt-3' %>
+					</div>
+				</div>
+				<!-- end company-list-1-->
+			</div>
+			<!--End part NEXT STEPS-->
 
-					<div class="edit-notes">
-						<%= form_tag url_for(action: 'update_notes'), method: "put", remote: true do %>
-						<div class="form-group text-edit-notes">
-							<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'write notes', rows: 8 %>
+
+			<!--Start part NOTES-->
+		</div>
+		<div class="col-8">
+				<div id="accordion" class="custom-accordion mb-4">
+			<div class="card">
+				<div class="card-header" id="headingOne">
+					<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+							 aria-controls="collapseOne">
+						
+						<h5 class="text-muted font-weight-normal mt-0 ">NOTES </h5>
+					</a>
+				</div>
+				<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+					<div class="card-body">
+						<div class="row align-items-center">
+
+							<div class="edit-notes">
+								<%= form_tag url_for(action: 'update_notes'), method: "put", remote: true do %>
+								<div class="form-group text-edit-notes">
+									<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'write notes', rows: 8  %>
+								</div>
+								<div class="form-group">
+									<%= submit_tag "Save changes", class:"btn btn-primary btn-alert-success" %>
+								</div>
+								<% end %>
+							</div>
+							
+							<!-- end card-->
 						</div>
-						<div class="form-group">
-							<%= submit_tag "Save changes", class:"btn btn-primary" %>
-						</div>
-						<% end %>
+						
 					</div>
 
 				</div>
-				<!-- end card-->
+				<!-- end row-->
 			</div>
+			<!-- end card-body -->
 		</div>
+		<!-- end card -->
 	</div>
 </div>
-<!--End part of Notes-->
+</div>
+</div>
+<!--End part NOTES-->
 
-<!--Start part of Application details-->
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<div id="accordion" class="custom-accordion mb-4">
-					<div class="card mb-0 shadow-sm">
-						<div class="card-header bg-dragula" id="headingTwo">
-							<h5 class="m-0 text-center">
-								<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseTwo" aria-expanded="true"
-								 aria-controls="collapseTwo">
-									<h4>Job Offer details</h4>
-								</a>
-							</h5>
-						</div>
+<!--Start part JOB DETAILS-->
+<div class="container">
+<div class="row">
+	<div class="col">
+		<div class="card">
+			<div class="card-body">
+				<div class="row align-items-center">
+					<div class="col-6">
+						<h5 class="text-muted font-weight-normal mt-0 text-truncate">JOB DETAILS</h5>
 						<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
 							<div class="card-body">
 								<h5 class="text-primary">
-									<a href=' <%=application.joboffer_link%>'>Link of application
+									<a href=' <%=@application.joboffer_link%>'>Link of application
+									
 									</a>
-								</h5>
-								<%= @application.joboffer_link %>
-								<h5 class="text-primary"> Description </h5>
-								<%=application.joboffer_description%>
+								</h5><%= @application.joboffer_link %>
+								<h5 class="text-primary"> Description </h5><%=@application.joboffer_description%>
 							</div>
-
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Edit</button>
-							
-							<!-- beginning modal -->	
+							<!-- beginning modal -->
 							<div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
-
 										<div class="card">
 											<!-- Logo-->
 											<div class="card-header pt-4 pb-4 text-center bg-primary">
 												<h4 style="color:white">Edit Application</h4>
 											</div>
+											<div class="card-body p-4"><%= form_tag url_for(action: 'update_job_offer'), method: "put", remote: true do %>
+												<div class="form-group"><%= label_tag 'Link to job offer' %>
+													<br /><%= url_field_tag :joboffer_link, @application.joboffer_link, class: 'form-control', placeholder: 'Enter link' %>
+												</div>
 
-											<div class="card-body p-4">
-
-												<%= form_tag url_for(action: 'update_job_offer'), method: "put", remote: true do %>
-												<div class="form-group">
-													<%= label_tag 'Link to job offer' %><br />
-													<%= url_field_tag :joboffer_link, @application.joboffer_link, class: 'form-control', placeholder: 'Enter link' %>
+												<div class="form-group"><%= label_tag 'Job offer description' %>
+													<br /><%= text_area_tag :joboffer_description, @application.joboffer_description, class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
 												</div>
-												<div class="form-group">
-													<%= label_tag 'Job offer description' %><br />
-													<%= text_area_tag :joboffer_description, @application.joboffer_description, class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
-												</div>
-												<div class="form-group">
-													<%= submit_tag "Edit application", class:"btn btn-primary" %>
-												</div>
-												<% end %>
-											</div> <!-- end card-body -->
+												<div class="form-group"><%= submit_tag "Edit application", class:"btn btn-primary btn-alert-success" %>
+												</div><% end %>
+											</div>
+											<!-- end card-body -->
 										</div>
-
-									</div><!-- /.modal-content -->
-								</div><!-- /.modal-dialog -->
+									</div>
+									<!-- /.modal-content -->
+								</div>
+								<!-- /.modal-dialog -->
 							</div>
 							<!--end modal -->
-							
 						</div>
 					</div>
-					<!-- end card-->
 				</div>
+				<!-- end row-->
 			</div>
+			<!-- end card-body -->
 		</div>
-
+		<!-- end card -->
 	</div>
-</section>
-<!--End part of Application details-->
+</div>
+</div>
+
+<!--End part JOB DETAILS-->
+
 
 <!--Start part button archive-->
 <div class="container text-center p-3">
-	<%= link_to "Archive", archive_application_path(@application), method: 'GET', class: 'btn btn-dark btn-sm ml-3' %>
+	<%= link_to "Archive", archive_application_path(@application), method: 'GET', class: 'btn btn-light btn-sm ml-3' %>
 	</div>
-<!--Start part button archive-->
+<!--End part button archive-->
+
+
+
+<!--------------- NOTIFICATION SUCCESSS FOR AJAX ACTIONS TRIGERRED WITH THE CLASS BTN-ALERT-SUCCESS ------------------>
+
+					<div class="jq-toast-wrap top-right">
+						<div class="jq-toast-single jq-has-icon jq-icon-success" style="text-align: left; display: none;">
+							<span class="close-jq-toast-single">×</span>
+							<h2 class="jq-toast-heading">Well Done!</h2>Your action has been successful
+						</div>
+					</div>
+
+<!------------------------------------------------------------------------------- ----------------------------------->
+
