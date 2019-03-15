@@ -1,5 +1,6 @@
 class ArchivedController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     @applications = current_user.applications
     @archived = []

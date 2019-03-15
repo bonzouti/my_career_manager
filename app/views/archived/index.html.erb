@@ -47,7 +47,7 @@
                                                             <span class="text-muted font-13"><%=application.position%></span>
                                                         </td>
                                                         <td><%=link_to "View", root_path%></td>
-                                                        <td><%=link_to "Delete", root_path%></td>
+                                                        <td><%=link_to "Delete", application_path(application), method: :delete %></td>
                                                     </tr>
                                                      </tbody>
                                             </table>
