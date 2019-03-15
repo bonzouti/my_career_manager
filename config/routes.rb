@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     resources :steps
     
     member do
-      get 'edit_job_offer'
       put 'update_job_offer'
+      put 'update_notes'
     end
 
   end

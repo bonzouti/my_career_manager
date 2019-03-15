@@ -30,12 +30,22 @@ class ApplicationsController < ApplicationController
       end
     end
 
-
   end
   
-  def edit_job_offer
+
+  def update_notes
     @application = Application.find(params[:id])
+
+    if @application.update(notes: params[:notes])
+      respond_to do |format|
+        format.html {redirect_to application_path(@application)}
+        format.js
+      end
+    else
+      render :edit
+    end
   end
+
 
   def update_job_offer
     @application = Application.find(params[:id])
@@ -88,6 +98,7 @@ class ApplicationsController < ApplicationController
     end
   end
 
+
   def archive
     @application = Application.find(params[:id])
       @application.status = "archived"
@@ -96,4 +107,10 @@ class ApplicationsController < ApplicationController
       end
   end
   
+  def destroy
+    @application = Application.find(params[:id])
+    @application.destroy
+    redirect_to archived_index_path
+end
+
 end
