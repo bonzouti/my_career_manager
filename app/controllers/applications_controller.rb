@@ -4,6 +4,18 @@ class ApplicationsController < ApplicationController
   def index
     
     @applications = current_user.applications
+    @steps = current_user.steps
+
+    @next_steps = []
+    @steps.each do |step|
+      if step.date != nil
+        if step.date > Date.today
+          @next_steps << step
+        end
+      end
+    end 
+
+    @next_steps = @next_steps.sort_by &:date
 
     @identified = []
     @applied = []
@@ -50,8 +62,10 @@ class ApplicationsController < ApplicationController
 
 
   def create
-    @application = Application.new(company_name: params[:company_name], position: params[:position], status: params[:status], joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
-    @application.user = User.all.sample
+    @application = Application.new(company_name: params[:company_name], 
+      position: params[:position], status: params[:status], 
+      joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
+    @application.user = current_user
     if @application.save
       redirect_to root_path
     else
