@@ -93,7 +93,7 @@ class ApplicationsController < ApplicationController
     @application.user = current_user
     if @application.save
       flash[:success] = "Your application for the position '#{@application.position}' has been created"
-      redirect_to root_path
+      redirect_to application_path(@application)
     else
       render :new
     end

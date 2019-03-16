@@ -29,6 +29,11 @@
 		<div class="col-12 col-lg-4">
 			<div class="tasks nextsteps-userview">
 				<h5 class="mt-0 task-header next-step-header">MY NEXT STEPS </h5>
+				<%if @application.has_no_next_step%>
+				<div>
+					<h5 class="text-primary text-center m-4">No next step... <br><br> It may be time for a follow-up email?</h5>
+					</div>
+				<%end%>
 				<div id="task-list-one">
 
 					<!-- Task Item --><% @next_steps.each do |next_step| %>
@@ -110,8 +115,12 @@
 		<div class="card">
 			<div class="card-body">
 				<div class="row align-items-center">
-					<div class="col-6">
-						<h5 class="text-muted font-weight-normal mt-0 text-truncate">JOB DETAILS</h5>
+					<div class="col-12">
+						<h5 class="text-muted mt-0 text-truncate task-header">
+						<span> JOB DETAILS </span>
+						<span> <button type="button" class="btn btn-light" data-toggle="modal" data-target="#signup-modal"><i class="material-icons">edit</i></button> </span>
+						</h5>
+						
 						<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
 							<div class="card-body">
 								<h5 class="text-primary">
@@ -121,9 +130,10 @@
 								</h5><%= @application.joboffer_link %>
 								<h5 class="text-primary"> Description </h5><%=@application.joboffer_description%>
 							</div>
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Edit</button>
+							<button type="button" class="btn btn-light" data-toggle="modal" data-target="#signup-modal">Edit</button>
+
 							<!-- beginning modal -->
-							<div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+							<div id="edit-job_offer-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
 										<div class="card">
@@ -150,6 +160,7 @@
 								<!-- /.modal-dialog -->
 							</div>
 							<!--end modal -->
+
 						</div>
 					</div>
 				</div>
@@ -167,7 +178,7 @@
 
 <!--Start part button archive-->
 <div class="container text-center p-3">
-	<%= link_to "Archive", archive_application_path(@application), method: 'GET', class: 'btn btn-light btn-sm ml-3' %>
+	<%= link_to "Archive application", archive_application_path(@application), method: 'GET', class: 'btn btn-light btn-sm ml-3' %>
 	</div>
 <!--End part button archive-->
 
