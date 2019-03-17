@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
 
   	@application = Application.find(params[:application_id])
 
-  	 @contacts = @application.contacts
+  	@contacts = @application.contacts
 
 
   end

@@ -1,16 +1,19 @@
-<div class="account-pages mt-5 mb-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-5">
-        <div class="card">
-          <!-- Logo-->
-            <div class="card-header pt-4 pb-4 text-center bg-primary">
-              <h4 style="color:white">Forgot your password?</h4>
-              </div>
-          <div class="card-body p-4">
-           <div class="text-center w-75 m-auto">
-                                    <p class="text-muted mb-4">Enter your email address and we'll send you an email with instructions to reset your password.</p>
-                                </div>
+<div class="auth-fluid bg-image-lp">
+	<!--Auth fluid left content -->
+	<div class="auth-fluid-form-box">
+		<div class="align-items-center d-flex h-100">
+			<div class="card-body">
+				<!-- Logo -->
+				<div class="auth-brand text-center text-lg-left">
+					<a href="index.html">
+						<span>
+              <h3 class="border border-info text-info rounded mb-0 pt-1 pb-1 pl-2 pr-2">My Career Manager</h3>
+							</span>
+						</a>
+					</div>
+					<!-- title-->
+					<h4 class="mt-0">Forgot your password?</h4>
+					<p class="text-muted mb-4">Enter your email address and we'll send you an email with instructions to reset your password.</p>
   
             <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
@@ -20,16 +23,16 @@
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Your Email" %>
                </div>
               <br />
-              <div class="actions text-center">
+              <div class="actions">
                 <%= f.submit "Reset Password", class: "btn btn-primary" %>
               </div>
             <% end %>
-            <br />
-            <div class="text-center">
-            <%= render "devise/shared/links" %></div>
+            <br /><%= render "devise/shared/links" %>
+            <%= render "layouts/lpfooter" %>
           </div>
         </div>
       </div>
-    </div>
+    <%= render "layouts/motto" %>
   </div>
 </div>
+
