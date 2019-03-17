@@ -17,9 +17,7 @@
         <div class="row">
           <div class="col-12">
             <div class="page-title-box">
-              <h1 class="page-title text-center">MY APPLICATIONS
-                
-              </h1>
+              <h1 class="page-title text-center">MY APPLICATIONS</h1>
             </div>
           </div>
         </div>
@@ -71,7 +69,7 @@
               <div class="tasks">
                 <h5 class="mt-0 task-header text-uppercase">
                   <span>Identified (<%= @identified.length %>)</span>
-                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-identified">+</button></span>
+                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
                 <div id="task-list-two" class="task-list-items">
@@ -104,7 +102,7 @@
               <div class="tasks">
                 <h5 class="mt-0 task-header text-uppercase">
                   <span>Applied (<%= @applied.length %>)</span>
-                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-applied">+</button></span>
+                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-applied"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
                 <div id="task-list-three" class="task-list-items">
@@ -135,8 +133,8 @@
 
               <div class="tasks">
                 <h5 class="mt-0 task-header text-uppercase">
-                  <span>Applied (<%= @applied.length %>)</span>
-                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-in_progress">+</button></span>
+                  <span>In progress (<%= @in_progress.length %>)</span>
+                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-in_progress"><i class="fas fa-plus"></i></button></span>
                 </h5>
                 <div id="task-list-four" class="task-list-items">
 
