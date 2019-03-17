@@ -9,7 +9,7 @@
 					</a>
 				</li>
 				<li class="nav-item"><%= link_to application_contacts_path(@application), class: 'nav-link rounded-0 ', data: { 'data-toggle' => 'tab'} do %>
-					<span class="d-none d-lg-block">Contact</span><% end %>
+					<span class="d-none d-lg-block">Contacts (<%=@application.contacts.count%>)</span><% end %>
 				</li>
 			</ul>
 		</div>
