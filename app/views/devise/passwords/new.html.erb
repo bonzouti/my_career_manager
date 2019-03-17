@@ -1,34 +1,33 @@
-<!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title text-center">Forgot your password?</h4>
+<div class="account-pages mt-5 mb-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="card">
+          <!-- Logo-->
+            <div class="card-header pt-4 pb-4 text-center bg-primary">
+              <h4 style="color:white">Forgot your password?</h4>
+              </div>
+          <div class="card-body p-4">
+           <div class="text-center w-75 m-auto">
+                                    <p class="text-muted mb-4">Enter your email address and we'll send you an email with instructions to reset your password.</p>
                                 </div>
-                            </div>
-                        </div>     
- <!-- end page title --> 
-<div class="container pt-lg">
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-8 col-lg-6">
-      <div class="card shadow zindex-100">
-        <div class="card-body px-md-5 py-5">
+  
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
 
-          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
-
-            <div class="form-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Your Email" %>
-            </div>
-          <br />
-            <div class="actions">
-              <%= f.submit "Send me reset password instructions", class: "btn btn-primary" %>
-            </div>
-          <% end %>
-          <br />
-          <%= render "devise/shared/links" %>
-
-
+              <div class="form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Your Email" %>
+               </div>
+              <br />
+              <div class="actions text-center">
+                <%= f.submit "Reset Password", class: "btn btn-primary" %>
+              </div>
+            <% end %>
+            <br />
+            <div class="text-center">
+            <%= render "devise/shared/links" %></div>
+          </div>
         </div>
       </div>
     </div>
