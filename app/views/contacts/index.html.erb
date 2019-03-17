@@ -14,7 +14,7 @@
 
                                 <li class="nav-item">
                                         <%= link_to application_contacts_path, class: 'nav-link rounded-0 active', data: { 'data-toggle' => 'tab'} do %>
-                                        <span class="d-none d-lg-block">Contact</span>
+                                        <span class="d-none d-lg-block">Contacts (<%=@application.contacts.count%>)</span>
                                         <% end %>
                                     <!--</a> -->
                                 </li>
@@ -31,6 +31,11 @@
             <div class="col">
                 <div class="card">
                      <div class="card-body">
+
+                     <%if @application.contacts.count == 0 %>
+                     <a> No contact saved for now. <a>
+                     <%else%>
+
                         <div class="table-sm">
 
                             <table class="table table-sm table-centered mb-0">
@@ -133,9 +138,10 @@
                                 </tbody>
                             </table>
                         </div> <!-- end table-responsive-->
+                        <%end%>
                     </div> <!-- end card body-->
            <div class="row justify-content-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-contact-modal" style="margin-bottom: 20px;">Create a contact</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-contact-modal" style="margin-bottom: 20px;">Add Contact</button>
         </div>
                 </div> <!-- end card -->
              </div> <!-- end col -->
@@ -184,7 +190,7 @@
                                                             </div>
 
                                                         <div class="form-group text-center">
-                                                          <%= submit_tag "Create", class: "btn btn-primary" %>
+                                                          <%= submit_tag "Confirm", class: "btn btn-primary" %>
                                                         </div>
 
                                                         <% end %>
