@@ -1,5 +1,10 @@
 /* index application ************************************************/
 
+.index-title {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .content-page {
   display: flex;
   justify-content: center;
@@ -35,11 +40,12 @@
 }
 
 .next-step-header {
-  background-color: rgb(214, 161, 62)!important;
+  background-color: #6f7884 !important;
+  color: white;
 }
 
 .next-step-background {
-  background-color: rgb(224, 217, 207);
+  background-color: #6f7884;
 }
 
 .content {
@@ -106,16 +112,12 @@
     margin-bottom: 0px;
   }
 
-/********************LANDING PAGE IMAGE********************/ 
+/********************LANDING PAGE********************/ 
 .bg-image-lp{
   background: url("/assets/atrium.jpg");
   background-size: 50%;
     background-position: right;
 }
-
-
-
-
 
  /********************FORMS********************/ 
 
