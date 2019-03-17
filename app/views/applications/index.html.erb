@@ -17,9 +17,7 @@
         <div class="row">
           <div class="col-12">
             <div class="page-title-box">
-              <h1 class="text-center display-5 index-title">MY APPLICATION BOARD
-                
-              </h1>
+              <h1 class="text-center display-5 index-title">MY APPLICATION BOARD</h1>
             </div>
           </div>
         </div>
@@ -68,10 +66,10 @@
                 </h3>
               </div>
               -->
-              <div class="tasks">
-                <h5 class="mt-0 task-header text-uppercase">
+              <div class="tasks bg-light">
+                <h5 class="mt-0 task-header text-uppercase bg-light">
                   <span>Identified (<%= @identified.length %>)</span>
-                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-identified">+</button></span>
+                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
                 <div id="task-list-two" class="task-list-items">
@@ -87,7 +85,7 @@
                       </h5>
 
                       <p class="mb-0">
-                        <span class="align-middle">
+                        <span class="pr-2 mb-2 d-inline-block">
                           <%= application.position %></span>
                       </p>
                     </div> <!-- end card-body -->
@@ -101,10 +99,10 @@
               </div>
 
 
-              <div class="tasks">
-                <h5 class="mt-0 task-header text-uppercase">
+              <div class="tasks bg-light">
+                <h5 class="mt-0 task-header text-uppercase bg-light">
                   <span>Applied (<%= @applied.length %>)</span>
-                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-applied">+</button></span>
+                  <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-applied"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
                 <div id="task-list-three" class="task-list-items">
@@ -120,7 +118,7 @@
                       </h5>
 
                       <p class="mb-0">
-                        <span class="pr-2 text-nowrap mb-2 d-inline-block">
+                        <span class="pr-2 mb-2 d-inline-block">
                           <%= application.position %></span>
                       </p>
 
@@ -133,9 +131,9 @@
                 </div> <!-- end company-list-3-->
               </div>
 
-              <div class="tasks">
-                <h5 class="mt-0 task-header text-uppercase">
-                  <span>Applied (<%= @applied.length %>)</span>
+              <div class="tasks bg-light">
+                <h5 class="mt-0 task-header text-uppercase bg-light">
+                  <span>In Progress (<%= @in_progress.length %>)</span>
                   <span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-modal-in_progress">+</button></span>
                 </h5>
                 <div id="task-list-four" class="task-list-items">
@@ -236,7 +234,7 @@
                   </div>
                   <div class="form-group">
                       <%= label_tag 'Job offer description' %><br />
-                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x3"  %>
                   </div>
                   <div class="form-group">
                       <%= label_tag '' %><br />
@@ -286,7 +284,7 @@
                   </div>
                   <div class="form-group">
                       <%= label_tag 'Job offer description' %><br />
-                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x3"  %>
                   </div>
                   <div class="form-group">
                       <%= label_tag '' %><br />
@@ -336,7 +334,7 @@
                   </div>
                   <div class="form-group">
                       <%= label_tag 'Job offer description' %><br />
-                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x3"  %>
                   </div>
                   <div class="form-group">
                       <%= label_tag '' %><br />

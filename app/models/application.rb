@@ -35,8 +35,24 @@ class Application < ApplicationRecord
     end
 
     def has_no_next_step
-        if self.steps.count == 0
+        @next_steps = []
+        self.steps.each do |step|
+          if step.date != nil
+            if step.date > Date.today
+              @next_steps << step
+            end
+          end
+        end 
+        if @next_steps.count == 0
             return true
+        end
+    end
+
+    def has_no_joboffer_details
+        if (self.joboffer_description == "" && self.joboffer_link == "")
+            return true
+        else
+            return false
         end
     end
 

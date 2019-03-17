@@ -4,7 +4,7 @@
             <div class="col-lg-5">
                 <div class="card">
                     <div class="card-header pt-4 pb-4 text-center bg-primary">
-                        <h4 style="color:white">New Application</h4>
+                        <h4 style="color:white">Add Application</h4>
                     </div>
 
                     <div class="card-body p-4">
@@ -28,11 +28,11 @@
                         </div>
                         <div class="form-group">
                             <%= label_tag 'Job offer description' %><br />
-                            <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+                            <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x5"  %>
                         </div>
                         <div class="form-group text-center">
                             <%= label_tag '' %><br />
-                            <%= submit_tag "Add new application", class:"btn btn-primary" %>
+                            <%= submit_tag "Confirm", class:"btn btn-primary" %>
                         </div>
                         <% end %>
                     </div> <!-- end card-body -->

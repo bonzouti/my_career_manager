@@ -27,9 +27,19 @@
   }
 
   .content {
-    width: 100%;
+    width: 95%;
   }
   
+  .task-list-items {
+    min-height: 60px;
+  }
 
-
+  .task-list-items:before {
+    line-height: 6;
+  }
+  /*
+  #task-list-one:before {
+    line-height: 60px;
+  }
+  */
 }

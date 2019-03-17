@@ -24,7 +24,7 @@
 }
 
 .tasks {
-  width: 23%;
+  width: 23.5%;
 }
 
 .nextsteps-userview {
@@ -40,21 +40,31 @@
 }
 
 .next-step-header {
-  background-color: rgb(214, 161, 62)!important;
+  background-color: #6f7884 !important;
+  color: white;
 }
 
 .next-step-background {
-  background-color: rgb(224, 217, 207);
+  background-color: #6f7884;
 }
 
 .content {
-  width: 80%;
+  width: 75%;
 }
 
 .task-list-items:before {
   content: "No Application";
 }
-
+/*
+#task-list-one:before {
+  content: "No Step";
+  line-height: 110px;
+  width: 100%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+*/
 .next-step {
   text-align: center;
   margin-bottom: 0.75rem!important;
@@ -75,6 +85,9 @@
   display: none;
 }
 
+.p-3 {
+  padding: 1rem!important;
+}
 
 /*******************************************************/
 
@@ -119,3 +132,8 @@
     min-height: 100px; }
 
 
+ /********************ALERT********************/ 
+
+.alert {
+  margin-bottom: 0rem;
+}
