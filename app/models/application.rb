@@ -33,4 +33,11 @@ class Application < ApplicationRecord
         end
         self.save
     end
+
+    def has_no_next_step
+        if self.steps.count == 0
+            return true
+        end
+    end
+
 end

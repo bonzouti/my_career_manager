@@ -1,20 +1,37 @@
+
+
 $( document ).ready(function() {
     console.log( "ready!" );
 
-    //définition du lien à bouger
-    $movingLink = $('.movinglink')
+    //definition of the links to move on large screen
+    $largesizeLink = $('.lg-link')
 
-    //définition de l'ul qui va accueillir le lien
-    $listInToggleButton = $('.togglelist')
+    //definition of the links to move on small screen
+    $smallsizeLink = $('.sm-link')
 
     $navbrand = $('.navbar-brand')
+
+    $smallMenu = $('#sm-menu')
+
+    $togglerButton = $('.navbar-toggler')
 
 
 	if (window.matchMedia("(max-width: 700px)").matches) {
 
-	  			$movingLink.detach()
-		    	$movingLink.appendTo($listInToggleButton)
-		    	$navbrand.hide()
+	  			$largesizeLink.hide()
+		    	$navbrand.css("padding-left", "10px")
+
+                $togglerButton.click(function(){
+                    $navbrand.toggle()
+                });
+
 		}
+
+    if (window.matchMedia("(min-width: 700px)").matches) {
+
+            $smallsizeLink.css("display", "none");
+    }
+
+
 
 });

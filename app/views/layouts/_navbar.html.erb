@@ -1,33 +1,44 @@
 <!-- NAVBAR PAS TERMINEE-->
+
 <% if signed_in? %>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
 
-  <div class="container">
+<div class="container">
 
-    <div class="row align-items-center"> 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <%= link_to "My Career Manager", applications_path, class:"navbar-brand" %>
+      <div class="col" > 
 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item movinglink">
-            <%= link_to "Create an application", new_application_path, class:"nav-link" %>
-        </li>
-          <li class="nav-item movinglink">
-            <%  if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link" %> <%end%>
-        </li>
-       
-    </ul>
-    </div>
+        <div class="row">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="row justify-content-end">
+        <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "My Career Manager", applications_path, class:"navbar-brand" %>
+      </li>
+      <li class="nav-item lg-link">
+        <%= link_to "Create an application", new_application_path, class:"nav-link d-flex" %>
+      </li>
+      <li class="nav-item lg-link">
+        <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex" %>
+      </li>
+        </ul>
+        </div>
+      </div>
+
+      <div id="sm-menu" class="row justify-content-end">
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
 
           <ul class="navbar-nav mr-auto togglelist">
+             <li class="nav-item sm-link">
+                <%= link_to "Create an application", new_application_path, class:"nav-link d-flex" %>
+            </li>
+              <li class="nav-item sm-link">
+                <%  if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex" %> <%end%>
+            </li>
             
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle d-flex" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <% if user_signed_in? %> <%=current_user.email%> <%end%> <i class="material-icons">account_circle</i>
               </a> 
 
@@ -52,8 +63,10 @@
           </ul>
 
         </div>
+      </div>
 
-    </div>
-</div>
+</div>  <!-- container end -->
+
 </nav>
+
 <% end %>
