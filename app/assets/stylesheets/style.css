@@ -155,3 +155,10 @@
 .alert {
   margin-bottom: 0rem;
 }
+
+ /********************NAVBAR********************/ 
+
+.navbar{
+  border-bottom: 1px solid;
+  border-color: #e3eaef;
+}
