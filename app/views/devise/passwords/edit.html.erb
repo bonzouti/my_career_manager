@@ -1,13 +1,20 @@
-<div class="account-pages mt-5 mb-5">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-5">
-				<div class="card">
-					<!-- Logo-->
-					<div class="card-header pt-4 pb-4 text-center bg-primary">
-						<h4 style="color:white">Edit your password</h4>
+<div class="auth-fluid bg-image-lp">
+	<!--Auth fluid left content -->
+	<div class="auth-fluid-form-box">
+		<div class="align-items-center d-flex h-100">
+			<div class="card-body">
+				<!-- Logo -->
+				<div class="auth-brand text-center text-lg-left">
+					<a href="index.html">
+						<span>
+              <h3 class="border border-info text-info rounded mb-0 pt-1 pb-1 pl-2 pr-2">My Career Manager</h3>
+							</span>
+						</a>
 					</div>
-					<div class="card-body p-4">
+					<!-- title-->
+					<h4 class="mt-0">Edit your password</h4>
+					<p class="text-muted mb-4">Enter your new password to access your account!</p>
+  
             <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %><%= render "devise/shared/error_messages", resource: resource %><%= f.hidden_field :reset_password_token %>
 						<div class="form-group">
               <%= f.label :password, "New password" %>
@@ -23,14 +30,15 @@
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm new password" %>
 						</div>
 						<br />
-						<div class="actions text-center">
+						<div class="actions">
             <%= f.submit "Edit password", class: "btn btn-primary" %>
 						</div><% end %>
-						<br />
-						<div class="text-center"><%= render "devise/shared/links" %></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>  
+						 <br />
+            <%= render "devise/shared/links" %>
+						<%= render "layouts/lpfooter" %>
+          </div>
+        </div>
+      </div>
+    <%= render "layouts/motto" %>
+  </div>
+</div>

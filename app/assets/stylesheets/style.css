@@ -115,8 +115,8 @@
 /********************LANDING PAGE********************/ 
 .bg-image-lp{
   background: url("/assets/atrium.jpg");
-  background-size: 50%;
-    background-position: right;
+  background-size: 70%;
+  background-position: left 110% top 82%;
 }
 
  /********************FORMS********************/ 
@@ -125,6 +125,7 @@
     background-image: url("/assets/painting.jpg");
     background-size: 100%;
     background-position: center;
+    
   }
 
   .bg-formsandothers.bigger, .auth-fluid-pages.bigger {
