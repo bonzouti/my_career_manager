@@ -1,5 +1,10 @@
 /* index application ************************************************/
 
+.index-title {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .content-page {
   display: flex;
   justify-content: center;
