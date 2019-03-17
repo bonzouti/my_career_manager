@@ -1,76 +1,47 @@
 <div class="auth-fluid bg-image-lp">
-    <!--Auth fluid left content -->
-    <div class="auth-fluid-form-box">
-        <div class="align-items-center d-flex h-100">
-            <div class="card-body">
-
-                <!-- Logo -->
-                <div class="auth-brand text-center text-lg-left">
-                    <a href="index.html">
-                        <span><img src="assets/images/logo-light.png" alt="" height="18"></span>
-                    </a>
-                </div>
-
-                <!-- title-->
-                <h4 class="mt-0">Sign Up</h4>
-                <p class="text-muted mb-4">Create an account to start tracking your job applications.</p>
-
-                <!-- form -->
-                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                <%= render "devise/shared/error_messages", resource: resource %>
-                
-                <div class="form-group">
-                  <%= f.label :email %><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter Email" %>
-                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-              
-                <div class="from-group">
-                  <%= f.label :password %>
-                  <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
-                  <% end %><br />
-                  <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Enter Password" %>
-                </div>
-                <br />
-                <div class="form-group">
-                  <%= f.label :password_confirmation %><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" %>
-                </div>
-                <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="checkbox-signup">
-                                    <label class="custom-control-label" for="checkbox-signup">I accept <a href="javascript: void(0);" class="text-muted">Terms and Conditions</a></label>
-                                </div>
-                            </div>
-                <div class="actions">
-                  <%= f.submit "Create account", class: "btn btn-primary" %>
-                </div>
-              <% end %>
-               
-              <br />
-                <!-- end form-->
-                <!-- Footer-->
-                <footer class="footer footer-alt">
-                    <p class="text-muted">Already have an account?<%= link_to "Log in", new_user_session_path, class:"text-muted ml-1 font-weight-bold" %></p>
-                </footer>
-
-            </div> <!-- end .card-body -->
-        </div> <!-- end .align-items-center.d-flex.h-100-->
-    </div>
-    <!-- end auth-fluid-form-box-->
-
-    <!-- Auth fluid right content -->
-    <div class="auth-fluid-right text-center">
-        <div class="auth-user-testimonial">
-            <h2 class="mb-3">Never miss a professional opportunity anymore!</h2>
-            <p class="lead"> Your job search. Hands on. Designed for hard workers.
-            </p>
-            <p>
-            - THP  2019 -
-            </p>
-        </div> <!-- end auth-user-testimonial-->
-    </div>
-    <!-- end Auth fluid right content -->
-</div>
-<!-- end auth-fluid-->
+	<!--Auth fluid left content -->
+	<div class="auth-fluid-form-box">
+		<div class="align-items-center d-flex h-100">
+			<div class="card-body">
+				<!-- Logo -->
+				<div class="auth-brand text-center text-lg-left">
+					<a href="index.html">
+						<span>
+              <h3 class="border border-info text-info rounded mb-0 pt-1 pb-1 pl-2 pr-2">My Career Manager</h3>
+							</span>
+						</a>
+					</div>
+					<!-- title-->
+					<h4 class="mt-0">Sign Up</h4>
+					<p class="text-muted mb-4">Create an account to start tracking your job applications.</p>
+					<!-- form --><%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %><%= render "devise/shared/error_messages", resource: resource %>
+					<div class="form-group"><%= f.label :email %>
+						<br /><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter Email" %>
+						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+					<div class="from-group"><%= f.label :password %><% if @minimum_password_length %>
+						<em>(<%= @minimum_password_length %> characters minimum)
+						</em><% end %>
+						<br /><%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Enter Password" %>
+					</div>
+					<br />
+					<div class="form-group"><%= f.label :password_confirmation %>
+						<br /><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" %>
+					</div>
+						<div class="actions"><%= f.submit "Create account", class: "btn btn-primary" %>
+						</div><% end %>
+						<br />
+						<!-- end form--><%= render "devise/shared/links" %>
+						<%= render "layouts/lpfooter" %>
+					</div>
+					<!-- end .card-body -->
+				</div>
+				<!-- end .align-items-center.d-flex.h-100-->
+			</div>
+			<!-- end auth-fluid-form-box-->
+			<!-- Auth fluid right content -->
+			<%= render "layouts/motto" %>
+		</div>
+		<!-- end Auth fluid right content -->
+	</div>
+	<!-- end auth-fluid-->
