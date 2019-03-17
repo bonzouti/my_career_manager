@@ -100,16 +100,12 @@
     margin-bottom: 0px;
   }
 
-/********************LANDING PAGE IMAGE********************/ 
+/********************LANDING PAGE********************/ 
 .bg-image-lp{
   background: url("/assets/atrium.jpg");
   background-size: 50%;
     background-position: right;
 }
-
-
-
-
 
  /********************FORMS********************/ 
 
