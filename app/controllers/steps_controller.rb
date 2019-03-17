@@ -38,10 +38,10 @@ class StepsController < ApplicationController
             @application.save
             @step.destroy
 
-        respond_to do |format|
-            format.html {redirect_to application_path(@application)}
-            format.js
-        end
+            respond_to do |format|
+                format.html {redirect_to application_path(@application)}
+                format.js
+            end
 
 
         end
