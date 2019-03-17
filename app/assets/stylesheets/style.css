@@ -129,3 +129,8 @@
     min-height: 100px; }
 
 
+ /********************ALERT********************/ 
+
+.alert {
+  margin-bottom: 0rem;
+}
