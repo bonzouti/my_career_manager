@@ -40,11 +40,12 @@
 }
 
 .next-step-header {
-  background-color: rgb(214, 161, 62)!important;
+  background-color: #6f7884 !important;
+  color: white;
 }
 
 .next-step-background {
-  background-color: rgb(224, 217, 207);
+  background-color: #6f7884;
 }
 
 .content {
