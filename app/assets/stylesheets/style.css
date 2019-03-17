@@ -19,7 +19,7 @@
 }
 
 .tasks {
-  width: 23%;
+  width: 23.5%;
 }
 
 .nextsteps-userview {
@@ -43,7 +43,7 @@
 }
 
 .content {
-  width: 80%;
+  width: 75%;
 }
 
 .task-list-items:before {
@@ -70,6 +70,9 @@
   display: none;
 }
 
+.p-3 {
+  padding: 1rem!important;
+}
 
 /*******************************************************/
 
