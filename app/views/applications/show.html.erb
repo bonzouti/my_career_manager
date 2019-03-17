@@ -86,12 +86,12 @@
 						<div class="card-body">
 							<div class="row align-items-center">
 
-								<div class="edit-notes">
+								<div class="edit-notes w-100">
 									<%= form_tag url_for(action: 'update_notes'), method: "put", remote: true do %>
 									<div class="form-group text-edit-notes">
 										<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'write notes', rows: 8  %>
 									</div>
-									<div class="form-group">
+									<div class="form-group text-center">
 										<%= submit_tag "Save changes", class:"btn btn-primary btn-alert-success" %>
 									</div>
 									<% end %>
