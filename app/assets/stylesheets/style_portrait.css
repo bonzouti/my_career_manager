@@ -37,9 +37,9 @@
   .task-list-items:before {
     line-height: 6;
   }
-
+  /*
   #task-list-one:before {
     line-height: 60px;
   }
-  
+  */
 }

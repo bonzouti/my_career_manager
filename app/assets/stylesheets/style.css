@@ -49,7 +49,7 @@
 .task-list-items:before {
   content: "No Application";
 }
-
+/*
 #task-list-one:before {
   content: "No Step";
   line-height: 110px;
@@ -58,7 +58,7 @@
   display: flex;
   justify-content: center;
 }
-
+*/
 .next-step {
   text-align: center;
   margin-bottom: 0.75rem!important;
