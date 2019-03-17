@@ -123,13 +123,15 @@
 						
 						<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
 							<div class="card-body">
-								<h5 class="text-primary">
-									<a href=' <%=@application.joboffer_link%>'>Link of application
-									
-									</a>
-								</h5><%= @application.joboffer_link %>
-								<h5 class="text-primary"> Description </h5><%=@application.joboffer_description%>
-							</div>
+								<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of this job offer.<br></a>
+								<%else %>
+									<h5 class="text-primary">
+										<a href=' <%=@application.joboffer_link%>'>Link of application
+										</a>
+									</h5><%= @application.joboffer_link %>
+									<h5 class="text-primary"> Description </h5><%=@application.joboffer_description%>
+								</div>
+								<%end %>
 							<button type="button" class="btn btn-light" data-toggle="modal" data-target="#signup-modal">Edit</button>
 
 							<!-- beginning modal -->

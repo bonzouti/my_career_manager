@@ -48,4 +48,12 @@ class Application < ApplicationRecord
         end
     end
 
+    def has_no_joboffer_details
+        if (self.joboffer_description == "" && self.joboffer_link == "")
+            return true
+        else
+            return false
+        end
+    end
+
 end
