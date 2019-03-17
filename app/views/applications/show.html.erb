@@ -1,4 +1,5 @@
 <!--Start part of tabs application && contact-->
+<div class="d-block d-sm-none"> <!--visible only on XS-->
 <div class="container p-3">
 	<div class="row">
 		<div class="col text-center">
@@ -14,6 +15,7 @@
 			</ul>
 		</div>
 	</div>
+</div>
 </div>
 <!--End part of tabs application && contact-->
 
@@ -117,8 +119,10 @@
 
 
 
+
 <!--Start part JOB DETAILS-->
 <div class="container">
+<<<<<<< HEAD
 	<div class="row">
 		<div class="col">
 			<div class="card">
@@ -135,6 +139,23 @@
 								<div class="card-body">
 									<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of this job offer.<br></a>
 									<%else %>
+=======
+<div class="row align-items-center">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-body">
+				<div class="row align-items-center">
+					<div class="col-12">
+						<h5 class="text-muted mt-0 text-truncate task-header">
+						<span> JOB DETAILS </span>
+						<span> <button type="button" class="btn btn-light" data-toggle="modal" data-target="#signup-modal"><i class="material-icons">edit</i></button> </span>
+						</h5>
+						
+						<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+							<div class="card-body">
+								<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of this job offer.<br></a>
+								<%else %>
+>>>>>>> 2a9b074e7e8124de4914e1add7aa06bf7cdbe301
 									<h5 class="text-primary">
 										<a href=' <%=@application.joboffer_link%>'>Link of application</a>
 									</h5>
@@ -183,10 +204,14 @@
 
 							</div>
 						</div>
+<<<<<<< HEAD
 					</div>
 					<!-- end row-->
 				</div>
 				<!-- end card-body -->
+=======
+				<!-- end row-->
+>>>>>>> 2a9b074e7e8124de4914e1add7aa06bf7cdbe301
 			</div>
 			<!-- end card -->
 		</div>
@@ -196,10 +221,218 @@
 <!--End part JOB DETAILS-->
 
 
+
+
+<!--Start part CONTACTS -->
+
+<div class="container p-0 d-none d-sm-block">
+<div class="row align-items-center">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-body">
+				<div class="row align-items-center">
+					<div class="col-12">
+						<h5 class="text-muted mt-0 text-truncate task-header">
+						<span> CONTACTS </span>
+						<span> <button type="button" class="btn btn-light" data-toggle="modal" data-target="#create-contact-modal"> Add </button> </span>
+						</h5>
+						
+						<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+
+
+						<div class="card-body">
+
+                     <%if @application.contacts.count == 0 %>
+                     <a> No contact saved for now. <a>
+                     <%else%>
+
+                        <div class="table-sm">
+
+                            <table class="table table-sm table-centered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Phone number</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+        							<% @application.contacts.each do |contact| %>
+
+                                        <tr>
+                                            <td> <%= contact.first_name %> <%= contact.last_name %> </td>
+                                            <td> <%= contact.position %></td>
+                                            <td>
+                                            	<%= tel_to contact.phone do %>
+
+        										    <i class="fas fa-phone link-icon-sm"></i>
+                                                    <p class="link-text-lg"> <%= contact.phone %></p> 
+                                                   
+                                            	<% end %>
+
+                                        	</td>
+                                            <td> <%= mail_to(contact.email) do %>
+
+                                            	<i class="fas fa-envelope link-icon-sm"></i> 
+                                                <p class="link-text-lg"> <%= contact.email %></p> 
+                                            	<% end %>
+                                            </td>
+                                            <td>
+                                              <i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i>
+                                            </td>
+                                        </tr>
+
+    <!---------------------------------- MODAL UPDATE CONTACT----------------------------------->
+
+
+    <div id="update-contact-modal-<%= contact.id %>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <div class="text-center mt-2 mb-4">
+                                                        <h3> Update this contact</h3>
+                                                        <i class="fas fa-user-tie"></i>
+                                                        </div>
+
+                                                        <%= form_tag(application_contact_path(@application, contact), method: "put", class: 'pl-3 pr-3') do %>
+
+                                                            <div class="form-group">
+                                                              <%= label_tag(:first_name, "First name") %>
+                                                              <%= text_field_tag :first_name, contact.first_name, class: 'form-control', placeholder: 'Enter the first name' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:last_name, "Last name") %>
+                                                              <%= text_field_tag :last_name, contact.last_name, class: 'form-control', placeholder: 'Enter your last name' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                              <%= label_tag(:position, "Position") %>
+                                                              <%= text_field_tag :position, contact.position, class: 'form-control', placeholder: 'Enter your position'%>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:email, "Email") %>
+                                                              <%= text_field_tag :email, contact.email, class: 'form-control', placeholder: 'Enter your email' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:phone, "Phone") %>
+                                                              <%= text_field_tag :phone, contact.phone, class: 'form-control', placeholder: 'Enter your phone' %>
+                                                            </div>
+
+                                                        <div class="form-group text-center">
+
+                                                          <%= submit_tag "Update", class: "btn btn-primary", style:"margin-right:20px" %>
+
+                                                            <%= link_to application_contact_path(@application, contact), method: :delete do %> 
+
+                                                                 <button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button>
+                                                            <% end %>
+
+                                                        </div>
+
+                                                        <% end %>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+
+
+<!------------------------------------------------------------------------------------------------------------>
+
+        							<% end %>
+
+                                </tbody>
+                            </table>
+                        </div> <!-- end table-responsive-->
+                        <%end%>
+                    </div> <!-- end card body-->
+
+
+
+						
+							<button type="button" class="btn btn-light" data-toggle="modal" data-target="#create-contact-modal">Add Contact</button>
+
+
+<!---------------------------------- MODAL CREATION CONTACT----------------------------------->
+
+    <div id="create-contact-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <div class="text-center mt-2 mb-4">
+                                                        <i class="fas fa-user-tie fa-3x"></i>
+                                                        </div>
+
+                                                        <%= form_tag(application_contacts_path(@application), method: "post", class: 'pl-3 pr-3') do %>
+
+                                                            <div class="form-group">
+                                                              <%= label_tag(:first_name, "First name") %>
+                                                              <%= text_field_tag :first_name, "", class: 'form-control', placeholder: 'Enter your first name' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:last_name, "Last name") %>
+                                                              <%= text_field_tag :last_name, "", class: 'form-control', placeholder: 'Enter your last name' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                              <%= label_tag(:position, "Position") %>
+                                                              <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter your position'%>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:email, "Email") %>
+                                                              <%= text_field_tag :email, "", class: 'form-control', placeholder: 'Enter your email' %>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                               <%= label_tag(:phone, "Phone") %>
+                                                              <%= text_field_tag :phone, "", class: 'form-control', placeholder: 'Enter your phone' %>
+                                                            </div>
+
+                                                        <div class="form-group text-center">
+                                                          <%= submit_tag "Confirm", class: "btn btn-primary" %>
+                                                        </div>
+
+                                                        <% end %>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+
+
+
+
+						</div>
+				<!-- end row-->
+			</div>
+			<!-- end card-body -->
+		</div>
+		<!-- end card -->
+	</div>
+</div>
+</div>
+
+
+<!--End part CONTACTS-->
+
+
+
+
+
 <!--Start part button archive-->
 <div class="container text-center p-3">
+<<<<<<< HEAD
 	<%= link_to "Archive application", archive_application_path(@application), method: 'GET', class: 'btn btn-light btn-sm ml-3' %>
 </div>
+=======
+	<%= link_to "Archive Application", archive_application_path(@application), method: 'GET', class: 'btn btn-light btn-sm ml-3' %>
+	</div>
+>>>>>>> 2a9b074e7e8124de4914e1add7aa06bf7cdbe301
 <!--End part button archive-->
 
 
