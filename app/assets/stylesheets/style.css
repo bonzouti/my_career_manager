@@ -1,0 +1,164 @@
+/* index application ************************************************/
+
+.index-title {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.content-page {
+  display: flex;
+  justify-content: center;
+  margin-left: 0px;
+}
+
+.text-body {
+  font-size: 20px;
+}
+
+.badge {
+  font-size: 14px;
+}
+
+.float-right {
+  font-size: 14px;
+}
+
+.tasks {
+  width: 22%;
+}
+
+.nextsteps-userview {
+  width: 100%;
+}
+
+.mt-2 {
+  margin-bottom: 0rem!important;
+}
+
+.create-index-portrait {
+  display: none
+}
+
+.next-step-header {
+  background-color: #6f7884 !important;
+  color: white;
+  justify-content: center!important;
+}
+
+.task-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.next-step-background {
+  background-color: #6f7884;
+}
+
+.content {
+  width: 75%;
+}
+
+.task-list-items:before {
+  content: "No Application";
+}
+/*
+#task-list-one:before {
+  content: "No Step";
+  line-height: 110px;
+  width: 100%;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+*/
+.next-step {
+  text-align: center;
+  margin-bottom: 0.75rem!important;
+}
+
+.break-word {
+  word-wrap: break-word;
+}
+
+.hidden-form {
+  display: none;
+}
+
+.p-3 {
+  padding: 1rem!important;
+}
+
+/********************SHOW APPLICATION*******************/
+
+/* fixed screen size for show_application*/
+.d-lg-block {
+  display: block !important;
+}
+
+.edit-notes {
+  width: 100%;
+}
+
+#notes {
+  border-style: none;
+}
+
+.save-changes {
+  margin-bottom: 0px;
+  padding-left: 15px;
+}
+
+.custom-accordion-title {
+  padding-bottom: 0rem!important;
+}
+
+/********************INDEX_CONTACTS********************/
+
+
+/* make the email and phone icon disappear for large screens on index_contacts*/
+   i.link-icon-sm{
+    display: none;
+  }
+
+  .link-text-lg{
+    margin-bottom: 0px;
+  }
+
+   i.link-icon-sm{
+    margin-bottom: 0px;
+  }
+
+/********************LANDING PAGE********************/ 
+.bg-image-lp{
+  background: url("/assets/atrium.jpg");
+  background-size: 70%;
+  background-position: left 110% top 82%;
+}
+
+ /********************FORMS********************/ 
+
+  .bg-formsandothers{
+    background-image: url("/assets/painting.jpg");
+    background-size: 100%;
+    background-position: center;
+    
+  }
+
+  .bg-formsandothers.bigger, .auth-fluid-pages.bigger {
+    min-height: 100px; }
+
+
+ /********************ALERT********************/ 
+
+.alert {
+  margin-bottom: 0rem;
+}
+
+ /********************NAVBAR********************/ 
+
+.navbar{
+  border-bottom: 1px solid;
+  border-color: #e3eaef;
+}

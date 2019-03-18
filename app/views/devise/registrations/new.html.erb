@@ -1,52 +1,47 @@
-<!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title text-center">Sign Up</h4>
-                                </div>
-                            </div>
-                        </div>     
- <!-- end page title --> 
-<div class="container pt-lg">
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-8 col-lg-6">
-      <div class="card shadow zindex-100">
-        <div class="card-body px-md-5 py-5">
-          <h4 class="mb-3 header-title">Create an account</h4>  
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter Email" %>
-     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-
-  <div class="from-group">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Enter Password" %>
-  </div>
-  <br />
-  <div class="form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" %>
-  </div>
-  <br />
-  <div class="actions">
-    <%= f.submit "Create account", class: "btn btn-primary" %>
-  </div>
-<% end %>
-<br /></form>
-
-<%= render "devise/shared/links" %>
-
-        </div> 
-      </div> 
-    </div> 
-  </div>
-</div>  
-
+<div class="auth-fluid bg-image-lp">
+	<!--Auth fluid left content -->
+	<div class="auth-fluid-form-box">
+		<div class="align-items-center d-flex h-100">
+			<div class="card-body">
+				<!-- Logo -->
+				<div class="auth-brand text-center text-lg-left">
+					<a href="index.html">
+						<span>
+              <h3 class="border border-info text-info rounded mb-0 pt-1 pb-1 pl-2 pr-2">My Career Manager</h3>
+							</span>
+						</a>
+					</div>
+					<!-- title-->
+					<h4 class="mt-0">Sign Up</h4>
+					<p class="text-muted mb-4">Create an account to start tracking your job applications.</p>
+					<!-- form --><%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %><%= render "devise/shared/error_messages", resource: resource %>
+					<div class="form-group"><%= f.label :email %>
+						<br /><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter Email" %>
+						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+					<div class="from-group"><%= f.label :password %><% if @minimum_password_length %>
+						<em>(<%= @minimum_password_length %> characters minimum)
+						</em><% end %>
+						<br /><%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Enter Password" %>
+					</div>
+					<br />
+					<div class="form-group"><%= f.label :password_confirmation %>
+						<br /><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" %>
+					</div>
+						<div class="actions"><%= f.submit "Create account", class: "btn btn-primary" %>
+						</div><% end %>
+						<br />
+						<!-- end form--><%= render "devise/shared/links" %>
+						<%= render "layouts/lpfooter" %>
+					</div>
+					<!-- end .card-body -->
+				</div>
+				<!-- end .align-items-center.d-flex.h-100-->
+			</div>
+			<!-- end auth-fluid-form-box-->
+			<!-- Auth fluid right content -->
+			<%= render "layouts/motto" %>
+		</div>
+		<!-- end Auth fluid right content -->
+	</div>
+	<!-- end auth-fluid-->

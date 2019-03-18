@@ -1,6 +1,36 @@
 Rails.application.routes.draw do
- resources :applications
-devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :applications do
+  	
+    resources :contacts, only: [:index, :create, :update, :destroy]
+
+
+    member do
+      get 'archive'
+    end
+
+    resources :steps, only: [:new, :create, :update]
+    
+
+    member do
+      get 'archive'
+      put 'update_job_offer'
+      put 'update_notes'
+    end
+
+  end
+
+  devise_for :users
+
+  resources :users, only: [:show]
+
+  resources :archived, :only => [:index]
+  
+  namespace :admin do
+    root 'dashboards#index'
+    resources :users
+  end
+
+  root "applications#index"
 
 end

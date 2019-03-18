@@ -10,8 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery3
+//= require jquery_ujs
 //= require activestorage
 //= require_tree .
 
 //= require assets/js/app.min
+//= require assets/js/dragula.min
+//= require assets/js/component.dragula
+
+//= require assets/js/demo.typehead
+//= require assets/js/handlebars.min
+//= require assets/js/typeahead.bundle.min
+
+$(document).ready(function() {
+
+})

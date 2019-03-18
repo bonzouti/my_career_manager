@@ -1,0 +1,71 @@
+        <body class="bg-formsandothers">
+        <!-- Begin page -->
+        <div class="wrapper">
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                                           <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h2 class="page-title text-center text-white">ARCHIVED APPLICATIONS</h2>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <% if @archived.count == 0 %>
+                                        <h5 class="text-center text-primary">No applications have been archived yet.</h5>
+                                        <% end %>
+                                       
+                                        
+                                        <div class="table-responsive ">
+                                            <table class="table table-striped table-sm table-centered mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Application</th>
+                                                        <th></th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody> <%@archived.each do |application|%>
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="font-15 mb-1 font-weight-normal"><%=application.company_name%></h5>
+                                                            <span class="text-muted font-13"><%=application.position%></span>
+                                                        </td>
+                                                        <td><%=link_to "View", application_path(application), method: :get %></td>
+                                                        <td><%=link_to "Delete", application_path(application), method: :delete, data: { confirm: 'This action is irreversible. Are you sure?' } %></td>
+                                                    </tr><%end%>    
+                                                </tbody>
+                                            </table>
+                                            </div> <!-- end table-responsive-->    
+                                                     
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div>
+                            <!-- end col -->  
+                        </div>
+                        <!-- end row-->  
+                    </div> <!-- container -->
+                </div> <!-- content -->
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+        </body>
+      

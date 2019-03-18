@@ -1,0 +1,17 @@
+
+/* make the email and phone icon appear and the corresponding text disappear on mobile */
+@media all and (orientation: portrait)
+{
+
+  .link-text-lg{
+    display: none;
+  }
+
+   i.link-icon-sm{
+    display: inline-block!important;
+  }
+
+
+
+}
+

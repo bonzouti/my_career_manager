@@ -1,36 +1,38 @@
-<!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title text-center">Forgot your password?</h4>
-                                </div>
-                            </div>
-                        </div>     
- <!-- end page title --> 
-<div class="container pt-lg">
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-8 col-lg-6">
-      <div class="card shadow zindex-100">
-        <div class="card-body px-md-5 py-5">
+<div class="auth-fluid bg-image-lp">
+	<!--Auth fluid left content -->
+	<div class="auth-fluid-form-box">
+		<div class="align-items-center d-flex h-100">
+			<div class="card-body">
+				<!-- Logo -->
+				<div class="auth-brand text-center text-lg-left">
+					<a href="index.html">
+						<span>
+              <h3 class="border border-info text-info rounded mb-0 pt-1 pb-1 pl-2 pr-2">My Career Manager</h3>
+							</span>
+						</a>
+					</div>
+					<!-- title-->
+					<h4 class="mt-0">Forgot your password?</h4>
+					<p class="text-muted mb-4">Enter your email address and we'll send you an email with instructions to reset your password.</p>
+  
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
 
-          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
-
-            <div class="form-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Your Email" %>
-            </div>
-          <br />
-            <div class="actions">
-              <%= f.submit "Send me reset password instructions", class: "btn btn-primary" %>
-            </div>
-          <% end %>
-          <br />
-          <%= render "devise/shared/links" %>
-
-
+              <div class="form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Your Email" %>
+               </div>
+              <br />
+              <div class="actions">
+                <%= f.submit "Reset Password", class: "btn btn-primary" %>
+              </div>
+            <% end %>
+            <br /><%= render "devise/shared/links" %>
+            <%= render "layouts/lpfooter" %>
+          </div>
         </div>
       </div>
-    </div>
+    <%= render "layouts/motto" %>
   </div>
 </div>
+

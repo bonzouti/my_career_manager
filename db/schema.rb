@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_172910) do
+ActiveRecord::Schema.define(version: 2019_03_14_161904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2019_03_11_172910) do
     t.string "company_name"
     t.string "position"
     t.string "status"
+    t.string "joboffer_link"
+    t.text "joboffer_description"
+    t.text "notes"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,23 +38,6 @@ ActiveRecord::Schema.define(version: 2019_03_11_172910) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["application_id"], name: "index_contacts_on_application_id"
-  end
-
-  create_table "job_offers", force: :cascade do |t|
-    t.string "link"
-    t.text "description"
-    t.bigint "application_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["application_id"], name: "index_job_offers_on_application_id"
-  end
-
-  create_table "notes", force: :cascade do |t|
-    t.text "content"
-    t.bigint "application_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["application_id"], name: "index_notes_on_application_id"
   end
 
   create_table "steps", force: :cascade do |t|
@@ -74,6 +60,9 @@ ActiveRecord::Schema.define(version: 2019_03_11_172910) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_admin"
+    t.string "country"
+    t.string "full_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
