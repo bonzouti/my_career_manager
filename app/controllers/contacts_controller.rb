@@ -1,4 +1,8 @@
 class ContactsController < ApplicationController
+	include ApplicationHelper
+
+
+
   def index
 
   	@application = Application.find(params[:application_id])
@@ -8,6 +12,7 @@ class ContactsController < ApplicationController
 
   end
 
+
   def create
 
   	@application = Application.find(params[:application_id])
@@ -15,14 +20,19 @@ class ContactsController < ApplicationController
   	@contact = Contact.new(application: @application, first_name: params[:first_name], last_name: params[:last_name],
      position: params[:position], email: params[:email], phone: params[:phone])
 
-  	if @contact.save
+		if @contact.save
+			
+			if mobile_device?
+				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created ON MOBILE"
+				redirect_to application_contacts_path(@application)
+			else
 
-      flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
-  		redirect_to application_contacts_path(@application)
+				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created ON DESKTOP"
+				redirect_to application_path(@application)
+			end 
 
-  	end
-
-
+		end
+		
   end
 
 
