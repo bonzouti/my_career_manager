@@ -5,7 +5,7 @@
     </h5>
     <%= @application.joboffer_link %>
     <h5 class="text-primary"> Description </h5>
-    <%= @application.joboffer_description %>
+    <%= simple_format(@application.joboffer_description) %>
   </div>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Edit</button>
   <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
@@ -29,7 +29,7 @@
               <div class="form-group">
                 <label for="Job_offer_description">Job offer description</label><br>
                 <textarea name="joboffer_description" id="joboffer_description" class="form-control" placeholder="Enter a description or copy-paste the job offer"
-                  cols="20" rows="10"><%= @application.joboffer_description %></textarea>
+                  cols="20" rows="10"><%= simple_format(@application.joboffer_description) %></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" name="commit" value="Edit application" class="btn btn-primary" data-disable-with="Edit application">
