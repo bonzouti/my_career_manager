@@ -93,8 +93,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  #Devise 
-  config.action_mailer.default_url_options = { :host => 'mycareermanager.herokuapp.com' }
+  # Devise mailer
+  config.action_mailer.default_url_options = { :host => 'mycareermanager-dev.herokuapp.com' }
 
   # Allow images to display
   config.assets.digest = true
