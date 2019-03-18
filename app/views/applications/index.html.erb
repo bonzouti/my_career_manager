@@ -26,16 +26,25 @@
         <div class="row">
           <div class="col-12 text-center">
             <div>
-              <div class="tasks next-step-background" data-plugin="dragula" data-containers='["task-list-one", "task-list-two", "task-list-three", "task-list-four"]'>
-                <h5 class="mt-0 task-header next-step-header">MY NEXT STEPS </h5>
 
-                <div id="task-list-one"> <!-- Start company-list-1-->
 
-                      <%if @next_steps.count == 0%>
-                        <a class = "text-white"> Nothing on your agenda!</a>
-                      <%end%>
+            <!----- NEXT STEPS --->
 
-                  <% @next_steps.each do |next_step| %> <!-- Starts Next Steps Cards Loop -->
+              <!-----END NEXT STEPS --->
+
+
+              <!-----NEXT STEPS --->
+              <div class="tasks bg-primary mr-4">
+                <h5 class="mt-0 task-header text-uppercase text-white text-center bg-primary">
+                    <span>MY NEXT STEPS</span>
+                    </h5>
+                <div id="task-list-two" class="task-list-items">
+
+                  <%if @next_steps.count == 0%>
+                    <a class = "text-white"> Nothing on your agenda!</a>
+                  <%end%>
+
+                <% @next_steps.each do |next_step| %> <!-- Starts Next Steps Cards Loop -->
 
                   <div class="card mb-0"> <!-- Start card -->
                     <div class="card-body p-3"> <!-- Start card body -->
@@ -62,11 +71,14 @@
 
                   <% end %> <!-- End Next Steps Cards Loop -->
 
-                  <!-- Task Item End -->
 
-                </div> <!-- end company-list-1-->
-
+                </div> <!-- end company-list-2-->
               </div>
+              <!-----END NEXT STEPS --->
+
+
+
+
               <!--
               <div class="create-index-ortrait">
                 <h3>Applications
@@ -74,6 +86,8 @@
                 </h3>
               </div>
               -->
+
+              <!-----IDENTIFIED --->
               <div class="tasks bg-light mr-1">
                 <h5 class="mt-0 task-header text-uppercase bg-light">
                     <span>Identified (<%= @identified.length %>)</span>
@@ -104,6 +118,8 @@
 
                 </div> <!-- end company-list-2-->
               </div>
+              <!-----END IDENTIFIED --->
+
 
 
               <div class="tasks bg-light mr-1">
