@@ -22,4 +22,10 @@ class User < ApplicationRecord
     self.save
   end
 
+  def create_superadmin
+    superadmin = User.create!(email: "superadmin@yopmail.com", password: "azerty2020", is_admin: true, country: "France", full_name: "Gauthier")
+    superadmin.is_admin = true
+    superadmin.save
+  end
+
 end
