@@ -3,6 +3,10 @@ class Application < ApplicationRecord
     
     has_many :steps
     has_many :contacts
+
+    validates :company_name, presence: true
+    validates :position, presence: true
+
     
     def archive
         @application = Application.find(params[:id])

@@ -103,6 +103,10 @@
   padding-bottom: 0rem!important;
 }
 
+.job_offer {
+  padding-left: 0px;
+}
+
 /********************INDEX_CONTACTS********************/
 
 
@@ -156,6 +160,24 @@
   box-sizing: border-box;
   box-shadow: 0px 10px 10px -10px #e3eaef; 
 }
+
+ /********************CARD NEXT STEP - SHOW ********************/ 
+
+.step-category-show{
+  font-size: 18px; 
+  margin-right: 2px;
+}
+
+.step-date-show{
+  margin-left: 2px;
+}
+
+.step-col-show{
+  margin-top: 10px;
+}
+
+ /********************COLORS ********************/ 
+
 
 .bg-light-grey {
   background-color: #f8f9fb; }

@@ -25,6 +25,22 @@ class StepsController < ApplicationController
 
     def update
 
+    @step = Step.find(params[:id])
+    @application = Application.find(params[:application_id])
+
+    @step.update(title: params[:title], category: params[:category], description: params[:description],
+     date: params[:date])
+
+    flash[:success] = "The step has been updated"
+
+    redirect_to application_path(@application)
+
+
+    end
+
+
+    def validate
+
         @application = Application.find(params[:application_id])
         @step = Step.find(params[:id])
         @step.status = true
@@ -36,7 +52,6 @@ class StepsController < ApplicationController
 
             @application.notes = @current_notes + "\n\n" + @addition_to_current_notes
             @application.save
-            @step.destroy
 
             respond_to do |format|
                 format.html {redirect_to application_path(@application)}
@@ -47,6 +62,18 @@ class StepsController < ApplicationController
         end
  
     end 
+
+
+    def destroy
+
+        @application = Application.find(params[:application_id])
+        @step = Step.find(params[:id])
+
+        @step.destroy
+
+        redirect_to application_path(@application)
+
+    end
 
 
 end
