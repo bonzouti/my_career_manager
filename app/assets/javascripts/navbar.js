@@ -1,7 +1,6 @@
 
 
 $( document ).ready(function() {
-    console.log( "ready!" );
 
     //definition of the links to move on large screen
     $largesizeLink = $('.lg-link')
