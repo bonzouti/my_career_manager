@@ -23,11 +23,11 @@ class ContactsController < ApplicationController
 		if @contact.save
 			
 			if mobile_device?
-				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created ON MOBILE"
+				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
 				redirect_to application_contacts_path(@application)
 			else
 
-				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created ON DESKTOP"
+				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
 				redirect_to application_path(@application)
 			end 
 
