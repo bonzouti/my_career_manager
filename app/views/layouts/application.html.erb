@@ -19,7 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700,700i" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="bg-formsandothers">
+  <div class="container-fluid content bg-light-grey">
 
     <%= render "layouts/navbar" %>
 
@@ -32,13 +33,13 @@
         <%= value %>
 
       </div>
-<% end %>
+    <% end %>
 
     <%= yield %>
 
 
-    
-  </body> <br>
+  <div class="container-fluid content bg-light-grey">    
+  </body>
   <%= render 'layouts/footer' %> <br/>
   <br/>
   <br/>
