@@ -8,7 +8,7 @@ puts('Old users destroyed')
     elo = User.create!(email: "elo@yopmail.com", password: Faker::String.random(8), is_admin: false, country: "France", full_name: "Elo")
     lionel = User.create!(email: "lionel@yopmail.com", password: Faker::String.random(8), is_admin: false, country: "France", full_name: "Lion")
     superadmin = User.create!(email: "superadmin@yopmail.com", password: "azerty2020", is_admin: true, country: "France", full_name: "Gauthier")
-    superadmin.is_admin = false 
+    superadmin.is_admin = true
     superadmin.save
 
 puts('New users seeded')
