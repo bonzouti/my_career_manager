@@ -162,3 +162,18 @@
   border-bottom: 1px solid;
   border-color: #e3eaef;
 }
+
+ /********************CARD NEXT STEP - SHOW ********************/ 
+
+.step-category-show{
+  font-size: 18px; 
+  margin-right: 2px;
+}
+
+.step-date-show{
+  margin-left: 2px;
+}
+
+.step-col-show{
+  margin-top: 10px;
+}
