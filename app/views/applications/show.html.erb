@@ -152,7 +152,7 @@
 										</h5>
 										<%= @application.joboffer_link %>
 										<h5 class="text-primary"> Description </h5>
-										<%=@application.joboffer_description%>
+										<%= simple_format(@application.joboffer_description) %>
 									</div>
 									<%end %>
 									<button type="button" class="btn btn-light" data-toggle="modal" data-target="#edit-job_offer-modal"><i class="material-icons">edit</i></button>
@@ -178,7 +178,7 @@
 														<div class="form-group">
 															<%= label_tag 'Job offer description' %>
 															<br />
-															<%= text_area_tag :joboffer_description, @application.joboffer_description, class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+															<%= text_area_tag :joboffer_description, simple_format(@application.joboffer_description), class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
 														</div>
 														<div class="form-group">
 															<%= submit_tag "Edit job details", class:"btn btn-primary btn-alert-success" %>
@@ -206,11 +206,9 @@
 			<!--End part JOB DETAILS-->
 
 
-
-
 			<!--Start part CONTACTS -->
 
-			<div class="container p-0 d-none d-sm-block">
+			<div class="container ">
 				<div class="row align-items-center">
 					<div class="col-12">
 						<div class="card">
