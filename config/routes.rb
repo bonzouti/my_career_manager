@@ -4,13 +4,9 @@ Rails.application.routes.draw do
   	
     resources :contacts, only: [:index, :create, :update, :destroy]
 
-
     member do
       get 'archive'
     end
-
-    resources :steps, only: [:new, :create, :update]
-    
 
     member do
       get 'archive'
@@ -18,7 +14,16 @@ Rails.application.routes.draw do
       put 'update_notes'
     end
 
+    resources :steps, only: [:new, :create, :update, :destroy] do
+
+      member do
+        patch 'validate'
+      end
+
+    end
+
   end
+
 
   devise_for :users
 

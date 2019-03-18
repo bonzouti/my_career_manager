@@ -1,7 +1,7 @@
 
 
 $( document ).ready(function() {
-    console.log( "ready!" );
+    console.log( "salut" );
 
     //definition of the links to move on large screen
     $largesizeLink = $('.lg-link')
@@ -33,5 +33,14 @@ $( document ).ready(function() {
     }
 
 
+/* -------------------NEXT-STEP SHOW ---------------------------- */
+
+//Method to keep the checkbox unchecked even when there is an alert popping
+$checkboxStep = $('.checkbox-step')
+
+$checkboxStep.click(function() {
+  console.log("click checked");
+  $checkboxStep.prop('checked', false);
+});
 
 });
