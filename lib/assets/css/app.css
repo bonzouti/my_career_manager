@@ -9770,7 +9770,6 @@ body.authentication-bg {
   min-height: 100px;
   position: relative; }
   .task-list-items:before {
-    content: "No Tasks";
     position: absolute;
     line-height: 110px;
     width: 100%;
