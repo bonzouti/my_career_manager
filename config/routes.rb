@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   	
     resources :contacts, only: [:index, :create, :update, :destroy]
 
+    resources :steps, only: [:new, :create, :update]
+
 
     member do
       get 'archive'
     end
-
-    resources :steps, only: [:new, :create, :update]
-    
 
     member do
       get 'archive'
