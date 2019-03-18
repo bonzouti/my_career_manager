@@ -95,4 +95,8 @@ Rails.application.configure do
 
   #Devise 
   config.action_mailer.default_url_options = { :host => 'mycareermanager.herokuapp.com' }
+
+  # Allow images to display
+  config.assets.digest = true
+  config.serve_static_assets = false
 end
