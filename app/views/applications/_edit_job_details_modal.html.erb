@@ -1,0 +1,36 @@
+<!-- beginning modal -->
+<div id="edit-job-details-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;"
+aria-hidden="true">
+ <div class="modal-dialog">
+	 <div class="modal-content">
+		 <div class="card">
+			 <!-- Logo-->
+			 <div class="card-header pt-4 pb-4 text-center bg-primary">
+				 <h4 style="color:white">Edit Job details</h4>
+			 </div>
+			 <div class="card-body p-4">
+				 <%= form_tag url_for(action: 'update_job_details'), method: "put", remote: true do %>
+				 <div class="form-group">
+					 <%= label_tag 'Link to job offer' %>
+					 <br />
+					 <%= url_field_tag :joboffer_link, @application.joboffer_link, class: 'form-control', placeholder: 'Enter link' %>
+				 </div>
+
+				 <div class="form-group">
+					 <%= label_tag 'Job offer description' %>
+					 <br />
+					 <%= text_area_tag :joboffer_description, simple_format(@application.joboffer_description), class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x10"  %>
+				 </div>
+				 <div class="form-group">
+					 <%= submit_tag "Edit job details", class:"btn btn-primary btn-alert-success" %>
+				 </div>
+				 <% end %>
+			 </div>
+			 <!-- end card-body -->
+		 </div>
+	 </div>
+	 <!-- /.modal-content -->
+ </div>
+ <!-- /.modal-dialog -->
+</div>
+<!--end modal -->

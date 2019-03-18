@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
     member do
       get 'archive'
-      put 'update_job_offer'
+      put 'update_job_details'
       put 'update_notes'
     end
 
