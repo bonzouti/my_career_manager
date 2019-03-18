@@ -25,16 +25,33 @@
 
     <%= render "layouts/navbar" %>
 
-    <!-- Alert bootstrap --->
-    <% flash.each do |key, value| %>
-      <div class="<%= flash_class(key) %>">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-        <%= value %>
+    <!-------- Personalized Flash notification with Javascript to close them automaticaly -------->
 
+    <% flash.each do |key, value| %>
+
+      <div class="jq-toast-wrap top-right">
+        <div class="<%= flash_class(key) %>" style="text-align: left; display: block;">
+          <span class="close-jq-toast-single">×</span>
+          <%= value %>
+        </div>
       </div>
+
+      <script type="text/javascript">
+
+          setTimeout(function() {
+
+          $($cardToDisplay).css({
+                    display: 'none'
+                  });
+
+          }, 2000);
+
+
+    </script>
+
     <% end %>
+
+<!-------------------------------------------------------------------------------------------------->
 
     <%= yield %>
 

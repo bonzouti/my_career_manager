@@ -7,12 +7,21 @@ $( document ).ready(function() {
     $cardToDisplay = $('.jq-has-icon')
     $buttonToCloseAlert = $('.close-jq-toast-single')
 
-    //On click the notification message is shown
+    //On click the notification message is shown and closed
     $($buttonToDisplayAlert).click(function() {
 
           $($cardToDisplay).css({
           display: 'block'
         });
+
+          setTimeout(function() {
+
+          $($cardToDisplay).css({
+                    display: 'none'
+                  });
+
+    }, 2000);
+
 
     });
 

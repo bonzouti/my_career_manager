@@ -16,6 +16,7 @@ class StepsController < ApplicationController
 
         if @step.save
           @application.update_status
+          flash[:success] = "Your step has been created"
           redirect_to application_path(@application)
         else
           render :new
@@ -52,7 +53,6 @@ class StepsController < ApplicationController
 
             @application.notes = @current_notes + "\n\n" + @addition_to_current_notes
             @application.save
-
             respond_to do |format|
                 format.html {redirect_to application_path(@application)}
                 format.js
