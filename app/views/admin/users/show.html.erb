@@ -1,16 +1,10 @@
 
-        <!-- Begin page -->
-        <div class="wrapper">
-
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
 
             <div class="content-page">
-                <div class="content">
+                <div class="container">
 
                     <!-- Start Content-->
-                    <div class="container-fluid">
+                    
 
                          <!-- start page title -->
                         <div class="row">
@@ -29,8 +23,8 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted font-weight-normal mt-0 text-truncate">Member since:</h5>
-                                                <h3 class="my-2 py-1"><%= @user.created_at.strftime '%a %m/%d' %></h3>
+                                                <h5 class="text-muted font-weight-normal mt-0">Subscription</h5>
+                                                <h3 class="my-2 py-1"><%= @user.created_at.strftime '%m/%d' %></h3>
                                             </div>
                                         </div> <!-- end row-->
                                     </div> <!-- end card-body -->
@@ -78,7 +72,7 @@
 
                         </div>
                         <!-- end row -->
-                        </div>
+                        
                         <!-- end row-->
 
 
@@ -167,12 +161,3 @@
                 </div> <!-- content -->
 
             </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-
-        </div>
-        <!-- END wrapper -->
-
