@@ -20,7 +20,7 @@
         <%= link_to "Add Application", new_application_path, class:"nav-link d-flex" %>
       </li>
       <li class="nav-item lg-link">
-        <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex" %>
+        <% if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex" %> <%end%>
       </li>
         </ul>
         </div>
@@ -34,7 +34,7 @@
                 <%= link_to "Create an application", new_application_path, class:"nav-link d-flex" %>
             </li>
               <li class="nav-item sm-link">
-                <%  if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex" %> <%end%>
+                <% if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex" %> <%end%>
             </li>
             
             <li class="nav-item dropdown">

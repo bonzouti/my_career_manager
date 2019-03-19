@@ -25,7 +25,7 @@
                                     <div class="card-body">
                                         <% if @archived.count == 0 %>
                                         <h5 class="text-center text-primary">No applications have been archived yet.</h5>
-                                        <% end %>
+                                        <% else %>
                                        
                                         
                                         <div class="table-responsive ">
@@ -45,7 +45,7 @@
                                                         </td>
                                                         <td><%=link_to "View", application_path(application), method: :get %></td>
                                                         <td><%=link_to "Delete", application_path(application), method: :delete, data: { confirm: 'This action is irreversible. Are you sure?' } %></td>
-                                                    </tr><%end%>    
+                                                    </tr><%end%> <%end%>    
                                                 </tbody>
                                             </table>
                                             </div> <!-- end table-responsive-->    
