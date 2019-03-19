@@ -18,6 +18,8 @@
 //= require assets/js/app.min
 //= require assets/js/dragula.min
 //= require assets/js/component.dragula
+//= require assets/js/demo.toastr
+
 
 //= require assets/js/demo.typehead
 //= require assets/js/handlebars.min
