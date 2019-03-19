@@ -1,0 +1,11 @@
+<div class="card mb-0" id="past_steps_card" %>
+	<div class="card-body p-3">
+		<h5> PAST STEPS</h5>
+		<% steps_done = @application.steps.to_a.select {|x| x.status == true}.sort_by &:date %>
+		<% steps_done.each do |step| %>
+		<a>
+			<%= step.category%> -
+			<%= step.date%> </a> <br>
+		<% end %>
+	</div>
+</div>

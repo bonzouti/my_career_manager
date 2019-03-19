@@ -3,13 +3,13 @@
 <% if signed_in? %>
 <nav class="navbar navbar-expand-lg navbar-light">
 
-<div class="container">
+<div class="container navbar-container">
 
       <div class="col" > 
 
         <div class="row">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span><i class="fas fa-bars text-white"></i></span>
         </button>
 
         <ul class="navbar-nav mr-auto">
@@ -31,15 +31,15 @@
 
           <ul class="navbar-nav mr-auto togglelist">
              <li class="nav-item sm-link">
-                <%= link_to "Create an application", new_application_path, class:"nav-link d-flex" %>
+                <%= link_to "Create an application", new_application_path, class:"nav-link d-flex text-white" %>
             </li>
               <li class="nav-item sm-link">
-                <% if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex" %> <%end%>
+                <% if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex text-white" %> <%end%>
             </li>
             
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle d-flex text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <% if user_signed_in? %> <%=current_user.email%> <%end%> <i class="material-icons text-white">account_circle</i>
+               <% if user_signed_in? %> <i class="material-icons text-white">account_circle</i><span class="navbar-email"><%=current_user.email%></span> <%end%>
               </a> 
 
               <% if user_signed_in? %>

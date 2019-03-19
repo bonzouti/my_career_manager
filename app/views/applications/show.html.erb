@@ -44,8 +44,9 @@
 		<div class="row">
 			<div class="col-12 col-lg-4">
 				<div class="tasks nextsteps-userview">
-					<h5 class="mt-0 task-header next-step-header bg-primary">MY NEXT STEPS </h5>
-					<%if @application.has_no_next_step%>
+
+					<h5 class="mt-0 task-header next-step-header bg-primary">MY PROCESS </h5>
+					<%if @application.has_no_next_step %>
 					<div>
 						<h5 class="text-white text-center m-4">No next step... <br><br> It may be time for a follow-up email?</h5>
 					</div>
@@ -55,7 +56,6 @@
 						<!-- Task Item -->
 						<% @next_steps.each do |next_step| %>
 
-						<% unless next_step.status == true%>
 
 						<div class="card mb-0" id="card-step-<%=next_step.id%>">
 							<div class="card-body p-3">
@@ -75,7 +75,6 @@
 
 										<% unless next_step.title === "" && next_step.description === ""  %>
 										<div class="row">
-
 
 											<div class="col step-col-show">
 
@@ -104,7 +103,7 @@
 							<!-- end card-body -->
 						</div>
 						<!-- end card -->
-						<%end %>
+					
 
 						<!---------------------------------- MODAL UPDATE NEXT STEP----------------------------------->
 
@@ -161,9 +160,24 @@
 
 
 						<!------------------------------------------------------------------------------------------------------------>
-
-
 						<% end %>
+
+						<!-------------- Start Card 'Past steps' ---------------------->
+						<% unless @steps_done.count == 0 %>
+							<div class="card mb-0" id="past_steps_card"%>
+								<div class="card-body p-3">
+										<h5> PAST STEPS</h5>
+											<% @steps_done.each do |step| %>
+											<a> <%= step.category%> - <%= step.date%> </a> <br>
+											<% end %>
+								</div>
+							</div>
+						<% end %>
+						<!-------------- End Card 'Past steps' ---------------------->
+
+
+
+
 						<!-- Task Item End -->
 
 						<div class="container text-center">

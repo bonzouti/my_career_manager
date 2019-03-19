@@ -35,13 +35,15 @@
 
               <!-----NEXT STEPS --->
               <div class="tasks mr-4">
-                <h5 class="mt-0 task-header text-uppercase text-center bg-transparentblack">
-                    <span>MY NEXT STEPS</span>
+                <h5 class="mt-0 task-header text-uppercase text-left bg-transparentblack">
+                    <span>MY NEXT STEPS <br> <small>What's on your agenda?</small> </span>
                     </h5>
                 <div id="task-list-one" class="task-list-items">
 
                   <%if @next_steps.count == 0%>
-                    <a class = "text-white"> Nothing on your agenda!</a>
+                  <div class="card-body p-3">
+                    <a class = "text-white"> Nothing on your agenda! <br> When you plan an interview, don't forget to 'add step' in the corresponding application.</a>
+                    </div>
                   <%end%>
 
                 <% @next_steps.each do |next_step| %> <!-- Starts Next Steps Cards Loop -->
@@ -51,7 +53,7 @@
 
 
                       <h5 class="mt-2 mb-2 next-step">
-                        @<%= link_to next_step.application.company_name, application_path(next_step.application), class: "text-body break-word", toggle: "modal" %>
+                        <%= link_to next_step.application.company_name, application_path(next_step.application), class: "text-body break-word", toggle: "modal" %>
                       </h5>
 
                       <span class="badge <%= 'badge-success' if next_step.category == 'interview' %>
@@ -81,15 +83,20 @@
 
               <!-----IDENTIFIED --->
               <div class="tasks mr-1">
-                <h5 class="mt-0 task-header text-uppercase">
-                    <span>Identified (<%= @identified.length %>)</span>
-                    <span><button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
+                <h5 class="mt-0 task-header text-left text-uppercase">
+                    <span>IDENTIFIED (<%= @identified.length %>) <br> <small>Time to send application!</small> </span>
+                    <span><button type="button" class="btn btn-itmeo m-0" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
                 </h5>
                 <div id="task-list-two" class="task-list-items">
 
+                  <%if @identified.count == 0%>
+                  <div class="card-body p-3">
+                    <a class = "text-white"> No identified job opportunity! <br> You may want to check offers on your favourite job boards and 'Add' the most interesting here.</a>
+                    </div>
+                  <%end%>
+
                   <!-- Task Item -->
-                  <% @applications.each do |application| %>
-                  <% if application.status == "identified" %>
+                  <% @identified.each do |application| %>
                   <div class="card mb-0">
                     <div class="card-body p-0">
 
@@ -103,7 +110,6 @@
                       </p>
                     </div> <!-- end card-body -->
                   </div>
-                  <% end %>
                   <% end %>
                   <!-- Task Item End -->
 
@@ -113,18 +119,23 @@
               <!-----END IDENTIFIED --->
 
 
-
+              <!-----START APPLIED --->
               <div class="tasks mr-1">
-                <h5 class="mt-0 task-header text-uppercase">
-                  <span>Applied (<%= @applied.length %>)</span>
+                <h5 class="mt-0 task-header text-uppercase text-left">
+                  <span>Applied (<%= @applied.length %>) <br> <small>Waiting for a call.</small> </span>
                   <span><button type="button" class="btn btn-itmeo button-header-3" data-toggle="modal" data-target="#new-modal-applied"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
                 <div id="task-list-three" class="task-list-items">
 
+                  <%if @applied.count == 0%>
+                  <div class="card-body p-3">
+                    <a class = "text-white"> You haven't applied to any offer. <br> Check applications on the 'identified' column and kick your ass ;).</a>
+                    </div>
+                  <%end%>
+
                   <!-- Task Item -->
-                  <% @applications.each do |application| %>
-                  <% if application.status == "applied" %>
+                  <% @applied.each do |application| %>
                   <div class="card mb-0">
                     <div class="card-body p-0">
 
@@ -140,65 +151,53 @@
                     </div> <!-- end card-body -->
                   </div>
                   <% end %>
-                  <% end %>
                   <!-- Task Item End -->
 
                 </div> <!-- end company-list-3-->
               </div>
 
+              <!-----END APPLIED --->
+
+
+
+              <!-----START IN PROGRESS --->
+
               <div class="tasks">
-                <h5 class="mt-0 task-header text-uppercase">
-                  <span>In Progress (<%= @in_progress.length %>)</span>
+                <h5 class="mt-0 task-header text-uppercase text-left">
+                  <span>In Progress (<%= @in_progress.length %>)<br> <small>Your running processes.</small></span>
                   <span><button type="button" class="btn btn-itmeo button-header-4" data-toggle="modal" data-target="#new-modal-in_progress"><i class="fas fa-plus"></i></button></span>
                 </h5>
                 <div id="task-list-four" class="task-list-items">
 
+                  <%if @in_progress.count == 0%>
+                  <div class="card-body p-3">
+                    <a class = "text-white"> No running processes. <br> It may be time to identify new opportunities.</a>
+                    </div>
+                  <%end%>
+
                   <!-- Task Item -->
-                  <% @applications.each do |application| %>
-                  <% if application.status == "in_progress" %>
+                  <% @in_progress.each do |application| %>
                   <div class="card mb-0">
-                    <div class="card-body p-1">
+                    <div class="card-body p-0">
 
-
-                      <h5 class="mb-2">
+                      <h5 class="mt-2 mb-2">
                         <%= link_to application.company_name, application_path(application), class: "text-body", toggle: "modal" %>
                       </h5>
 
                       <p class="mb-0">
-                        <span class="pr-2 d-inline-block">
-                          <%= application.position %>
-                        </span>
+                        <span class="pr-2 mb-2 d-inline-block">
+                          <%= application.position %></span>
                       </p>
-
-
-                      <% categories = [] %>
-                      <% application.steps.each do |step| %>
-                      <% categories << step.category %>
-                      <% end %>
-
-                      <span class="m-1 float-center badge <%= 'badge-success' if categories.last == 'interview' %><%= 'badge-warning' if categories.last == 'phone interview' %><%= 'badge-info' if categories.last == 'follow-up' %>">
-                        <%= categories.last %>
-                      </span>
-                      <!--
-                      <small class="float-right badge <%= 'badge-success-lighten' if categories.last == 'interview' %><%= 'badge-warning-lighten' if categories.last == 'phone interview' %><%= 'badge-info-lighten' if categories.last == 'follow-up' %>">
-                        <% dates = [] %>
-                        <% application.steps.each do |step| %>
-                        <% dates << step.date %>
-                        <% end %>
-                        <% unless dates.last == nil %>
-                        <%= dates.last.strftime '%a %m/%d' %>
-                        <% end %>
-                      </small>
-                      -->
 
                     </div> <!-- end card-body -->
                   </div>
                   <% end %>
-                  <% end %>
+
                   <!-- Task Item End -->
 
                 </div> <!-- end company-list-4-->
               </div>
+              <!-----END IN PROGRESS --->
 
             </div> <!-- end .board-->
           </div> <!-- end col -->

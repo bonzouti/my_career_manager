@@ -9,7 +9,7 @@ class StepsController < ApplicationController
     def create
 
     @step = Step.new(date: params[:date], category: params[:category], title: params[:title],
-     description: params[:description])
+     description: params[:description], status: false)
 
     @application = Application.find(params[:application_id])
     @step.application = @application
