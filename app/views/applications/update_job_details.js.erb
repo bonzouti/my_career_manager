@@ -1,6 +1,3 @@
-$("div.modal-backdrop").remove()
-$(".modal-open").removeClass()
-$("body").removeAttr("style")
-$("#edit-job-details-modal").toggle()
+$('#edit-job-details-modal').modal('hide')
 
 $("#collapse-job-details").replaceWith("<%= j render 'job_details', application: @application %>")
