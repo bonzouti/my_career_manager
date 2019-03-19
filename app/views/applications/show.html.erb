@@ -242,14 +242,14 @@
 
 								<div id="collapse-job-details" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
 									<hr>
-									<div class="card-body job_offer">
+									<div class="card-body job-details">
 										<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of
 											this job offer.<br></a>
 										<%else %>
 										<h5 class="text-primary">
 											<a href=' <%=@application.joboffer_link%>'>Link of application</a>
 										</h5>
-										<%= @application.joboffer_link %>
+										<%= @application.joboffer_link %><br><br>
 										<h5 class="text-primary"> Description </h5>
 										<%= simple_format(@application.joboffer_description) %>
 									</div>
@@ -339,8 +339,8 @@
 																			<i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i>
 																		</td>
 																	</tr>
-
-
+																	<%= render "update_contact_modal.html.erb", contact: contact %>
+																	
 																	<% end %>
 
 																</tbody>
@@ -359,6 +359,8 @@
 						</div>
 					</div>
 					<%= render "new_contact_modal.html.erb" %>
+					
+					
 
 
 					<!--End part CONTACTS-->
