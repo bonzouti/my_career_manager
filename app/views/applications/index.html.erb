@@ -51,7 +51,8 @@
 
 
                       <h5 class="mt-2 mb-2 next-step">
-                        @<%= link_to next_step.application.company_name, application_path(next_step.application), class: "text-body break-word", toggle: "modal" %>
+                        <%= link_to next_step.application.company_name, application_path(next_step.application), class: "text-body break-word", toggle: "modal" %>
+                        <%=next_step.status%>
                       </h5>
 
                       <span class="badge <%= 'badge-success' if next_step.category == 'interview' %>
