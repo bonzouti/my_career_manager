@@ -6,7 +6,7 @@ class ApplicationsController < ApplicationController
     @applications = current_user.applications
     @steps = current_user.steps
 
-    @next_steps = current_user.steps.to_a.select {|x| x.date >= Date.today}.sort_by &:date
+    @next_steps = current_user.steps.to_a.select {|x| x.date >= Date.today}.select{|x| x.application.status != "archived"}.sort_by &:date
 
     @identified = current_user.applications.to_a.select {|x| x.status == "identified"}.sort_by &:updated_at
     @applied = current_user.applications.to_a.select {|x| x.status == "applied"}.sort_by &:updated_at
