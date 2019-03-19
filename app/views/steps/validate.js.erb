@@ -9,3 +9,5 @@ $cardStepToDestroy.hide()
 $textAreaForNotes.replaceWith($replacementText)
 
 $.NotificationApp.send("Yeah !", "Your step has been validated", 'top-right', 'Background color', 'success');
+
+$("#past_steps_card").replaceWith("<%= j render 'past_steps_area', application: @application %>")

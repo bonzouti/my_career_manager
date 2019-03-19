@@ -56,7 +56,7 @@ end
     step = Step.create!(category: ["interview", "phone interview", "follow-up"].sample, 
     title: ["Great Feeling", "Dream job", "Dushbag guy", "Talked about my impressive experiences"].sample, 
     description: Faker::Company.bs, 
-    status: [true, false].sample, 
+    status: "false", 
     application: Application.all[i],
     date: Faker::Date.forward(60) )
 

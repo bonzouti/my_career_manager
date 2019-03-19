@@ -14,7 +14,20 @@ class ApplicationsController < ApplicationController
 
 
   end
-  
+
+
+  def show
+    @application = Application.find(params[:id])
+
+    @steps = @application.steps
+
+    @next_steps = @application.steps.to_a.select {|x| x.status == false}.sort_by &:date
+
+    @steps_done= @application.steps.to_a.select {|x| x.status == true}.sort_by &:date
+
+
+  end
+
 
   def update_notes
     @application = Application.find(params[:id])
@@ -42,18 +55,6 @@ class ApplicationsController < ApplicationController
       render :edit
     end
   end
-
-
-  def show
-    @application = Application.find(params[:id])
-
-    @steps = @application.steps
-
-    @next_steps = @application.steps.to_a.select {|x| x.date >= Date.today}.sort_by &:date
-
-
-  end
-
 
   def new
     @application = Application.new
