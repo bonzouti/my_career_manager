@@ -7,3 +7,4 @@ var $replacementText = $("<%= escape_javascript(render "text_area", application:
 $cardStepToDestroy.hide()
 
 $textAreaForNotes.replaceWith($replacementText)
+$("#past_steps_card").replaceWith($("<%= escape_javascript(render "past_steps_area", step: @steps_done) %>"))
