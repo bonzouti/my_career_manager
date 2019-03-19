@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem "aws-sdk-s3", require: false
 gem 'tel_to_helper'
 gem 'faker'
 gem 'table_print'
