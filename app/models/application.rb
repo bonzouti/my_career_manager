@@ -39,16 +39,11 @@ class Application < ApplicationRecord
     end
 
     def has_no_next_step
-        @next_steps = []
-        self.steps.each do |step|
-          if step.date != nil
-            if step.date > Date.today
-              @next_steps << step
-            end
-          end
-        end 
+        @next_steps = self.steps.to_a.select {|x| x.status == false}
         if @next_steps.count == 0
             return true
+        else
+            return false
         end
         
     end
