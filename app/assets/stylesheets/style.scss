@@ -172,6 +172,33 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.navbar-container {
+  max-width: 100%;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-email {
+  margin-left: 5px;
+}
+
+.dropdown-menu {
+  right: 0!important;
+  left: auto!important;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-style: none;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-toggler {
+  border-color: white!important;
+}
+
  /********************CARD NEXT STEP - SHOW ********************/ 
 
 .step-category-show{
