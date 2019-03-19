@@ -2,7 +2,7 @@
 
 var $cardStepToDestroy = $('#card-step-' + '<%= @step.id %>')
 var $textAreaForNotes = $('#notes')
-var $replacementText = $("<%= escape_javascript(render "text_area", application: @application) %>")
+var $replacementText = $("<%= escape_javascript(render 'text_area', application: @application) %>")
 
 $cardStepToDestroy.hide()
 
