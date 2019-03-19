@@ -41,6 +41,7 @@ class ContactsController < ApplicationController
 
 
   def update
+		@application = Application.find(params[:application_id])
 
   	@contact = Contact.find(params[:id])
 
@@ -59,7 +60,8 @@ class ContactsController < ApplicationController
   end
 
   def destroy
-
+		@application = Application.find(params[:application_id])
+		
   	@contact = Contact.find(params[:id])
 
   	puts @contact.first_name

@@ -51,6 +51,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
 }
 
 .next-step-background {
@@ -103,8 +105,12 @@
   padding-bottom: 0rem!important;
 }
 
-.job_offer {
-  padding-left: 0px;
+.job-details {
+  padding: 0px;
+}
+
+.card-body {
+  padding: 1rem;
 }
 
 /********************INDEX_CONTACTS********************/
