@@ -16,8 +16,12 @@ class StepsController < ApplicationController
 
         if @step.save
           @application.update_status
-          flash[:success] = "Your step has been created"
-          redirect_to application_path(@application)
+          respond_to do |format|
+            format.html {redirect_to application_path(@application)}
+            format.js
+          end
+          #flash[:success] = "Your step has been created"
+          #redirect_to application_path(@application)
         else
           render :new
         end
