@@ -50,6 +50,7 @@ class Application < ApplicationRecord
         if @next_steps.count == 0
             return true
         end
+        
     end
 
     def has_no_joboffer_details

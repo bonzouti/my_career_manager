@@ -14,13 +14,13 @@
 
         <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "My Career Manager", applications_path, class:"navbar-brand" %>
+        <%= link_to "My Career Manager", applications_path, class:"navbar-brand text-white" %>
       </li>
       <li class="nav-item lg-link">
-        <%= link_to "Add Application", new_application_path, class:"nav-link d-flex" %>
+        <%= link_to "Add Application", new_application_path, class:"nav-link d-flex text-white" %>
       </li>
       <li class="nav-item lg-link">
-        <% if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex" %> <%end%>
+        <% if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex text-white" %> <%end%>
       </li>
         </ul>
         </div>
@@ -38,23 +38,23 @@
             </li>
             
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle d-flex" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <% if user_signed_in? %> <%=current_user.email%> <%end%> <i class="material-icons">account_circle</i>
+              <a class="nav-link dropdown-toggle d-flex text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <% if user_signed_in? %> <%=current_user.email%> <%end%> <i class="material-icons text-white">account_circle</i>
               </a> 
 
               <% if user_signed_in? %>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <%= link_to "My profile", user_path(current_user), class:"dropdown-item" %>
-                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+                  <%= link_to "My profile", user_path(current_user), class:"dropdown-item text-white" %>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"dropdown-item text-white" %>
                 </div>  
 
  
               <% else %>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <%= link_to "Login", user_session_path, class:"dropdown-item" %>
-                  <%= link_to "Sign-up", new_user_registration_path, class:"dropdown-item" %>
+                  <%= link_to "Login", user_session_path, class:"dropdown-item text-white" %>
+                  <%= link_to "Sign-up", new_user_registration_path, class:"dropdown-item text-white" %>
                 </div>    
 
               <% end %>

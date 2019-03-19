@@ -6,29 +6,12 @@ class ApplicationsController < ApplicationController
     @applications = current_user.applications
     @steps = current_user.steps
 
-    @next_steps = []
-    @steps.each do |step|
-      if step.date != nil
-        if step.date > Date.today
-          @next_steps << step
-        end
-      end
-    end 
+    @next_steps = current_user.steps.to_a.select {|x| x.date >= Date.today}.sort_by &:date
 
-    @next_steps = @next_steps.sort_by &:date
+    @identified = current_user.applications.to_a.select {|x| x.status == "identified"}.sort_by &:updated_at
+    @applied = current_user.applications.to_a.select {|x| x.status == "applied"}.sort_by &:updated_at
+    @in_progress = current_user.applications.to_a.select {|x| x.status == "in_progress"}.sort_by &:updated_at
 
-    @identified = []
-    @applied = []
-    @in_progress = []
-    @applications.each do |application|
-      if application.status == "identified"
-        @identified << application
-      elsif application.status == "applied"
-        @applied << application
-      elsif application.status == "in_progress"
-        @in_progress << application
-      end
-    end
 
   end
   
@@ -66,16 +49,7 @@ class ApplicationsController < ApplicationController
 
     @steps = @application.steps
 
-    @next_steps = []
-    @steps.each do |step|
-      if step.date != nil
-        if step.date > Date.today
-          @next_steps << step
-        end
-      end
-    end 
-
-    @next_steps = @next_steps.sort_by &:date
+    @next_steps = @application.steps.to_a.select {|x| x.date >= Date.today}.sort_by &:date
 
 
   end
