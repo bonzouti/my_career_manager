@@ -28,7 +28,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :update] do
+    member do
+        put 'update_user_details'
+      end 
+    end
 
   resources :archived, :only => [:index]
   

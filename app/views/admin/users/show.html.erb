@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h2 class="page-title text-center">USER: <%=@user.email%> </h2>
+                                    <h2 class="page-title text-center text-white">USER: <%=@user.email%> </h2>
                                 </div>
                             </div>
                         </div>     
@@ -111,8 +111,8 @@
                                                             </ul>
                                                           </td>
                                                         <td> 
-                                                            <%= link_to "Edit", root_path, class: "btn btn-light" %>
-                                                            <%= link_to "Delete", application_path(application), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %> 
+                                                            <%= link_to "Edit", root_path, class: "btn btn-halloween" %>
+                                                            <%= link_to "Delete", application_path(application), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-salmon" %> 
                                                         </td>
                                                     </tr>
                                                     <%end%>

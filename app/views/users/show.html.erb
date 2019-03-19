@@ -16,12 +16,9 @@
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
-                                <div class="page-title-box">
+                                <div class="page-title-box text-white">
                                     <h4 class="page-title">
-                                    <%  if current_user.is_admin == true %>
-                                        <span class="badge-danger"> Admin</span> 
-                                    <% end %>
-                                    Profile
+                                    User Profile
                                     </h4> 
                                 </div>
                             </div>
@@ -38,10 +35,10 @@
                                         <div class="row">
                                             <div class="col-sm-8">
                                                 <div class="media">
-                                                    <span class="float-left m-2 mr-4"><img src="assets/images/users/avatar-2.jpg" style="height: 40px;" alt="" class="rounded-circle img-thumbnail"></span>
+                                                    
                                                     <div class="media-body">
 
-                                                        <h4 class="mt-1 mb-1 text-white"><%=current_user.email%></h4>
+                                                        <h4 class="mt-1 mb-1 text-white"><%=current_user.email%> <%  if current_user.is_admin == true %> (Admin profile) <% end %></h4> 
                                                         <p class="font-13 text-white-50"> Member since: <%=current_user.created_at%> </p>
 
                                                     </div> <!-- end media-body-->
@@ -74,14 +71,53 @@
                                         <div class="text-left">
                                             <p><strong>Full Name :</strong> <span class="ml-2"> <%=current_user.full_name%> </span></p>
 
-                                            <p><strong>Email :</strong> <span class="ml-2"> <%=current_user.email%> </span></p>
-
                                             <p><strong>Location :</strong> <span class="ml-2"> <%=current_user.country%> </span></p>
+
+                                            <button type="button" class="btn btn-itmeo btn-edit-user-details" data-toggle="modal" data-target="#edit-user-details-modal"> Update</button>
 
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Personal-Information -->
+
+
+                                <!-- beginning modal -->
+                                    <div id="edit-user-details-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="card-black-form">
+                                                <!-- Title -->
+                                                <div class="card-black-form-header pt-4 pb-4 text-center">
+                                                    <h4 style="color:white">Update your details</h4>
+                                                </div>
+                                                <!-- End title -->
+                                                <div class="p-4">
+                                                    <%= form_tag url_for(action: 'update_user_details'), method: "put", remote: true do %>
+                                                    <div class="form-group">
+                                                        <%= label_tag 'Full name' %>
+                                                        <br />
+                                                        <%= text_field_tag :full_name, current_user.full_name, class: 'form-control', placeholder: 'Enter country' %>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <%= label_tag 'Country' %>
+                                                        <br />
+                                                        <%= text_field_tag :country, current_user.country, class: 'form-control', placeholder: 'Full name' %>
+                                                    </div>
+                                                    <div class="form-group text-center">
+                                                        <%= submit_tag "Edit user details", class:"btn btn-itmeo mt-3" %>
+                                                    </div>
+                                                    <% end %>
+                                                </div>
+                                                <!-- end card-body -->
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                    </div>
+                                    <!--end modal -->
 
                                 
 

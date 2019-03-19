@@ -247,8 +247,6 @@
   background-color: #f8f9fb; }
 
 
-
-
 .btn {
     -webkit-transition: none;
     transition: none; }
@@ -292,3 +290,13 @@ pointer-events: none; }
       -webkit-box-shadow: 0 0 0 0.2rem #ff5858;
               box-shadow: 0 0 0 0.2rem #ff5858; }
     }
+
+  .btn-salmon {
+    color: #fff;
+    background-color: #ff5858;
+    border:none; }
+
+  .btn-halloween {
+    color: #fff;
+    background-color: #f09819;
+    border:none; }
