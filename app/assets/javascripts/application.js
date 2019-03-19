@@ -20,7 +20,6 @@
 //= require assets/js/component.dragula
 //= require assets/js/demo.toastr
 
-
 //= require assets/js/demo.typehead
 //= require assets/js/handlebars.min
 //= require assets/js/typeahead.bundle.min
