@@ -1,38 +1,27 @@
 require 'rails_helper'
 
-RSpec.describe Application, type: :model do
+RSpec.describe Contact, type: :model do
 
   before(:each) do 
-    @application = FactoryBot.create(:application)    
+    @contact = FactoryBot.create(:contact)    
   end
 
   it "has a valid factory" do
-    # teste toujours tes factories pour voir si elles sont valides
-    expect(build(:application)).to be_valid
+    expect(build(:contact)).to be_valid
   end
 
   context "validation" do
 
     it "is valid with valid attributes" do
-      expect(@application).to be_a(Application)
-    end
-
-    describe "#company_name" do
-      it { expect(@application).to validate_presence_of(:company_name) }
-    end
-
-    describe "#position" do
-      it { expect(@application).to validate_presence_of(:position) }
+      expect(@contact).to be_a(Contact)
     end
 
   end
 
   context "associations" do
 
-    describe "applications" do
-      it { expect(@application).to have_many(:steps) }
-      it { expect(@application).to have_many(:contacts) }  
-      it { expect(@application).to belong_to(:user) }
+    describe "contact" do 
+      it { expect(@contact).to belong_to(:application) }
     end
 
   end

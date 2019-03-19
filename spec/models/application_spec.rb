@@ -7,7 +7,6 @@ RSpec.describe Application, type: :model do
   end
 
   it "has a valid factory" do
-    # teste toujours tes factories pour voir si elles sont valides
     expect(build(:application)).to be_valid
   end
 
