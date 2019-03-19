@@ -1,9 +1,8 @@
 $(document).ready(function() {
   
   $(".task-header").click(function() {
-    $(this).next().toggle(100)
+    $(this).next().toggle(0)
   })
-
   
   $(".button-header-2").click(function() {
     $("#task-list-two").toggle()

@@ -1,22 +1,16 @@
 
-        <!-- Begin page -->
-        <div class="wrapper">
-
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
 
             <div class="content-page">
-                <div class="content">
+                <div class="container">
 
                     <!-- Start Content-->
-                    <div class="container-fluid">
+                    
 
                          <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h2 class="page-title text-center">USER DETAILS : <%=@user.email%> </h2>
+                                    <h2 class="page-title text-center">USER: <%=@user.email%> </h2>
                                 </div>
                             </div>
                         </div>     
@@ -29,8 +23,8 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted font-weight-normal mt-0 text-truncate">Member since:</h5>
-                                                <h3 class="my-2 py-1"><%= @user.created_at.strftime '%a %m/%d' %></h3>
+                                                <h5 class="text-muted font-weight-normal mt-0">Subscription</h5>
+                                                <h3 class="my-2 py-1"><%= @user.created_at.strftime '%m/%d' %></h3>
                                             </div>
                                         </div> <!-- end row-->
                                     </div> <!-- end card-body -->
@@ -68,8 +62,8 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted font-weight-normal mt-0 text-truncate">Next step</h5>
-                                                <h3 class="my-2 py-1"><%= @user.steps.count %></h3>
+                                                <h5 class="text-muted font-weight-normal mt-0 text-truncate">Next steps</h5>
+                                                <h3 class="my-2 py-1"><%= @user.steps.to_a.select {|x| x.date >= Date.today}.count %></h3>
                                             </div>
                                         </div> <!-- end row-->
                                     </div> <!-- end card-body -->
@@ -78,7 +72,7 @@
 
                         </div>
                         <!-- end row -->
-                        </div>
+                        
                         <!-- end row-->
 
 
@@ -94,7 +88,7 @@
                                                     <tr>
                                                         <th>Application</th>
                                                         <th>Status</th>
-                                                        <th>Steps</th>
+                                                        <th>Steps (past and next)</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -118,7 +112,7 @@
                                                           </td>
                                                         <td> 
                                                             <%= link_to "Edit", root_path, class: "btn btn-light" %>
-                                                            <%= link_to "Delete", root_path, class: "btn btn-danger" %> 
+                                                            <%= link_to "Delete", application_path(application), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %> 
                                                         </td>
                                                     </tr>
                                                     <%end%>
@@ -167,12 +161,3 @@
                 </div> <!-- content -->
 
             </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-
-        </div>
-        <!-- END wrapper -->
-

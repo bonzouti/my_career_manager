@@ -47,7 +47,7 @@ class ApplicationsController < ApplicationController
   end
 
 
-  def update_job_offer
+  def update_job_details
     @application = Application.find(params[:id])
 
     if @application.update(joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
