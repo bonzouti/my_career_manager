@@ -10,8 +10,8 @@ class User < ApplicationRecord
   has_many :applications
   has_many :steps, through: :applications
 
-  validates :email, presence: true, uniqueness: true, format: { with: /\A[\w+-.]+@[a-z\d-]+(.[a-z\d-]+)*.[a-z]+\z/i, message: "please enter a valid e-mail adress" }
-  validates :password, presence: true, length: {minimum: 6}
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "please enter a valid e-mail adress" }
+  validates :password, presence: true, length: {minimum: 6}           
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now

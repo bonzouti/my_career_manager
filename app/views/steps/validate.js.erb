@@ -7,3 +7,5 @@ var $replacementText = $("<%= escape_javascript(render "text_area", application:
 $cardStepToDestroy.hide()
 
 $textAreaForNotes.replaceWith($replacementText)
+
+$.NotificationApp.send("Yeah !", "Your step has been validated", 'top-right', 'Background color', 'success');
