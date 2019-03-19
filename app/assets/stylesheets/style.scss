@@ -3,6 +3,7 @@
 .index-title {
   padding-top: 40px;
   padding-bottom: 40px;
+  color: black;
 }
 
 .content-page {
@@ -26,6 +27,8 @@
 
 .tasks {
   width: 22%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border:none;
 }
 
 .nextsteps-userview {
@@ -44,6 +47,7 @@
   background-color: #6f7884 !important;
   color: white;
   justify-content: center!important;
+  background-color: rgba(0, 0, 0, 0.3)!important;
 }
 
 .task-header {
@@ -51,6 +55,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.3)!important;
+}
+
+.bg-transparentblack {
+  background-color: rgba(0, 0, 0, 0.3)!important;
 }
 
 .next-step-background {
@@ -103,8 +113,12 @@
   padding-bottom: 0rem!important;
 }
 
-.job_offer {
-  padding-left: 0px;
+.job-details {
+  padding: 0px;
+}
+
+.card-body {
+  padding: 1rem;
 }
 
 /********************INDEX_CONTACTS********************/
@@ -133,7 +147,7 @@
  /********************FORMS********************/ 
 
   .bg-formsandothers{
-    background: image-url("painting.jpg");
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
     background-size: 100%;
     background-position: center; 
   }
@@ -152,13 +166,10 @@
 
 .navbar{
   border-bottom: 1px solid;
-  border-color: #e3eaef;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
   box-sizing: border-box;
-  box-shadow: 0px 10px 10px -10px #e3eaef; 
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
  /********************CARD NEXT STEP - SHOW ********************/ 
@@ -176,9 +187,59 @@
   margin-top: 10px;
 }
 
+.card {
+  background:rgba(255,255,255, 0.9);
+}
+
  /********************COLORS ********************/ 
 
 
 .bg-light-grey {
   background-color: #f8f9fb; }
 
+
+
+
+.btn {
+    -webkit-transition: none;
+    transition: none; }
+.btn:hover {
+  color: #6c757d;
+  text-decoration: none; }
+.btn:focus, .btn.focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.15rem #ff5858;
+          box-shadow: 0 0 0 0.15rem #ff5858; }
+.btn.disabled, .btn:disabled {
+  opacity: 0.65; }
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer; }
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+pointer-events: none; }
+
+.btn-itmeo {
+  color: #fff;
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  border:none; }
+  .btn-primary:hover {
+    color: #fff;
+    background-image: linear-gradient(-80deg, #ff5858 0%, #f09819 100%);
+  .btn-primary:focus, .btn-primary.focus {
+    -webkit-box-shadow: 0 0 0 0.2rem#ff5858;
+            box-shadow: 0 0 0 0.2rem #ff5858 }
+  .btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #ff5858;
+    border-color: #ff5858; }
+  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #ff5858;
+    border-color: #ff5858; }
+    .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-primary.dropdown-toggle:focus {
+      -webkit-box-shadow: 0 0 0 0.2rem #ff5858;
+              box-shadow: 0 0 0 0.2rem #ff5858; }
+    }

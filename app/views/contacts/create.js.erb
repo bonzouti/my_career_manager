@@ -1,7 +1,3 @@
-$("div.modal-backdrop").remove()
-$(".modal-open").removeClass()
-$("body").removeAttr("style")
-$("#create-contact-modal").toggle()
-//$("#first_name").replaceWith($("#first_name").text("zzz"))
+$('#create-contact-modal').modal('hide')
 
 $("#collapse-contact").replaceWith("<%= j render 'create_contact', application: @application %>")

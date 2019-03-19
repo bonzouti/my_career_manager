@@ -1,4 +1,4 @@
-<div class="container bg-light-grey">
+
 
 	<!--Start part of tabs application && contact-->
 	<div class="d-block d-sm-none">
@@ -47,7 +47,7 @@
 					<h5 class="mt-0 task-header next-step-header bg-primary">MY NEXT STEPS </h5>
 					<%if @application.has_no_next_step%>
 					<div>
-						<h5 class="text-primary text-center m-4">No next step... <br><br> It may be time for a follow-up email?</h5>
+						<h5 class="text-white text-center m-4">No next step... <br><br> It may be time for a follow-up email?</h5>
 					</div>
 					<%end%>
 					<div id="task-list-one">
@@ -180,7 +180,7 @@
 			<!--Start part NOTES-->
 
 			<div class="col-12 col-lg-8">
-				<div id="accordion" class="custom-accordion mb-4">
+				<div id="accordion">
 					<div class="card">
 						<div class="card-header" id="headingOne">
 							<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
@@ -232,7 +232,7 @@
 						<div class="row align-items-center">
 							<div class="col-12">
 
-								<h5 class="text-muted mt-0 text-truncate task-header">
+								<h5 class="text-muted mt-0 text-truncate task-header bg-transparentblack">
 									<span> JOB DETAILS </span>
 									<span>
 										<button type="button" class="btn btn-light btn-edit-job-details" data-toggle="modal" data-target="#edit-job-details-modal"><i
@@ -242,14 +242,14 @@
 
 								<div id="collapse-job-details" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
 									<hr>
-									<div class="card-body job_offer">
+									<div class="card-body job-details">
 										<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of
 											this job offer.<br></a>
 										<%else %>
 										<h5 class="text-primary">
 											<a href=' <%=@application.joboffer_link%>'>Link of application</a>
 										</h5>
-										<%= @application.joboffer_link %>
+										<%= @application.joboffer_link %><br><br>
 										<h5 class="text-primary"> Description </h5>
 										<%= simple_format(@application.joboffer_description) %>
 									</div>
@@ -339,8 +339,8 @@
 																			<i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i>
 																		</td>
 																	</tr>
-
-
+																	<%= render "update_contact_modal.html.erb", contact: contact %>
+																	
 																	<% end %>
 
 																</tbody>
@@ -359,6 +359,8 @@
 						</div>
 					</div>
 					<%= render "new_contact_modal.html.erb" %>
+					
+					
 
 
 					<!--End part CONTACTS-->
@@ -374,4 +376,3 @@
 		</div>
 	</div>
 
-</div>
