@@ -303,27 +303,13 @@ pointer-events: none; }
     color: #fff;
     background-color: #f09819;
     border:none; }
-
-    .text-transparent-black{
-      color:  rgba(0, 0, 0, 0.7)!important;
-    }
-
-    .text-salmon{
-      color: #ff5858
-    }
-
- /******************** UPLOAD ********************/ 
-
-
-.image-upload > input {
-   display: none;
+.bg-note {
+  color:white;
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }
-
-.image-upload > label {
-  cursor:pointer;
+.job-details {
+  margin-left: 15px;
 }
-
-.upload-item {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.contact {
+  margin-left: 15px;
 }

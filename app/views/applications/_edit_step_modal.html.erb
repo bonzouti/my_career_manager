@@ -1,0 +1,55 @@
+<!---------------------------------- MODAL UPDATE NEXT STEP----------------------------------->
+
+
+<div id="update-next_step-modal-<%= next_step.id %>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center mt-2 mb-4">
+          <h3> Update this step</h3>
+          <i class="fas fa-stopwatch"></i>
+        </div>
+
+        <%= form_tag(application_step_path(@application, next_step), method: "put", class: 'pl-3 pr-3', remote: true) do %>
+
+        <div class="form-group">
+          <%= label_tag 'Date *' %><br />
+          <%= date_field_tag :date, next_step.date, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag(:category, "Category") %>
+          <%= select_tag "category", "<option>interview</option><option>phone interview</option><option>follow-up</option><option>application sent</option>".html_safe, class: 'custom-select' %>
+        </div>
+
+
+        <div class="form-group">
+          <%= label_tag(:title, "Title") %>
+          <%= text_field_tag :title, next_step.title, class: 'form-control', placeholder: 'Enter the title' %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag 'Description' %><br />
+          <%= text_area_tag :description, next_step.description, class: 'form-control', placeholder: 'Describe the step here' %>
+        </div>
+
+        <div class="form-group text-center">
+
+          <%= submit_tag "Update", class: "btn btn-primary", style:"margin-right:20px" %>
+          <%= link_to application_step_path(@application, next_step), method: :delete, remote: true do %>
+
+          <button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button>
+          <% end %>
+
+
+
+        </div>
+
+        <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!------------------------------------------------------------------------------------------------------------>
