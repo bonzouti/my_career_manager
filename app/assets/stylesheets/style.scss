@@ -312,6 +312,18 @@ pointer-events: none; }
       color: #ff5858
     }
 
-  /********************TABLES********************/ 
+ /******************** UPLOAD ********************/ 
 
-  
+
+.image-upload > input {
+   display: none;
+}
+
+.image-upload > label {
+  cursor:pointer;
+}
+
+.upload-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
