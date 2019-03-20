@@ -310,10 +310,31 @@ pointer-events: none; }
 .job-details {
   margin-left: 15px;
 }
+
+ /******************** NOTIFICATIONS ********************/ 
+
+
+.jq-icon-warning{
+  background-color: #f1921f;
+}
+
+.jq-icon-error{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.jq-icon-success{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.jq-icon-info{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .contact {
   margin-left: 15px;
 }
- /******************** UPLOAD ********************/
+
+/******************** UPLOAD ********************/
  .image-upload>input {
    display: none;
  }
