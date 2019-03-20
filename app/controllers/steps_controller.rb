@@ -20,8 +20,6 @@ class StepsController < ApplicationController
             format.html {redirect_to application_path(@application)}
             format.js
           end
-          #flash[:success] = "Your step has been created"
-          #redirect_to application_path(@application)
         else
           render :new
         end
@@ -37,9 +35,6 @@ class StepsController < ApplicationController
         format.html {redirect_to application_path(@application)}
         format.js
     end
-    #flash[:success] = "The step has been updated"
-
-    #redirect_to application_path(@application)
 
 
     end
@@ -83,7 +78,6 @@ class StepsController < ApplicationController
             format.html {redirect_to application_path(@application)}
             format.js
         end
-        #redirect_to application_path(@application)
 
     end
 
