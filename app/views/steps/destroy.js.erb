@@ -1,0 +1,6 @@
+$(".modal-backdrop").remove()
+$("body").removeClass("modal-open")
+
+$("#task-list-one").replaceWith("<%= j render 'my_process', application: @application %>")
+
+$.NotificationApp.send("Yeah !", "Your step has been deleted", 'top-right', 'Background color', 'success');
