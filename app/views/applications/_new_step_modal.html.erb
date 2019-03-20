@@ -1,0 +1,56 @@
+<!-- beginning modal -->
+<div id="new-step-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="card-black-form">
+        <!-- Title-->
+        <div class="card-black pt-4 pb-4 text-center">
+          <h4 style="color:white">Add Step</h4>
+          <h5 style="color:white">(
+            <%=@application.position%> at
+            <%=@application.company_name%>)</h5>
+        </div>
+        <!-- Title-->
+
+        <div class="card-body p-4">
+
+          <%= form_tag(application_steps_path(@application), method: "post", remote: true) do %>
+          <% if @step.errors.any? %>
+          <% @step.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+          <% end %>
+          <% end %>
+          <br>
+          <div class="form-group">
+            <%= label_tag 'Date *' %><br />
+            <%= date_field_tag :date, @step.date, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag 'Type *' %><br />
+            <%= select_tag "category", "<option>interview</option><option>phone interview</option><option>follow-up</option><option>application sent</option>".html_safe, class: 'custom-select' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag 'Title' %><br />
+            <%= text_field_tag :title, @step.title, class: 'form-control', placeholder: 'Write the title here' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag 'Description' %><br />
+            <%= text_area_tag :description, @step.description, class: 'form-control', placeholder: 'Describe the step here' %>
+          </div>
+          <div class="form-group text-center">
+            <%= label_tag '' %><br />
+            <%= submit_tag "Confirm", class:"btn btn-itmeo" %>
+          </div>
+          <% end %>
+        </div> <!-- end card-body -->
+      </div>
+      <!-- end card-body -->
+    </div>
+  </div>
+  <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!--end modal -->

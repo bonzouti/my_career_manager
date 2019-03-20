@@ -25,7 +25,7 @@ class ApplicationsController < ApplicationController
 
     @steps_done= @application.steps.to_a.select {|x| x.status == true}.sort_by &:date
 
-
+    @step = Step.new
   end
 
 
