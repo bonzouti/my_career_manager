@@ -131,8 +131,7 @@
 					<!-- Task Item End -->
 
 					<div class="container text-center">
-						<%= link_to "Add step", new_application_step_path(@application), class: 'btn btn-itmeo btn-sm mt-3' %>
-					</div>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-step-modal">Add step</button>					</div>
 				</div>
 				<!-- end company-list-1-->
 			</div>
@@ -182,6 +181,7 @@
 	<!-- end row-->
 </div>
 <!-- end container-->
+<%= render "new_step_modal.html.erb" %>
 
 <!--Start part JOB DETAILS-->
 <div class="container">
