@@ -55,7 +55,11 @@ class StepsController < ApplicationController
             @current_notes = @application.notes
             @addition_to_current_notes = "#{@step.date} : #{@step.category}"  
 
-            @application.notes = @current_notes + "\n\n" + @addition_to_current_notes
+            if @current_notes == nil
+                @application.notes = @addition_to_current_notes
+            else
+                @application.notes = @current_notes + "\n\n" + @addition_to_current_notes
+            end
             @application.save
             respond_to do |format|
                 format.html {redirect_to application_path(@application)}
