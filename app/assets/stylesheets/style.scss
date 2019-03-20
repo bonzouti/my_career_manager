@@ -252,8 +252,10 @@
     -webkit-transition: none;
     transition: none; }
 .btn:hover {
-  color: #6c757d;
-  text-decoration: none; }
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  font-weight: 600;
+}
 .btn:focus, .btn.focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.15rem #ff5858;
@@ -301,37 +303,12 @@ pointer-events: none; }
     color: #fff;
     background-color: #f09819;
     border:none; }
-
-    .text-transparent-black{
-      color:  rgba(0, 0, 0, 0.7)!important;
-    }
-
-    .text-salmon{
-      color: #ff5858
-    }
-
- /******************** UPLOAD ********************/ 
-
-
-.image-upload > input {
-   display: none;
+.bg-note {
+  color:white;
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }
-
-.image-upload > label {
-  cursor:pointer;
-}
-
-.upload-item {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.col-card-download {
-  margin-top: 30px;
-}
-
-.fa-cloud-download-alt{
-  color: white;
+.job-details {
+  margin-left: 15px;
 }
 
  /******************** NOTIFICATIONS ********************/ 
@@ -353,3 +330,31 @@ pointer-events: none; }
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.contact {
+  margin-left: 15px;
+}
+
+/******************** UPLOAD ********************/
+ .image-upload>input {
+   display: none;
+ }
+
+ .image-upload>label {
+   cursor: pointer;
+ }
+
+ .upload-item {
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+
+ .col-card-download {
+   margin-top: 30px;
+ }
+
+ .fa-cloud-download-alt {
+   color: white;
+ }
+ .text-transparent-black {
+   color: rgba(0, 0, 0, 0.7);
+ }

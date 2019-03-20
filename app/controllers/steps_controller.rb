@@ -20,8 +20,6 @@ class StepsController < ApplicationController
             format.html {redirect_to application_path(@application)}
             format.js
           end
-          #flash[:success] = "Your step has been created"
-          #redirect_to application_path(@application)
         else
           render :new
         end
@@ -29,16 +27,14 @@ class StepsController < ApplicationController
     end
 
     def update
-
     @step = Step.find(params[:id])
     @application = Application.find(params[:application_id])
 
-    @step.update(title: params[:title], category: params[:category], description: params[:description],
-     date: params[:date])
-
-    flash[:success] = "The step has been updated"
-
-    redirect_to application_path(@application)
+    @step.update(title: params[:title], category: params[:category], description: params[:description], date: params[:date])
+    respond_to do |format|
+        format.html {redirect_to application_path(@application)}
+        format.js
+    end
 
 
     end
@@ -78,8 +74,10 @@ class StepsController < ApplicationController
         @step = Step.find(params[:id])
 
         @step.destroy
-
-        redirect_to application_path(@application)
+        respond_to do |format|
+            format.html {redirect_to application_path(@application)}
+            format.js
+        end
 
     end
 

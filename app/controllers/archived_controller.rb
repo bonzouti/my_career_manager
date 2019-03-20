@@ -2,14 +2,7 @@ class ArchivedController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @applications = current_user.applications
-    @archived = []
-    @applications.each do |application|
-      if application.status == "archived"
-        @archived << application
-      else
-      end
-    end  
+    @archived = current_user.applications.to_a.select {|x| x.status == "archived"}.sort_by &:updated_at
   end
 
   def new
