@@ -60,9 +60,6 @@ class ContactsController < ApplicationController
 		
   	@contact = Contact.find(params[:id])
 
-  	puts @contact.first_name
-  	puts "$" * 60
-  	puts params
   	@contact.destroy
 		
 		if mobile_device?
