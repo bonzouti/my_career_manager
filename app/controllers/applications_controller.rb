@@ -1,5 +1,7 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :user_match, only: [:show] 
+  
 
   def index
     
@@ -88,6 +90,13 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
     @application.destroy
     redirect_to archived_index_path
-end
+  end
+
+  def user_match
+    @application = Application.find(params[:id])
+    if @application.user != current_user
+      redirect_to root_path
+    end
+  end
 
 end
