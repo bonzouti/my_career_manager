@@ -14,7 +14,7 @@
 
         <div class="card-body p-4">
 
-          <%= form_tag(application_steps_path(@application), method: "post") do %>
+          <%= form_tag(application_steps_path(@application), method: "post", remote: true) do %>
           <% if @step.errors.any? %>
           <% @step.errors.full_messages.each do |message| %>
           <li>
