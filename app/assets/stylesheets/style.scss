@@ -310,6 +310,51 @@ pointer-events: none; }
 .job-details {
   margin-left: 15px;
 }
+
+ /******************** NOTIFICATIONS ********************/ 
+
+
+.jq-icon-warning{
+  background-color: #f1921f;
+}
+
+.jq-icon-error{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.jq-icon-success{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.jq-icon-info{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .contact {
   margin-left: 15px;
 }
+
+/******************** UPLOAD ********************/
+ .image-upload>input {
+   display: none;
+ }
+
+ .image-upload>label {
+   cursor: pointer;
+ }
+
+ .upload-item {
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+
+ .col-card-download {
+   margin-top: 30px;
+ }
+
+ .fa-cloud-download-alt {
+   color: white;
+ }
+ .text-transparent-black {
+   color: rgba(0, 0, 0, 0.7);
+ }
