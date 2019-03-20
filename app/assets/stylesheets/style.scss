@@ -1,3 +1,4 @@
+
 /* index application ************************************************/
 
 .index-title {
@@ -328,7 +329,8 @@ pointer-events: none; }
 }
 
 .jq-icon-error{
-  background-color: #fe5e52;
+  background-color: rgba(0, 0, 0, 0.9);
+}
 
 .jq-icon-success{
   background-color: rgba(0, 0, 0, 0.9);
@@ -372,7 +374,6 @@ pointer-events: none; }
 
  /******** FOOTER *************************/
 
- .footer {
+ .footer-main {
    position: relative;
  }
-}
