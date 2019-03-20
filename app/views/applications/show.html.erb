@@ -192,11 +192,11 @@
 				<h5 class="text-white mt-0 task-header">
 					<span class="job-details"> JOB DETAILS </span>
 					<span>
-						<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#edit-job-details-modal"><i class="material-icons ">edit</i></button>
+						<button type="button" class="btn btn-itmeo btn-edit-job-details" data-toggle="modal" data-target="#edit-job-details-modal"><i class="fas fa-pen"></i></button>
 					</span>
 				</h5>
 
-				<div class="card-body">
+				<div class="card-body collapse-job-details">
 					<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of
 						this job offer.<br></a>
 					<%else %>
@@ -226,7 +226,7 @@
 							<h5 class="text-white mt-0 task-header">
 								<span class="contact"> CONTACTS </span>
 								<span>
-									<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#create-contact-modal">Add</button>
+									<button type="button" class="btn btn-itmeo btn-new-contact" data-toggle="modal" data-target="#create-contact-modal"><i class="fas fa-plus"></i></button>
 								</span>
 							</h5>
                 
