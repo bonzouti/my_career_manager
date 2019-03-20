@@ -75,7 +75,6 @@
 
 .next-step {
   text-align: center;
-  margin-bottom: 0.75rem!important;
 }
 
 .break-word {
@@ -380,7 +379,41 @@ pointer-events: none; }
  .footer-main {
    position: relative;
  }
+/*****************************************/
+
+/******************** LANDING PAGE ********************/
+
+.lp-main-container{
+  background-color: rgba(0,0,0,.5);
+}
+
+.logo-container{
+  color: white;
+  margin-top: 10px;  
+}
+
+.lp-logo{
+  border: solid white 2px;
+  border-radius: 3px;
+  padding: 7px;
+}
+
+.lp-title-container{
+  flex: 1; 
+  color: white;
+}
+
+.lp-title{
+  font-weight: bold;  
+}
+
+.lp-phrase{
+  font-weight: normal;
+  color: #c9c9c9;
+}
  
+/******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
+
 a:link {
   color: #FFFFFF;
 }
