@@ -46,7 +46,7 @@
 				<h5 class="mt-0 task-header next-step-header bg-primary">MY PROCESS </h5>
 				<%if @application.has_no_next_step %>
 				<div>
-					<h5 class="text-white text-center m-4">No next step... <br><br> It may be time for a follow-up email?</h5>
+					<h5 class="text-white text-center font-weight-normal m-4">No next step... <br><br> It may be time for a follow-up email?</h5>
 				</div>
 				<%end%>
 				<div id="task-list-one">
@@ -125,9 +125,6 @@
 
 					<!-------------- End Card 'steps done' ---------------------->
 
-
-
-
 					<!-- Task Item End -->
 
 					<div class="container text-center pt-2">
@@ -144,6 +141,7 @@
 		<!--Start part NOTES-->
 
 		<div class="col-12 col-lg-8">
+		<div class="notes-userview">
 			<div id="accordion">
 				<div class="bg-note">
 					<div class="card bg-note" id="headingOne">
@@ -176,6 +174,7 @@
 				</div>
 				<!-- end card-->
 			</div>
+		</div>
 		</div>
 		<!-- end col -->
 	</div>
