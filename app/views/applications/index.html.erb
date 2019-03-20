@@ -106,7 +106,7 @@
 
                       <p class="mb-0">
                         <span class="pr-2 mb-2 d-inline-block">
-                          <%= application.position %></span>
+                          <%= application.jobtitle %></span>
                       </p>
                     </div> <!-- end card-body -->
                   </div>
@@ -117,6 +117,45 @@
                 </div> <!-- end company-list-2-->
               </div>
               <!-----END IDENTIFIED --->
+
+
+
+              <!-----SORTABLE --->
+              <div class="tasks mr-1">
+                <h5 class="mt-0 task-header text-left text-uppercase">
+                    <span>TEST SORTABLE 1 </span>
+                    <span><button type="button" class="btn btn-itmeo m-0" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
+                </h5>
+                <div id="sortable-test-1" class="task-list-items">
+
+                  <div class="card mb-0">
+                  TEST 1 
+                  </div>
+                  <div class="card mb-0">
+                  TEST 2 
+                  </div>
+                  <!-- Task Item End -->
+                </div> <!-- end company-list-2-->
+              </div>
+
+                <div class="tasks mr-1">
+                <h5 class="mt-0 task-header text-left text-uppercase">
+                    <span>TEST SORTABLE 2 </span>
+                    <span><button type="button" class="btn btn-itmeo m-0" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
+                </h5>
+                <div id="task-list-two" class="task-list-items">
+
+                  <div class="card mb-0">
+                  TEST 1 
+                  </div>
+                  <div class="card mb-0">
+                  TEST 2 
+                  </div>
+                  <!-- Task Item End -->
+                </div> <!-- end company-list-2-->
+              </div>
+              <!-----END SORTABLE --->
+
 
 
               <!-----START APPLIED --->
@@ -145,7 +184,7 @@
 
                       <p class="mb-0">
                         <span class="pr-2 mb-2 d-inline-block">
-                          <%= application.position %></span>
+                          <%= application.jobtitle %></span>
                       </p>
 
                     </div> <!-- end card-body -->
@@ -186,7 +225,7 @@
 
                       <p class="mb-0">
                         <span class="pr-2 mb-2 d-inline-block">
-                          <%= application.position %></span>
+                          <%= application.jobtitle %></span>
                       </p>
 
                     </div> <!-- end card-body -->
@@ -238,7 +277,7 @@
                   </div>
                   <div class="form-group">
                       <%= label_tag 'Job title *' %><br />
-                      <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title', required: true %>
+                      <%= text_field_tag :jobtitle, "", class: 'form-control', placeholder: 'Enter job title', required: true %>
                   </div>
                   <div class="form-group hidden-form">
                       <%= label_tag 'Status *' %><br />
@@ -287,7 +326,7 @@
                   </div>
                   <div class="form-group">
                       <%= label_tag 'Job title *' %><br />
-                      <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
+                      <%= text_field_tag :jobtitle, "", class: 'form-control', placeholder: 'Enter job title' %>
                   </div>
 
                   <div class="form-group hidden-form">
@@ -338,7 +377,7 @@
                   </div>
                   <div class="form-group">
                       <%= label_tag 'Job title *' %><br />
-                      <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
+                      <%= text_field_tag :jobtitle, "", class: 'form-control', placeholder: 'Enter job title' %>
                   </div>
 
                   <div class="form-group hidden-form">

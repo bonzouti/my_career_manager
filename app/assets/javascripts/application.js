@@ -12,8 +12,11 @@
 //
 //= require jquery3
 //= require jquery_ujs
+//= require jquery-ui/widget
+//= require jquery-ui/sortable
 //= require activestorage
 //= require_tree .
+//= require turbolinks
 
 //= require assets/js/app.min
 //= require assets/js/dragula.min

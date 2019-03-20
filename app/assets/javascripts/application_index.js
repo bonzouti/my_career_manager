@@ -16,17 +16,15 @@ $(document).ready(function() {
     $("#task-list-four").toggle()
   })
 
-/*
-  $("#status-header-2").click(function() {
-    $("#task-list-two").toggle(200)
-  })
+  document.getElementById('sortable-test-1').addEventListener("turbolinks:load", function(){
+    
+    console.log("turbolinks detected")
+    $("#sortable-test-1").sortable();
+  
+  });
 
-  $("#status-header-3").click(function() {
-    $("#task-list-three").toggle(200)
-  })
+  document.addEventListener("turbolinks:load", function() {
+    alert("ok!")
+   });
 
-  $("#status-header-4").click(function() {
-    $("#task-list-four").toggle(200)
-  })
-*/
 })
