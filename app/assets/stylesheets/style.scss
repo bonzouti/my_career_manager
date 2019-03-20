@@ -215,6 +215,7 @@
   border-color: white!important;
 }
 
+
  /********************CARD NEXT STEP - SHOW ********************/ 
 
 .step-category-show{
@@ -300,3 +301,7 @@ pointer-events: none; }
     color: #fff;
     background-color: #f09819;
     border:none; }
+
+    .text-transparent-black{
+      color:  rgba(0, 0, 0, 0.7);
+    }
