@@ -313,3 +313,27 @@ pointer-events: none; }
 .contact {
   margin-left: 15px;
 }
+ /******************** UPLOAD ********************/
+ .image-upload>input {
+   display: none;
+ }
+
+ .image-upload>label {
+   cursor: pointer;
+ }
+
+ .upload-item {
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+
+ .col-card-download {
+   margin-top: 30px;
+ }
+
+ .fa-cloud-download-alt {
+   color: white;
+ }
+ .text-transparent-black {
+   color: rgba(0, 0, 0, 0.7);
+ }
