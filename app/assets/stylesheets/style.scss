@@ -258,8 +258,8 @@
 }
 .btn:focus, .btn.focus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.15rem #ff5858;
-          box-shadow: 0 0 0 0.15rem #ff5858; }
+  -webkit-box-shadow: 0 0 0 0.05rem #ff5858;
+          box-shadow: 0 0 0 0.05rem #ff5858; }
 .btn.disabled, .btn:disabled {
   opacity: 0.65; }
 .btn:not(:disabled):not(.disabled) {
@@ -303,58 +303,27 @@ pointer-events: none; }
     color: #fff;
     background-color: #f09819;
     border:none; }
-.bg-note {
-  color:white;
-  background-color: rgba(0, 0, 0, 0.3) !important;
-}
-.job-details {
-  margin-left: 15px;
-}
 
- /******************** NOTIFICATIONS ********************/ 
+    .text-transparent-black{
+      color:  rgba(0, 0, 0, 0.7)!important;
+    }
+
+    .text-salmon{
+      color: #ff5858
+    }
+
+ /******************** UPLOAD ********************/ 
 
 
-.jq-icon-warning{
-  background-color: #f1921f;
-}
-
-.jq-icon-error{
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.jq-icon-success{
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.jq-icon-info{
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.contact {
-  margin-left: 15px;
-}
-
-/******************** UPLOAD ********************/
- .image-upload>input {
+.image-upload > input {
    display: none;
- }
+}
 
- .image-upload>label {
-   cursor: pointer;
- }
+.image-upload > label {
+  cursor:pointer;
+}
 
- .upload-item {
-   margin-top: 10px;
-   margin-bottom: 10px;
- }
-
- .col-card-download {
-   margin-top: 30px;
- }
-
- .fa-cloud-download-alt {
-   color: white;
- }
- .text-transparent-black {
-   color: rgba(0, 0, 0, 0.7);
- }
+.upload-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
