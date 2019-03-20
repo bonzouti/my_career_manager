@@ -327,3 +327,31 @@ pointer-events: none; }
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.col-card-download {
+  margin-top: 30px;
+}
+
+.fa-cloud-download-alt{
+  color: white;
+}
+
+ /******************** NOTIFICATIONS ********************/ 
+
+
+.jq-icon-warning{
+  background-color: #f1921f;
+}
+
+.jq-icon-error{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.jq-icon-success{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.jq-icon-info{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+

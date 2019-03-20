@@ -25,26 +25,29 @@
 
     <!-- Alert bootstrap --->
     <% flash.each do |key, value| %>
+      <% if value != '' %>
+      
+          <div class="jq-toast-wrap top-right">
+            <div class="<%= flash_class(key) %>" style="text-align: left; display: block;">
+              <span class="close-jq-toast-single">×</span>
+              <%= value %>
+            </div>
+          </div>
 
-      <div class="jq-toast-wrap top-right">
-        <div class="<%= flash_class(key) %>" style="text-align: left; display: block;">
-          <span class="close-jq-toast-single">×</span>
-          <%= value %>
-        </div>
-      </div>
+          <script type="text/javascript">
 
-      <script type="text/javascript">
+              setTimeout(function() {
 
-          setTimeout(function() {
+              $($cardToDisplay).css({
+                        display: 'none'
+                      });
 
-          $($cardToDisplay).css({
-                    display: 'none'
-                  });
-
-          }, 4000);
+              }, 4000);
 
 
-    </script>
+        </script>
+
+      <% end %>
 
     <% end %>
 

@@ -20,7 +20,7 @@ $( document ).ready(function() {
                     display: 'none'
                   });
 
-    }, 2000);
+    }, 4000);
 
 
     });
