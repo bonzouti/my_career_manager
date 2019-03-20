@@ -92,7 +92,7 @@
 
 								<div class="col-3 d-flex align-items-center justify-content-around">
 									<i class="fas fa-edit" data-toggle="modal" data-target="#update-next_step-modal-<%= next_step.id %>"></i>
-									<%= check_box_tag "checkbox-step-#{next_step.id}" , 'status', false , data: {remote: true, url: validate_application_step_path(@application, next_step), method: :patch, :confirm => 'This will validate your step and move it to the card "Notes". Are you sure you want to proceed ?'}, class:"checkbox-step" %>
+									<%= check_box_tag "checkbox-step-#{next_step.id}" , 'status', false , data: {remote: true, url: validate_application_step_path(@application, next_step), method: :patch }, class:"checkbox-step" %>
 								</div>
 							</div>
 							<!-- end main-row -->
