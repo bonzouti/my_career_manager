@@ -102,7 +102,9 @@
 
 #notes {
   border-style: none;
-}
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+ }
 
 .save-changes {
   margin-bottom: 0px;
@@ -429,3 +431,6 @@ a:hover {
 a:active {
   color: #333333;
 }
+
+
+
