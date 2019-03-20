@@ -121,6 +121,15 @@
   padding: 1rem;
 }
 
+#collapseOne {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.app-show-bottom {
+  margin-top: 30px;
+}
+
 /********************INDEX_CONTACTS********************/
 
 
@@ -357,4 +366,13 @@ pointer-events: none; }
  }
  .text-transparent-black {
    color: rgba(0, 0, 0, 0.7);
+ }
+
+
+
+ 
+ /******** FOOTER *************************/
+
+ .footer {
+   position: relative;
  }
