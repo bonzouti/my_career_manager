@@ -30,10 +30,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :update] do
     resources :resumes, only: [:create]
-    member do
-        put 'update_user_details'
-      end 
-    end
+  end
 
   resources :archived, :only => [:index]
   

@@ -21,16 +21,4 @@ class UsersController < ApplicationController
     end
   end
 
-
-  def update_user_details
-    @user = current_user
-
-    if @user.update(country: params[:country], full_name: params[:full_name])
-      redirect_to root_path
-    else
-      render :edit
-    end
-  end
-
-
 end
