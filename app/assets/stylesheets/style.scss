@@ -107,7 +107,6 @@
 
 .save-changes {
   margin-bottom: 0px;
-  padding-left: 15px;
 }
 
 .custom-accordion-title {
@@ -381,3 +380,19 @@ pointer-events: none; }
  .footer-main {
    position: relative;
  }
+ 
+a:link {
+  color: #FFFFFF;
+}
+
+a:visited {
+  color: #FFFFFF;
+}
+
+a:hover {
+  color: #CCCCCC;
+}
+
+a:active {
+  color: #333333;
+}

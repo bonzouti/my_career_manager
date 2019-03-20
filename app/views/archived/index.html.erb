@@ -38,7 +38,7 @@
                                                             <span class="font-13 text-white"><%=application.position%></span>
                                                         </td>
                                                         <td><%=link_to "View", application_path(application), method: :get, class: "text-white" %></td>
-                                                        <td><%=link_to "Delete", application_path(application), method: :delete, data: { confirm: 'This action is irreversible. Are you sure?' }, class: "text-white" %></td>
+                                                        <td><%=link_to "Delete Forever", application_path(application), method: :delete, class: "text-white" %></td>
                                                     </tr><%end%> <%end%>    
                                                 </tbody>
                                             </table>

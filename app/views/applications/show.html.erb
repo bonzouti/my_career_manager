@@ -92,7 +92,7 @@
 
 								<div class="col-3 d-flex align-items-center justify-content-around">
 									<i class="fas fa-edit" data-toggle="modal" data-target="#update-next_step-modal-<%= next_step.id %>"></i>
-									<%= check_box_tag "checkbox-step-#{next_step.id}" , 'status', false , data: {remote: true, url: validate_application_step_path(@application, next_step), method: :patch, :confirm => 'This will validate your step and move it to the card "Notes". Are you sure you want to proceed ?'}, class:"checkbox-step" %>
+									<%= check_box_tag "checkbox-step-#{next_step.id}" , 'status', false , data: {remote: true, url: validate_application_step_path(@application, next_step), method: :patch }, class:"checkbox-step" %>
 								</div>
 							</div>
 							<!-- end main-row -->
@@ -130,8 +130,8 @@
 
 					<!-- Task Item End -->
 
-					<div class="container text-center">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-step-modal">Add step</button>
+					<div class="container text-center pt-2">
+						<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#new-step-modal">Add step</button>
 					</div>
 				</div>
 				<!-- end company-list-1-->
@@ -192,20 +192,21 @@
 				<h5 class="text-white mt-0 task-header">
 					<span class="job-details"> JOB DETAILS </span>
 					<span>
-						<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#edit-job-details-modal"><i class="material-icons ">edit</i></button>
+						<button type="button" class="btn btn-itmeo-transparent" data-toggle="modal" data-target="#edit-job-details-modal"><i class="fas fa-edit text-white"></i></button>
 					</span>
 				</h5>
 
-				<div class="card-body">
+				<div class="card-body collapse-job-details">
 					<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of
 						this job offer.<br></a>
 					<%else %>
 					<h5 class="text-transparent-black">Link of application</h5>
-					<%= link_to @application.joboffer_link %><br><br>
+					<%= link_to @application.joboffer_link, @application.joboffer_link,:target => "_blank" %><br><br>
 					<h5 class="text-transparent-black"> Description </h5>
 					<%= simple_format(@application.joboffer_description) %>
+					<%end %>
 				</div>
-				<%end %>
+				
 			</div> <!-- end card-body-->
 		</div> <!-- end card-->
 	</div> <!-- end col-->
@@ -220,16 +221,14 @@
 	<div class="row align-items-center">
 		<div class="col-12">
 			<div class="card bg-note">
-				<div class=" bg-note">
 					<div class="row align-items-center">
 						<div class="col-12">
 							<h5 class="text-white mt-0 task-header">
 								<span class="contact"> CONTACTS </span>
 								<span>
-									<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#create-contact-modal">Add</button>
+									<button type="button" class="btn btn-itmeo-transparent" data-toggle="modal" data-target="#create-contact-modal"><i class="fas fa-plus text-white"></i></button>
 								</span>
 							</h5>
-                
 							<div id="collapse-contact" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
 								<div class="card-body">
 
@@ -293,8 +292,6 @@
 											</div> <!-- end table-responsive-->
 											<%end%>
 								</div> <!-- end card body-->
-
-							</div>
 							<!-- end row-->
 						</div>
 						<!-- end card-body -->
