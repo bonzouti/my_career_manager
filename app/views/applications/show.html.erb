@@ -46,7 +46,7 @@
 				<h5 class="mt-0 task-header next-step-header bg-primary">MY PROCESS </h5>
 				<%if @application.has_no_next_step %>
 				<div>
-					<h5 class="text-white text-center font-weight-normal m-4">No next step... <br><br> It may be time for a follow-up email?</h5>
+					<h5 class="text-white text-center font-weight-normal m-2">No next step... <br> It may be time for a follow-up email?</h5>
 				</div>
 				<%end%>
 				<div id="task-list-one">
@@ -141,11 +141,12 @@
 		<!--Start part NOTES-->
 
 		<div class="col-12 col-lg-8">
-		<div class="notes-userview">
+		<div class="notes-userview b-not">
+		<div class="bg-note">
 			<div id="accordion">
-				<div class="bg-note">
+				
 					<div class="card bg-note" id="headingOne">
-						<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+						<a class="custom-accordion-title d-block pt-2 pb-2" aria-expanded="true"
 						 aria-controls="collapseOne">
 							<h5 class="text-white mt-0 text-center ">NOTES </h5>
 						</a>
@@ -154,13 +155,13 @@
 						<div class="card-body">
 							<div class="row align-items-center">
 
-								<div class="edit-notes w-100 text-center">
+								<div class="edit-notes text-center">
 									<%= form_tag url_for(action: 'update_notes'), method: "put", remote: true do %>
 									<div class="form-group text-edit-notes">
 										<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'Click here to write your notes then save your changes', rows: 8  %>
 									</div>
 									<div class="form-group save-changes">
-										<%= submit_tag "Save changes", class:"btn btn-itmeo btn-alert-success" %>
+										<%= submit_tag "Save", class:"btn btn-itmeo btn-alert-success" %>
 									</div>
 									<% end %>
 								</div>
