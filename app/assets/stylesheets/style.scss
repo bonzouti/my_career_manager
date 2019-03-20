@@ -317,6 +317,16 @@ pointer-events: none; }
 
 .image-upload > input {
    display: none;
+.jq-icon-error{
+  background-color: #fe5e52;
+}
+
+.jq-icon-success{
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.jq-icon-info{
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .image-upload > label {
