@@ -140,7 +140,7 @@
 
 									<div class="form-group text-center">
 
-										<%= submit_tag "Update", class: "btn btn-primary", style:"margin-right:20px" %>
+										<%= submit_tag "Update", class: "btn btn-itmeo", style:"margin-right:20px" %>
 										<%= link_to application_step_path(@application, next_step), method: :delete do %>
 
 										<button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button>
@@ -185,7 +185,7 @@
 					<!-- Task Item End -->
 
 					<div class="container text-center">
-						<%= link_to "Add step", new_application_step_path(@application), class: 'btn btn-primary btn-sm mt-3' %>
+						<%= link_to "Add step", new_application_step_path(@application), class: 'btn btn-itmeo btn-sm mt-3' %>
 					</div>
 				</div>
 				<!-- end company-list-1-->
@@ -199,12 +199,12 @@
 
 		<div class="col-12 col-lg-8">
 			<div id="accordion">
-				<div class="card">
-					<div class="card-header" id="headingOne">
+				<div class="bg-note">
+					<div class="card bg-note" id="headingOne">
 						<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
 						 aria-controls="collapseOne">
 
-							<h5 class="text-muted font-weight-normal mt-0 ">NOTES </h5>
+							<h5 class="text-white font-weight-normal mt-0 text-center ">NOTES </h5>
 						</a>
 					</div>
 					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
@@ -217,7 +217,7 @@
 										<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'write notes', rows: 8  %>
 									</div>
 									<div class="form-group save-changes">
-										<%= submit_tag "Save changes", class:"btn btn-primary btn-alert-success" %>
+										<%= submit_tag "Save changes", class:"btn btn-itmeo btn-alert-success" %>
 									</div>
 									<% end %>
 								</div>
@@ -238,30 +238,21 @@
 </div>
 <!-- end container-->
 
-
-
-
 <!--Start part JOB DETAILS-->
 <div class="container">
-	<div class="row align-items-center">
-		<div class="col-12">
-			<div class="card">
-				<div class="card-body">
-					<div class="row align-items-center">
-						<div class="col-12">
-
-							<h5 class="text-muted mt-0 text-truncate task-header bg-transparentblack">
+<div class="row align-items-center">
+<div class="col-12">
+         <div class="card bg-note"> 
+                <h5 class="text-white mt-0 task-header">
 								<span> JOB DETAILS </span>
 								<span>
-									<button type="button" class="btn btn-light btn-edit-job-details" data-toggle="modal" data-target="#edit-job-details-modal"><i
-										 class="material-icons">edit</i></button>
+									<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#edit-job-details-modal"><i
+										 class="material-icons ">edit</i></button>
 								</span>
 							</h5>
-
-							<div id="collapse-job-details" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-								<hr>
-								<div class="card-body job-details">
-									<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of
+                  
+                     <div class="card-body">
+                     <%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of
 										this job offer.<br></a>
 									<%else %>
 									<h5 class="text-primary">
@@ -272,38 +263,31 @@
 									<%= simple_format(@application.joboffer_description) %>
 								</div>
 								<%end %>
-							</div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
+														</div> <br/>
+													<%= render "edit_job_details_modal.html.erb" %>
 
-						</div>
-						<!-- end row-->
-					</div>
-					<!-- end card -->
-				</div>
-			</div>
-		</div>
-		<%= render "edit_job_details_modal.html.erb" %>
-		<!--End part JOB DETAILS-->
-
+<!--End part JOB DETAILS-->
 
 		<!--Start part CONTACTS -->
 
 		<div class="container ">
 			<div class="row align-items-center">
 				<div class="col-12">
-					<div class="card">
-						<div class="card-body">
+					<div class="card bg-note">
+						<div class=" bg-note">
 							<div class="row align-items-center">
 								<div class="col-12">
-									<h5 class="text-muted mt-0 text-truncate task-header">
+									<h5 class="text-white mt-0 task-header">
 										<span> CONTACTS </span>
 										<span>
-											<button type="button" class="btn btn-light btn-new-contact" data-toggle="modal" data-target="#create-contact-modal">Add</button>
+											<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#create-contact-modal">Add</button>
 										</span>
 									</h5>
 
 									<div id="collapse-contact" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-
-
 										<div class="card-body">
 
 											<%if @application.contacts.count == 0 %>
