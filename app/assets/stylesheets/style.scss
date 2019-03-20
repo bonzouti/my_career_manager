@@ -1,3 +1,4 @@
+
 /* index application ************************************************/
 
 .index-title {
@@ -267,8 +268,8 @@
 }
 .btn:focus, .btn.focus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.15rem #ff5858;
-          box-shadow: 0 0 0 0.15rem #ff5858; }
+  -webkit-box-shadow: 0 0 0 0.05rem #ff5858;
+          box-shadow: 0 0 0 0.05rem #ff5858; }
 .btn.disabled, .btn:disabled {
   opacity: 0.65; }
 .btn:not(:disabled):not(.disabled) {
@@ -328,15 +329,15 @@ pointer-events: none; }
 }
 
 .jq-icon-error{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #fe5e52;
 }
 
 .jq-icon-success{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .jq-icon-info{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .contact {
@@ -373,6 +374,6 @@ pointer-events: none; }
 
  /******** FOOTER *************************/
 
- .footer {
+ .footer-main {
    position: relative;
  }
