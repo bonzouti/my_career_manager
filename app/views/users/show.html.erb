@@ -16,9 +16,9 @@
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
-                                <div class="page-title-box text-white">
-                                    <h4 class="page-title">
-                                    User Profile
+                                <div class="page-title-box">
+                                    <h4 class="page-title text-transparent-black text-center">
+                                    USER PROFILE
                                     </h4> 
                                 </div>
                             </div>
@@ -64,64 +64,16 @@
                                 <!-- Personal-Information -->
                                 <div class="card-black upload-item">
                                     <div class="card-body">
-                                        <h4 class="header-title mt-0 mb-3">MY INFORMATION</h4>
+                                        <h4 class="header-title mt-0 mb-3">YOUR FEEDBACK MATTERS</h4>
 
                                         <hr/>
 
                                         <div class="text-left">
-                                            <p><strong>Full Name :</strong> <span class="ml-2"> <%=current_user.full_name%> </span></p>
-
-                                            <p><strong>Location :</strong> <span class="ml-2"> <%=current_user.country%> </span></p>
-
-                                            <button type="button" class="btn btn-itmeo btn-edit-user-details" data-toggle="modal" data-target="#edit-user-details-modal"> Update</button>
-
-                                        </div>
+                                            <p><span>Should you encounter any problems while using our platform, please write to our team at <a class="text-white" href="mailto:liobe.malogo@gmail.com">liobe.malogo@gmail.com </a></span></p>
+                                    </div>
                                     </div>
                                 </div>
                                 <!-- Personal-Information -->
-
-
-                                <!-- beginning modal -->
-                                    <div id="edit-user-details-modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;"
-                                    aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="card-black-form">
-                                                <!-- Title -->
-                                                <div class="card-black-form-header pt-4 pb-4 text-center">
-                                                    <h4 style="color:white">Update your details</h4>
-                                                </div>
-                                                <!-- End title -->
-                                                <div class="p-4">
-                                                    <%= form_tag url_for(action: 'update_user_details'), method: "put", remote: true do %>
-                                                    <div class="form-group">
-                                                        <%= label_tag 'Full name' %>
-                                                        <br />
-                                                        <%= text_field_tag :full_name, current_user.full_name, class: 'form-control', placeholder: 'Enter country' %>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <%= label_tag 'Country' %>
-                                                        <br />
-                                                        <%= text_field_tag :country, current_user.country, class: 'form-control', placeholder: 'Full name' %>
-                                                    </div>
-                                                    <div class="form-group text-center">
-                                                        <%= submit_tag "Edit user details", class:"btn btn-itmeo mt-3" %>
-                                                    </div>
-                                                    <% end %>
-                                                </div>
-                                                <!-- end card-body -->
-                                            </div>
-                                        </div>
-                                        <!-- /.modal-content -->
-                                    </div>
-                                    <!-- /.modal-dialog -->
-                                    </div>
-                                    <!--end modal -->
-
-                                
-
-                                
 
                             </div> <!-- end col-->
 

@@ -1,3 +1,4 @@
+
 /* index application ************************************************/
 
 .index-title {
@@ -106,7 +107,6 @@
 
 .save-changes {
   margin-bottom: 0px;
-  padding-left: 15px;
 }
 
 .custom-accordion-title {
@@ -119,6 +119,15 @@
 
 .card-body {
   padding: 1rem;
+}
+
+#collapseOne {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.app-show-bottom {
+  margin-top: 30px;
 }
 
 /********************INDEX_CONTACTS********************/
@@ -258,8 +267,8 @@
 }
 .btn:focus, .btn.focus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.15rem #ff5858;
-          box-shadow: 0 0 0 0.15rem #ff5858; }
+  -webkit-box-shadow: 0 0 0 0.05rem #ff5858;
+          box-shadow: 0 0 0 0.05rem #ff5858; }
 .btn.disabled, .btn:disabled {
   opacity: 0.65; }
 .btn:not(:disabled):not(.disabled) {
@@ -311,6 +320,10 @@ pointer-events: none; }
   margin-left: 15px;
 }
 
+.text-salmon{
+  color: #ff5858;
+}
+
  /******************** NOTIFICATIONS ********************/ 
 
 
@@ -356,7 +369,16 @@ pointer-events: none; }
    color: white;
  }
  .text-transparent-black {
-   color: rgba(0, 0, 0, 0.7);
+   color: rgba(0, 0, 0, 0.7)!important;
+ }
+
+
+
+
+ /******** FOOTER *************************/
+
+ .footer-main {
+   position: relative;
  }
 
 /******************** LANDING PAGE ********************/
@@ -388,4 +410,22 @@ pointer-events: none; }
 .lp-phrase{
   font-weight: normal;
   color: #c9c9c9;  
+ 
+/******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
+
+a:link {
+  color: #FFFFFF;
+}
+
+a:visited {
+  color: #FFFFFF;
+}
+
+a:hover {
+  color: #CCCCCC;
+}
+
+a:active {
+  color: #333333;
+>>>>>>> development
 }
