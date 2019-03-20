@@ -13,7 +13,7 @@
 
           <div class="p-4">
 
-          <%= form_tag(application_contacts_path(@application), method: "post", class: 'pl-3 pr-3') do %>
+          <%= form_tag(application_contacts_path(@application), method: "post", class: 'pl-3 pr-3', remote: true) do %>
 
           <div class="form-group">
             <%= label_tag(:first_name, "First name") %>
