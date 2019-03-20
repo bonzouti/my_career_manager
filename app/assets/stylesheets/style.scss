@@ -252,8 +252,10 @@
     -webkit-transition: none;
     transition: none; }
 .btn:hover {
-  color: #6c757d;
-  text-decoration: none; }
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  font-weight: 600;
+}
 .btn:focus, .btn.focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.15rem #ff5858;
