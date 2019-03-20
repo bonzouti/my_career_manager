@@ -121,6 +121,15 @@
   padding: 1rem;
 }
 
+#collapseOne {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.app-show-bottom {
+  margin-top: 30px;
+}
+
 /********************INDEX_CONTACTS********************/
 
 
@@ -258,8 +267,8 @@
 }
 .btn:focus, .btn.focus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.05rem #ff5858;
-          box-shadow: 0 0 0 0.05rem #ff5858; }
+  -webkit-box-shadow: 0 0 0 0.15rem #ff5858;
+          box-shadow: 0 0 0 0.15rem #ff5858; }
 .btn.disabled, .btn:disabled {
   opacity: 0.65; }
 .btn:not(:disabled):not(.disabled) {
@@ -303,37 +312,67 @@ pointer-events: none; }
     color: #fff;
     background-color: #f09819;
     border:none; }
+.bg-note {
+  color:white;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+.job-details {
+  margin-left: 15px;
+}
 
-    .text-transparent-black{
-      color:  rgba(0, 0, 0, 0.7)!important;
-    }
-
-    .text-salmon{
-      color: #ff5858
-    }
-
- /******************** UPLOAD ********************/ 
+ /******************** NOTIFICATIONS ********************/ 
 
 
-.image-upload > input {
-   display: none;
+.jq-icon-warning{
+  background-color: #f1921f;
+}
+
 .jq-icon-error{
-  background-color: #fe5e52;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .jq-icon-success{
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .jq-icon-info{
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.image-upload > label {
-  cursor:pointer;
+.contact {
+  margin-left: 15px;
 }
 
-.upload-item {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+/******************** UPLOAD ********************/
+ .image-upload>input {
+   display: none;
+ }
+
+ .image-upload>label {
+   cursor: pointer;
+ }
+
+ .upload-item {
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+
+ .col-card-download {
+   margin-top: 30px;
+ }
+
+ .fa-cloud-download-alt {
+   color: white;
+ }
+ .text-transparent-black {
+   color: rgba(0, 0, 0, 0.7)!important;
+ }
+
+
+
+
+ /******** FOOTER *************************/
+
+ .footer {
+   position: relative;
+ }
