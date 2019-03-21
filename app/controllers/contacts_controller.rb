@@ -28,10 +28,10 @@ class ContactsController < ApplicationController
   	@contact.update(first_name: params[:first_name], last_name: params[:last_name], position: params[:position],
      email: params[:email], phone: params[:phone])
 		if mobile_device?
-			flash[:warning] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
+			flash[:alert] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
 			redirect_to application_contacts_path(@application)
 		else
-			flash[:warning] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
+			flash[:alert] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
 			redirect_to application_path(@application)
 		end 
   end
