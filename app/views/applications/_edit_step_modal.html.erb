@@ -4,11 +4,13 @@
 <div id="update-next_step-modal-<%= next_step.id %>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-body">
-        <div class="text-center mt-2 mb-4">
+      <div class="card-black-form">
+        <div class="card-black-form-header text-center pt-4 pb-4">
           <h3> Update this step</h3>
           <i class="fas fa-stopwatch"></i>
         </div>
+
+        <div class="card-body p-4">
 
         <%= form_tag(application_step_path(@application, next_step), method: "put", class: 'pl-3 pr-3', remote: true) do %>
 
@@ -41,11 +43,10 @@
           <button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button>
           <% end %>
 
-
-
         </div>
 
         <% end %>
+      </div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

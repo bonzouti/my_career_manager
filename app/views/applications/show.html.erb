@@ -145,14 +145,14 @@
 		<!--Start part NOTES-->
 
 		<div class="col-12 col-lg-8">
-		<div class="notes-userview b-not">
+		<div class="notes-userview">
 		<div class="bg-note">
 			<div id="accordion">
 				
 					<div class="card bg-note" id="headingOne">
 						<a class="custom-accordion-title d-block pt-2 pb-2" aria-expanded="true"
 						 aria-controls="collapseOne">
-							<h5 class="text-white mt-0 text-center ">NOTES </h5>
+							<h5 class="text-white font-weight-normal mt-0 text-center ">NOTES </h5>
 						</a>
 					</div>
 					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
@@ -189,12 +189,12 @@
 <%= render "new_step_modal.html.erb" %>
 
 <!--Start part JOB DETAILS-->
-<div class="container app-show-bottom">
+<div class="container app-show-bottom pt-2">
 	<div class="row align-items-center">
 		<div class="col-12">
 			<div class="card bg-note">
 				<h5 class="text-white mt-0 task-header">
-					<span class="job-details"> JOB DETAILS </span>
+					<span class="job-details"> JOB DETAILS <i class="fas fa-angle-double-down text-white"></i></span>
 					<span>
 						<button type="button" class="btn btn-itmeo-transparent" data-toggle="modal" data-target="#edit-job-details-modal"><i class="fas fa-edit text-white"></i></button>
 					</span>
@@ -202,7 +202,7 @@
 
 				<div class="card-body collapse-job-details">
 					<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of
-						this job offer.<br></a>
+						this job offer.</a>
 					<%else %>
 					<h5 class="text-transparent-black">Link of application</h5>
 					<%= link_to @application.joboffer_link, @application.joboffer_link,:target => "_blank" %><br><br>
@@ -214,21 +214,21 @@
 			</div> <!-- end card-body-->
 		</div> <!-- end card-->
 	</div> <!-- end col-->
-</div> <br />
+</div> 
 <%= render "edit_job_details_modal.html.erb" %>
 
 <!--End part JOB DETAILS-->
 
 <!--Start part CONTACTS -->
 
-<div class="container ">
+<div class="container pt-2 ">
 	<div class="row align-items-center">
 		<div class="col-12">
 			<div class="card bg-note">
 					<div class="row align-items-center">
 						<div class="col-12">
 							<h5 class="text-white mt-0 task-header">
-								<span class="contact"> CONTACTS </span>
+								<span class="contact"> CONTACTS <i class="fas fa-angle-double-down text-white"></i></span>
 								<span>
 									<button type="button" class="btn btn-itmeo-transparent" data-toggle="modal" data-target="#create-contact-modal"><i class="fas fa-plus text-white"></i></button>
 								</span>
@@ -313,7 +313,7 @@
 
 
 		<!--Start part button archive-->
-		<div class="container text-center p-3">
+		<div class="container text-center p-2">
 			<%= link_to "Archive Application", archive_application_path(@application), method: 'GET', class: 'btn btn-itmeo btn-sm ml-3' %>
 		</div>
 		<!--End part button archive-->

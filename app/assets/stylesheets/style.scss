@@ -64,6 +64,8 @@
   justify-content: space-between;
   color:white;
   background-color: rgba(0, 0, 0, 0.3)!important;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 
 .bg-transparentblack {
@@ -329,6 +331,7 @@ pointer-events: none; }
   color:white;
   background-color: rgba(0, 0, 0, 0.3) !important;
   height: 100%;
+  border-radius: 0.25rem;
 }
 .job-details {
   margin-left: 15px;
@@ -441,7 +444,13 @@ pointer-events: none; }
 .lp-feature-list{
   margin-top: 10px;
   font-size: 15px;
-} 
+}
+
+@media screen and (min-width: 1200px) {
+  .auth-fluid-form-box {
+    max-width: 580px !important; 
+  }
+}
 
 /******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
 
@@ -461,4 +470,20 @@ a:active {
   color: #333333;
 }
 
+/******************** MODAL STEP - SHOW_APPLICATIONS ********************/
 
+.pb-4, .py-4{
+  padding-bottom: 1rem !important;
+}
+
+.pt-4, .py-4{
+  padding-top: 1rem !important;
+}
+
+/******************** ALL MODALS ********************/
+
+
+.p-4{
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
