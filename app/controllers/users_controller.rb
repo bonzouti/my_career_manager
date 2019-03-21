@@ -3,17 +3,9 @@ class UsersController < ApplicationController
 
 
   def show
-
-    @user = User.find(params[:id])
-        
+    @user = User.find(params[:id])  
     @applications = current_user.applications
-    @archived = []
-    
-    @applications.each do |application|
-      if application.status == "archived"
-        @archived << application
-      end
-    end
+    @archived = Application.where(status: "archived", user_id: current_user.id)
   end
 
   def archive

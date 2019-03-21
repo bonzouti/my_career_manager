@@ -15,7 +15,6 @@ class Admin::UsersController < ApplicationController
   end 
 
   def is_admin
-
 		if current_user.is_admin != true
 			redirect_to root_path
     end
