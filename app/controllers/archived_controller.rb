@@ -2,7 +2,7 @@ class ArchivedController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @archived = current_user.applications.to_a.select {|x| x.status == "archived"}.sort_by &:updated_at
+    @archived = Application.where(status: "archived", user_id: current_user.id)
   end
 
   def new
@@ -10,3 +10,4 @@ class ArchivedController < ApplicationController
 
 end
 
+#OK
