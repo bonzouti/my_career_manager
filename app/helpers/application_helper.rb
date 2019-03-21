@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
 
-    def flash_class(level)
+  def flash_class(level)
     case level
       when 'notice' then "jq-toast-single jq-has-icon jq-icon-info"
       when 'success' then "jq-toast-single jq-has-icon jq-icon-success"
