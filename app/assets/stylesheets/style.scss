@@ -64,6 +64,8 @@
   justify-content: space-between;
   color:white;
   background-color: rgba(0, 0, 0, 0.3)!important;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 
 .bg-transparentblack {
@@ -329,6 +331,7 @@ pointer-events: none; }
   color:white;
   background-color: rgba(0, 0, 0, 0.3) !important;
   height: 100%;
+  border-radius: 0.25rem;
 }
 .job-details {
   margin-left: 15px;
