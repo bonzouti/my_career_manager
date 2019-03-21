@@ -19,8 +19,8 @@
                             </div>
                         </div>     
                         <!-- end page title --> 
-                        <div class="row justify-content-center">
-                            <div class="col-lg-7">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-6">
                                 <div class="card bg-transparentblack">
                                     <div class="card-body">
                                         <% if @archived.count == 0 %>
@@ -37,8 +37,10 @@
                                                             <h5 class="font-15 mb-1 font-weight-normal text-white"><%=application.company_name%></h5>
                                                             <span class="font-13 text-white"><%=application.position%></span>
                                                         </td>
-                                                        <td><%=link_to "View", application_path(application), method: :get, class: "text-white" %></td>
-                                                        <td><%=link_to "Delete Forever", application_path(application), method: :delete, class: "text-white" %></td>
+                                                        <td><div class="d-flex justify-content-center flex-column align-items-center">
+                                                        <%=link_to "View", application_path(application), method: :get, class: "text-white", class: "btn btn-halloween" %></div></td>
+                                                        <td><div class="d-flex justify-content-center"><%=link_to "Delete Permanently", application_path(application), method: :delete, class: "text-white", class: "btn btn-salmon" %>
+                                                        </div></td>
                                                     </tr><%end%> <%end%>    
                                                 </tbody>
                                             </table>
