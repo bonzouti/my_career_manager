@@ -6,7 +6,7 @@
 			<div class="col text-center">
 				<ul class="nav bg-note nav-justified">
 					<li class="nav-item bg-contact">
-						<a href="#home1" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+						<a data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
 							<span class="d-none d-lg-block">Application</span>
 						</a>
 					</li>
@@ -40,7 +40,7 @@
 <!--Start part NEXT STEPS-->
 <div class="container">
 	<div class="row">
-		<div class="col-12 col-lg-4">
+		<div class="col-12 col-lg-4 app-show-top">
 			<div class="tasks nextsteps-userview">
 
 				<h5 class="mt-0 task-header next-step-header bg-primary">MY PROCESS </h5>
@@ -144,7 +144,7 @@
 
 		<!--Start part NOTES-->
 
-		<div class="col-12 col-lg-8">
+		<div class="col-12 col-lg-8 app-show-top">
 		<div class="notes-userview">
 		<div class="bg-note">
 			<div id="accordion">
@@ -189,19 +189,19 @@
 <%= render "new_step_modal.html.erb" %>
 
 <!--Start part JOB DETAILS-->
-<div class="container app-show-bottom pt-2">
+<div class="container pt-2">
 	<div class="row align-items-center">
 		<div class="col-12">
 			<div class="card bg-note">
 				<h5 class="text-white mt-0 task-header">
 					<span class="job-details"> JOB DETAILS <i class="fas fa-angle-double-down text-white"></i></span>
 					<span>
-						<button type="button" class="btn btn-itmeo-transparent" data-toggle="modal" data-target="#edit-job-details-modal"><i class="fas fa-edit text-white"></i></button>
+						<button type="button" class="btn btn-itmeo-transparent btn-edit-job-details" data-toggle="modal" data-target="#edit-job-details-modal"><i class="fas fa-edit text-white"></i></button>
 					</span>
 				</h5>
 
 				<div class="card-body collapse-job-details">
-					<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and/or description of
+					<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and description of
 						this job offer.</a>
 					<%else %>
 					<h5 class="text-transparent-black">Link of application</h5>
@@ -230,7 +230,7 @@
 							<h5 class="text-white mt-0 task-header">
 								<span class="contact"> CONTACTS <i class="fas fa-angle-double-down text-white"></i></span>
 								<span>
-									<button type="button" class="btn btn-itmeo-transparent" data-toggle="modal" data-target="#create-contact-modal"><i class="fas fa-plus text-white"></i></button>
+									<button type="button" class="btn btn-itmeo-transparent btn-new-contact" data-toggle="modal" data-target="#create-contact-modal"><i class="fas fa-plus text-white"></i></button>
 								</span>
 							</h5>
 							<div id="collapse-contact" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
