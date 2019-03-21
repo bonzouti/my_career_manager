@@ -3,4 +3,4 @@ $("body").removeClass("modal-open")
 
 $(".nextsteps-userview").replaceWith("<%= j render 'my_process', application: @application %>")
 
-$.NotificationApp.send("Validated step! You're moving forward in this process!", 'top-right', 'Background color', 'success');
+$.NotificationApp.send("Done !", "Your step is now deleted", 'top-right', 'Background color', 'info');
