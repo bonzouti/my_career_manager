@@ -23,6 +23,8 @@ class StepsController < ApplicationController
         else
           render :new
         end
+    @next_steps = @application.steps.to_a.select {|x| x.status == false}.sort_by &:date
+    @steps_done= @application.steps.to_a.select {|x| x.status == true}.sort_by &:date
 
     end
 
@@ -35,7 +37,9 @@ class StepsController < ApplicationController
         format.html {redirect_to application_path(@application)}
         format.js
     end
-
+    @next_steps = @application.steps.to_a.select {|x| x.status == false}.sort_by &:date
+    @steps_done= @application.steps.to_a.select {|x| x.status == true}.sort_by &:date
+    
 
     end
 
@@ -64,7 +68,9 @@ class StepsController < ApplicationController
 
 
         end
- 
+        @next_steps = @application.steps.to_a.select {|x| x.status == false}.sort_by &:date
+        @steps_done= @application.steps.to_a.select {|x| x.status == true}.sort_by &:date
+        
     end 
 
 
@@ -78,8 +84,11 @@ class StepsController < ApplicationController
             format.html {redirect_to application_path(@application)}
             format.js
         end
+        @next_steps = @application.steps.to_a.select {|x| x.status == false}.sort_by &:date
+        @steps_done= @application.steps.to_a.select {|x| x.status == true}.sort_by &:date
+    
 
     end
-
+    
 
 end

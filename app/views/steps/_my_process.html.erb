@@ -1,7 +1,3 @@
-<% @next_steps = @application.steps.to_a.select {|x| x.status == false}.sort_by &:date %>
-<% @steps_done= @application.steps.to_a.select {|x| x.status == true}.sort_by &:date %>
-
-
 <div class="tasks nextsteps-userview">
 
     <h5 class="mt-0 next-step-header bg-primary">MY PROCESS </h5>
