@@ -101,15 +101,12 @@
                                                             <span class="text-white font-13">Updated: <%=application.updated_at%></span>
                                                         </td>
                                                         <td class="text-white text-center"><%=application.status%></td>
-                                                        <td>
-                                                          <ul class="text-white">
+                                                        <td><div class="d-flex flex-column justify-content-center align-items-center">
                                                             <%application.steps.each do |step|%>
-                                                            <li><%=step.category%> on <%=step.date%></li>
+                                                            <span class="text-white"><%=step.category%> on <%=step.date%></span>
                                                             <%end%>
-                                                            </ul>
-                                                          </td>
+                                                          </div></td>
                                                         <td class="text-center" > 
-                                                            <%= link_to "Edit", root_path, class: "btn btn-halloween" %>
                                                             <%= link_to "Delete", application_path(application), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-salmon" %> 
                                                         </td>
                                                     </tr>
