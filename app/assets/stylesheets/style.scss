@@ -35,6 +35,7 @@
 .nextsteps-userview {
   width: 100%;
   height: 100%;
+  padding-bottom: 0px;
 }
 
 .notes-userview {
@@ -140,8 +141,12 @@
   padding-right: 20px;
 }
 
-.app-show-bottom {
-  margin-top: 30px;
+.app-show-top {
+  margin-bottom: 30px;
+}
+
+.pt-2 {
+  padding-bottom: 15px;
 }
 
 /********************INDEX_CONTACTS********************/
@@ -332,6 +337,7 @@ pointer-events: none; }
   background-color: rgba(0, 0, 0, 0.3) !important;
   height: 100%;
   border-radius: 0.25rem;
+  margin-bottom: 0px;
 }
 .job-details {
   margin-left: 15px;
