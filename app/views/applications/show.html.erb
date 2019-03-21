@@ -201,8 +201,7 @@
 				</h5>
 
 				<div class="card-body collapse-job-details">
-					<%if @application.has_no_joboffer_details == true %> <a> You can keep here the link and description of
-						this job offer.</a>
+					<%if @application.has_no_joboffer_details == true %> <a> No job offer link or description.</a>
 					<%else %>
 					<h5 class="text-transparent-black">Link of application</h5>
 					<%= link_to @application.joboffer_link, @application.joboffer_link,:target => "_blank" %><br><br>
