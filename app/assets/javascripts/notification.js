@@ -1,29 +1,18 @@
 $( document ).ready(function() {
 
-
-/*---------------------SUCCESS NOTIFICATION-------------------------- */
-
-    $buttonToDisplayAlert =  $('.btn-alert-success')
+    //close the notification automatically after a certain time
     $cardToDisplay = $('.jq-has-icon')
     $buttonToCloseAlert = $('.close-jq-toast-single')
 
-    //On click the notification message is shown and closed
-    $($buttonToDisplayAlert).click(function() {
+    setTimeout(function() {
 
-          $($cardToDisplay).css({
-          display: 'block'
-        });
+      $($cardToDisplay).css({
 
-          setTimeout(function() {
-
-          $($cardToDisplay).css({
                     display: 'none'
-                  });
+      });
 
-    }, 4000);
+          }, 4000);
 
-
-    });
 
     // On click on the cross the notification is hidden 
     $($buttonToCloseAlert).click(function() {
