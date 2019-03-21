@@ -163,7 +163,7 @@
 								<div class="edit-notes text-center">
 									<%= form_tag url_for(action: 'update_notes'), method: "put", remote: true do %>
 									<div class="form-group text-edit-notes">
-										<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'Click here to write your notes then save your changes', rows: 8  %>
+										<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'Write your notes here! Then, save your changes', rows: 8  %>
 									</div>
 									<div class="form-group save-changes text-right">
 										<%= submit_tag "Save", class:"btn btn-itmeo btn-alert-success" %>

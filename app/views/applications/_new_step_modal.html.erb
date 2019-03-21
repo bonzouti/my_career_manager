@@ -33,11 +33,11 @@
           </div>
           <div class="form-group">
             <%= label_tag 'Title' %><br />
-            <%= text_field_tag :title, @step.title, class: 'form-control', placeholder: 'Write the title here' %>
+            <%= text_field_tag :title, @step.title, class: 'form-control', placeholder: "What's important to know?" %>
           </div>
           <div class="form-group">
             <%= label_tag 'Description' %><br />
-            <%= text_area_tag :description, @step.description, class: 'form-control', placeholder: 'Describe the step here' %>
+            <%= text_area_tag :description, @step.description, class: 'form-control', placeholder: 'Note here anything that could be useful (What are the expectations, goals, of this step ? Who will you talk to, what should you remind of?)' %>
           </div>
           <div class="form-group text-center">
             <%= label_tag '' %><br />
