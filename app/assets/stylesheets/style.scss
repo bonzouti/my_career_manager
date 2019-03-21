@@ -75,7 +75,6 @@
 
 .next-step {
   text-align: center;
-  margin-bottom: 0.75rem!important;
 }
 
 .break-word {
@@ -103,7 +102,9 @@
 
 #notes {
   border-style: none;
-}
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+ }
 
 .save-changes {
   margin-bottom: 0px;
@@ -381,6 +382,12 @@ pointer-events: none; }
    position: relative;
  }
 
+.wrapper {
+  min-height: 85vh;
+}
+/*****************************************/
+
+
 /******************** LANDING PAGE ********************/
 
 .lp-main-container{
@@ -416,6 +423,7 @@ pointer-events: none; }
   margin-top: 10px;
   font-size: 15px;
 } 
+
 /******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
 
 a:link {
@@ -433,4 +441,3 @@ a:hover {
 a:active {
   color: #333333;
 }
-

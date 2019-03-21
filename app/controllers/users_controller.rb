@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :user_match, only: [:show] 
+
+
   def show
 
     @user = User.find(params[:id])
@@ -18,6 +21,13 @@ class UsersController < ApplicationController
     @application.status = "archived"
     if @application.save
         redirect_to root_path
+    end
+  end
+
+  def user_match
+    @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to root_path
     end
   end
 

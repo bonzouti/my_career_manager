@@ -15,18 +15,5 @@ $(document).ready(function() {
   $(".button-header-4").click(function() {
     $("#task-list-four").toggle()
   })
-
-/*
-  $("#status-header-2").click(function() {
-    $("#task-list-two").toggle(200)
-  })
-
-  $("#status-header-3").click(function() {
-    $("#task-list-three").toggle(200)
-  })
-
-  $("#status-header-4").click(function() {
-    $("#task-list-four").toggle(200)
-  })
-*/
+  
 })

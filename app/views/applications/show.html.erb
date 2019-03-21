@@ -60,10 +60,10 @@
 							<div class="row">
 								<div class="col">
 									<div class="row justify-content-center">
-										<span class="badge step-category-show <%= 'badge-success' if next_step.category == 'interview' %><%= 'badge-warning' if next_step.category == 'phone interview' %><%= 'badge-danger' if next_step.category == 'follow-up' %>">
+										<span class="badge step-category-show <%= 'badge-danger' if next_step.category == 'interview' %><%= 'badge-warning' if next_step.category == 'phone interview' %><%= 'badge-info' if next_step.category == 'follow-up' %><%= 'badge-primary' if next_step.category == 'application sent' %>">
 											<%= next_step.category %>
 										</span>
-										<small class=" badge step-date-show d-flex align-items-center <%= 'badge-success-lighten' if next_step.category == 'interview' %><%= 'badge-warning-lighten' if next_step.category == 'phone interview' %><%= 'badge-danger-lighten' if next_step.category == 'follow-up' %>">
+										<small class=" badge step-date-show d-flex align-items-center <%= 'badge-danger-lighten' if next_step.category == 'interview' %><%= 'badge-warning-lighten' if next_step.category == 'phone interview' %><%= 'badge-info-lighten' if next_step.category == 'follow-up' %><%= 'badge-primary-lighten' if next_step.category == 'application sent' %>">
 											<% unless next_step.date == nil %>
 											<%= next_step.date.strftime '%a %m/%d' %>
 											<% end %>
@@ -131,7 +131,7 @@
 					<!-- Task Item End -->
 
 					<div class="container text-center pt-2">
-						<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#new-step-modal">Add step</button>
+						<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#new-step-modal">Add Step</button>
 					</div>
 				</div>
 				<!-- end company-list-1-->
@@ -149,14 +149,14 @@
 					<div class="card bg-note" id="headingOne">
 						<a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
 						 aria-controls="collapseOne">
-							<h5 class="text-white font-weight-normal mt-0 text-center ">NOTES </h5>
+							<h5 class="text-white mt-0 text-center ">NOTES </h5>
 						</a>
 					</div>
 					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 						<div class="card-body">
 							<div class="row align-items-center">
 
-								<div class="edit-notes w-100">
+								<div class="edit-notes w-100 text-center">
 									<%= form_tag url_for(action: 'update_notes'), method: "put", remote: true do %>
 									<div class="form-group text-edit-notes">
 										<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'Click here to write your notes then save your changes', rows: 8  %>
