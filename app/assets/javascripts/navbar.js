@@ -32,15 +32,4 @@ $( document ).ready(function() {
             $smallsizeLink.css("display", "none");
     }
 
-
-/* -------------------NEXT-STEP SHOW ---------------------------- */
-
-//Method to keep the checkbox unchecked even when there is an alert popping
-$checkboxStep = $('.checkbox-step')
-
-$checkboxStep.click(function() {
-  console.log("click checked");
-  $checkboxStep.prop('checked', false);
-});
-
 });
