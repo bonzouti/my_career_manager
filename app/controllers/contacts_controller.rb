@@ -45,11 +45,11 @@ class ContactsController < ApplicationController
      email: params[:email], phone: params[:phone])
 		
 		if mobile_device?
-			flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
+			flash[:warning] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
 			redirect_to application_contacts_path(@application)
 		else
 
-			flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
+			flash[:warning] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
 			redirect_to application_path(@application)
 		end 
 
