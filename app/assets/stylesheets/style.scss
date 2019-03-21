@@ -441,9 +441,11 @@ pointer-events: none; }
 }
 
 @media screen and (min-width: 1200px) {
-  .auth-fluid-form-box {
-    max-width: 580px !important; 
+
+.auth-fluid .auth-fluid-form-box{
+  max-width: 780px;
   }
+
 }
 
 /******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
