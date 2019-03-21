@@ -149,9 +149,9 @@
 
 /********************LANDING PAGE********************/ 
 .bg-image-lp{
-  background: image-url("atrium.jpg");
-  background-size: 70%;
-  background-position: left 110% top 82%;
+  background: image-url("sunset_lp.jpeg");
+  background-size: 65%;
+  background-position: left 0% top 52%;
 }
 
  /********************FORMS********************/ 
@@ -387,6 +387,7 @@ pointer-events: none; }
 }
 /*****************************************/
 
+
 /******************** LANDING PAGE ********************/
 
 .lp-main-container{
@@ -418,6 +419,11 @@ pointer-events: none; }
   color: #c9c9c9;
 }
  
+.lp-feature-list{
+  margin-top: 10px;
+  font-size: 15px;
+} 
+
 /******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
 
 a:link {
@@ -435,6 +441,3 @@ a:hover {
 a:active {
   color: #333333;
 }
-
-
-
