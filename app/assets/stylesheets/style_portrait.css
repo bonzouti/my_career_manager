@@ -37,6 +37,9 @@
   .task-list-items:before {
     line-height: 6;
   }
+  .row-card {
+    display: none;
+  }
   /*
   #task-list-one:before {
     line-height: 60px;
