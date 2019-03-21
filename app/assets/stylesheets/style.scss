@@ -453,9 +453,11 @@ pointer-events: none; }
 }
 
 @media screen and (min-width: 1200px) {
-  .auth-fluid-form-box {
-    max-width: 900px !important; 
+
+.auth-fluid .auth-fluid-form-box{
+  max-width: 780px;
   }
+
 }
 
 /******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
@@ -474,6 +476,10 @@ a:hover {
 
 a:active {
   color: #333333;
+}
+/*************** Background contact **********/
+.bg-contact {
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 /******************** MODAL STEP - SHOW_APPLICATIONS ********************/
