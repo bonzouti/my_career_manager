@@ -421,11 +421,23 @@ pointer-events: none; }
   margin-top: 10px;  
 }
 
+.logo-mycareermanager {
+  background: image-url("logo-mycareermanager.png");
+  height: 180px;
+  width: 400px;
+  }
+
 .lp-logo{
   border: solid white 2px;
   border-radius: 3px;
   padding: 7px;
 }
+
+.logo-mycareermanager-navbar {
+  background: image-url("logo-mycareermanager-small.png");
+  height: 90px;
+  width: 250px;
+  }
 
 .lp-title-container{
   flex: 1; 
@@ -447,9 +459,11 @@ pointer-events: none; }
 }
 
 @media screen and (min-width: 1200px) {
-  .auth-fluid-form-box {
-    max-width: 580px !important; 
+
+.auth-fluid .auth-fluid-form-box{
+  max-width: 780px;
   }
+
 }
 
 /******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
