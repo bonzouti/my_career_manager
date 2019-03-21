@@ -427,6 +427,12 @@ pointer-events: none; }
   padding: 7px;
 }
 
+.logo-mycareermanager-navbar {
+  background: image-url("logo-mycareermanager-small.png");
+  height: 90px;
+  width: 250px;
+  }
+
 .lp-title-container{
   flex: 1; 
   color: white;
@@ -448,7 +454,7 @@ pointer-events: none; }
 
 @media screen and (min-width: 1200px) {
   .auth-fluid-form-box {
-    max-width: 580px !important; 
+    max-width: 900px !important; 
   }
 }
 
