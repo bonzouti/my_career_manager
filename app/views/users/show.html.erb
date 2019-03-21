@@ -88,7 +88,7 @@
                                         <div class="card-black tilebox-one">
                                             <div class="card-body">
                                                 <h6 class=" text-uppercase mt-0">Applications</h6>
-                                                <h2 class="m-b-20"><%=current_user.applications.count%></h2>
+                                                <h2 class="m-b-20"><%=@unarchived_applications.count%></h2>
                                                 <%= link_to "Add Application", new_application_path, class: "btn btn-itmeo" %>
                                             </div> <!-- end card-body-->
                                         </div> <!--end card-->
@@ -98,7 +98,7 @@
                                         <div class="card-black tilebox-one">
                                             <div class="card-body">
                                                 <h6 class=" text-uppercase mt-0">Steps</h6>
-                                                <h2 class="m-b-20"><span><%=current_user.steps.count%></span></h2>
+                                                <h2 class="m-b-20"><span><%=@steps.count%></span></h2>
                                                 <%= link_to "My dashboard", root_path, class: "btn btn-itmeo" %>
                                             </div> <!-- end card-body-->
                                         </div> <!--end card-->

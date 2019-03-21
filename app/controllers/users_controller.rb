@@ -4,8 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])  
-    @applications = current_user.applications
     @archived = Application.where(status: "archived", user_id: current_user.id)
+    @unarchived_applications = Application.where('status <> ?', "archived").where(user_id: current_user.id)
   end
 
   def archive
