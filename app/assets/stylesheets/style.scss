@@ -75,7 +75,6 @@
 
 .next-step {
   text-align: center;
-  margin-bottom: 0.75rem!important;
 }
 
 .break-word {
@@ -103,7 +102,9 @@
 
 #notes {
   border-style: none;
-}
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+ }
 
 .save-changes {
   margin-bottom: 0px;
@@ -148,9 +149,9 @@
 
 /********************LANDING PAGE********************/ 
 .bg-image-lp{
-  background: image-url("atrium.jpg");
-  background-size: 70%;
-  background-position: left 110% top 82%;
+  background: image-url("sunset_lp.jpeg");
+  background-size: 65%;
+  background-position: left 0% top 52%;
 }
 
  /********************FORMS********************/ 
@@ -320,6 +321,10 @@ pointer-events: none; }
   margin-left: 15px;
 }
 
+.text-salmon{
+  color: #ff5858;
+}
+
  /******************** NOTIFICATIONS ********************/ 
 
 
@@ -376,7 +381,51 @@ pointer-events: none; }
  .footer-main {
    position: relative;
  }
+
+.wrapper {
+  min-height: 85vh;
+}
+/*****************************************/
+
+
+/******************** LANDING PAGE ********************/
+
+.lp-main-container{
+  background-color: rgba(0,0,0,.5);
+}
+
+.logo-container{
+  color: white;
+  margin-top: 10px;  
+}
+
+.lp-logo{
+  border: solid white 2px;
+  border-radius: 3px;
+  padding: 7px;
+}
+
+.lp-title-container{
+  flex: 1; 
+  color: white;
+}
+
+.lp-title{
+  font-weight: bold;  
+}
+
+.lp-phrase{
+  font-weight: normal;
+  color: #c9c9c9;
+}
  
+.lp-feature-list{
+  margin-top: 10px;
+  font-size: 15px;
+} 
+
+/******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
+
 a:link {
   color: #FFFFFF;
 }

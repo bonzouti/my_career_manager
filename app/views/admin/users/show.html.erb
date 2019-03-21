@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h2 class="page-title text-center text-transparent-black">USER: <%=@user.email%> </h2>
+                                    <h2 class="page-title text-center text-transparent-black">USER : <%=@user.email%> </h2>
                                 </div>
                             </div>
                         </div>     
@@ -104,9 +104,7 @@
                                                         <td>
                                                           <ul class="text-white">
                                                             <%application.steps.each do |step|%>
-                                                            <li>
-                                                              <%=step.category%> on <%=step.date%>
-                                                              </li>
+                                                            <li><%=step.category%> on <%=step.date%></li>
                                                             <%end%>
                                                             </ul>
                                                           </td>
@@ -128,31 +126,6 @@
                         </div>
                         <!-- end row-->
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <!-- Personal-Information -->
-                                <div class="card bg-transparentblack">
-                                    <div class="card-body text-white">
-                                        <h4 class="header-title mt-0 mb-3">USER DETAILS</h4>
-
-                                        <hr/>
-
-                                        <div class="text-left">
-                                            <p class="text-white"><strong>Full Name :</strong><span class="ml-2"><%=@user.full_name%></span></p>
-
-                                            <p class="text-white"><strong>Email :</strong><span class="ml-2"><%=@user.email%></span></p>
-
-                                            <p class="text-white"><strong>Location :</strong><span class="ml-2"><%=@user.country%></span></p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Personal-Information -->
-
-
-                            </div> <!-- end col-->
-                                </div>
-                        <!-- end row-->
 
         
                         

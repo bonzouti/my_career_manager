@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :user_match, only: [:show] 
+
+
   def show
 
     @user = User.find(params[:id])
@@ -21,16 +24,11 @@ class UsersController < ApplicationController
     end
   end
 
-
-  def update_user_details
-    @user = current_user
-
-    if @user.update(country: params[:country], full_name: params[:full_name])
+  def user_match
+    @user = User.find(params[:id])
+    if @user != current_user
       redirect_to root_path
-    else
-      render :edit
     end
   end
-
 
 end

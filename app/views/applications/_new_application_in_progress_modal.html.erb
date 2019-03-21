@@ -1,0 +1,51 @@
+  <!-- beginning modal -->
+  <div id="new-modal-in_progress" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="card-black-form">
+              <!-- Title -->
+              <div class="card-black-form-header pt-4 pb-4 text-center">
+                <h4 style="color:white">Add an Application In Progress</h4>
+              </div>
+              <!-- End Title -->
+
+              <div class="card-body p-4">
+
+                  <%= form_tag url_for(action: 'create'), method: "post" do %>
+                  <div class="form-group">
+                      <%= label_tag 'Company *' %><br />
+                      <%= text_field_tag :company_name, "", class: 'form-control', placeholder: 'Enter company name' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Job title *' %><br />
+                      <%= text_field_tag :position, "", class: 'form-control', placeholder: 'Enter job title' %>
+                  </div>
+
+                  <div class="form-group hidden-form">
+                      <%= label_tag 'Status *' %><br />
+                      <%= text_field_tag :status, "in_progress", class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group">
+                      <%= label_tag 'Link to job offer' %><br />
+                      <%= url_field_tag :joboffer_link, "", class: 'form-control', placeholder: 'Enter link' %>
+                  </div>
+                  <div class="form-group">
+                      <%= label_tag 'Job offer description' %><br />
+                      <%= text_area_tag :joboffer_description, "", class: 'form-control', placeholder: 'Enter a description or copy-paste the job offer', size: "20x3"  %>
+                  </div>
+                  <div class="form-group text-center">
+                      <%= label_tag '' %><br />
+                      <%= submit_tag "Confirm", class:"btn btn-itmeo mt-3" %>
+                  </div>
+                  <% end %>
+              </div> <!-- end card-body -->
+          </div>
+          <!-- end card-body -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!--end modal -->
