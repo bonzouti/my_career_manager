@@ -404,6 +404,50 @@ pointer-events: none; }
 /*****************************************/
 
 
+/**********************badge****************/
+
+.badge-info {
+  background-color: #0098FF;
+  color: white;
+}
+
+.badge-info-lighten {
+  background-color: #B1DAFF;
+  color: #0098FF;
+}
+
+.badge-danger {
+  background-color: #FF1044;
+  color: white;
+}
+
+.badge-danger-lighten {
+  background-color: #FFD1F6;
+  color: #FF1044;
+}
+
+.badge-primary {
+  background-color: #309E6D;
+  color: white;
+}
+
+.badge-primary-lighten {
+  background-color: #A2D4A8;
+  color: #309E6D;
+}
+
+.badge-warning {
+  background-color: #0050FF;
+  color: white;
+}
+
+.badge-warning-lighten {
+  background-color: #B2C3FF;
+  color: #0050FF;
+
+}
+
+
 /******************** LANDING PAGE ********************/
 
 .lp-main-container{
@@ -499,3 +543,5 @@ a:active {
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
 }
+
+
