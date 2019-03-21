@@ -4,13 +4,13 @@
 	<div class="container p-3">
 		<div class="row">
 			<div class="col text-center">
-				<ul class="nav nav-pills bg-nav-pills nav-justified">
-					<li class="nav-item">
+				<ul class="nav bg-note nav-justified">
+					<li class="nav-item bg-contact">
 						<a href="#home1" data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
 							<span class="d-none d-lg-block">Application</span>
 						</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item ">
 						<%= link_to application_contacts_path(@application), class: 'nav-link rounded-0 ', data: { 'data-toggle' => 'tab'} do %>
 						<span class="d-none d-lg-block">Contacts (
 							<%=@application.contacts.count%>)</span>
@@ -221,7 +221,7 @@
 
 <!--Start part CONTACTS -->
 
-<div class="container pt-2 ">
+<div class="container pt-2  row-card">
 	<div class="row align-items-center">
 		<div class="col-12">
 			<div class="card bg-note">
