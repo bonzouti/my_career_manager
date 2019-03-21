@@ -422,7 +422,13 @@ pointer-events: none; }
 .lp-feature-list{
   margin-top: 10px;
   font-size: 15px;
-} 
+}
+
+@media screen and (min-width: 1200px) {
+  .auth-fluid-form-box {
+    max-width: 580px !important; 
+  }
+}
 
 /******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
 
