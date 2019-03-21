@@ -1,104 +1,115 @@
+<div class="wrapper">
+    <!--Start part of btn application && contact-->
+    <div class="container p-3">
+        <div class="row">
+            <div class="col text-center">
 
-            <!--Start part of btn application && contact-->
-                <div class="container p-3">
-                    <div class="row">
-                        <div class="col text-center">
+                <ul class="nav  bg-note nav-justified ">
 
-                            <ul class="nav  bg-note nav-justified ">
+                    <li class="nav-item">
+                        <%= link_to application_path(@application), class: 'nav-link rounded-0', data: { 'data-toggle' => 'tab'} do %>
+                        <span class="d-none d-lg-block">Application</span>
+                        <% end %>
+                    </li>
 
-                                <li class="nav-item">
-                                    <%= link_to application_path(@application), class: 'nav-link rounded-0', data: { 'data-toggle' => 'tab'} do %>
-                                        <span class="d-none d-lg-block">Application</span>
-                                    <% end %>
-                                </li>
+                    <li class="nav-item bg-contact">
+                        <%= link_to application_contacts_path, class: 'nav-link rounded-0 active', data: { 'data-toggle' => 'tab'} do %>
+                        <span class="d-none d-lg-block">Contacts (
+                            <%=@application.contacts.count%>)</span>
+                        <% end %>
+                        <!--</a> -->
+                    </li>
 
-                                <li class="nav-item bg-contact">
-                                        <%= link_to application_contacts_path, class: 'nav-link rounded-0 active', data: { 'data-toggle' => 'tab'} do %>
-                                        <span class="d-none d-lg-block">Contacts (<%=@application.contacts.count%>)</span>
-                                        <% end %>
-                                    <!--</a> -->
-                                </li>
+                </ul>
 
-                            </ul>
+            </div>
+        </div>
+    </div>
 
-                        </div>
-                    </div>
-                </div>
-
-            <!--Start part of btn application && contact-->
-    <div class="container" >
+    <!--Start part of btn application && contact-->
+    <div class="container">
         <div class="row">
             <div class="col">
                 <div class="bg-note">
-                     <div class="card-body">
+                    <div class="card-body">
 
-                     <%if @application.contacts.count == 0 %>
-                     <a> No contact saved for now. <a>
-                     <%else%>
+                        <%if @application.contacts.count == 0 %>
+                        <a> No contact saved for now. <a>
+                                <%else%>
 
-                        <div class="table-sm">
+                                <div class="table-sm">
 
-                            <table class="table table-sm table-centered mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Phone number</th>
-                                        <th>Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                                    <table class="table table-sm table-centered mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Phone number</th>
+                                                <th>Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-        							<% @contacts.each do |contact| %>
+                                            <% @contacts.each do |contact| %>
 
-                                        <tr>
-                                            <td> <%= contact.first_name %> <%= contact.last_name %> </td>
-                                            <td> <%= contact.position %></td>
-                                            <td>
-                                            	<%= tel_to contact.phone do %>
+                                            <tr>
+                                                <td>
+                                                    <%= contact.first_name %>
+                                                    <%= contact.last_name %>
+                                                </td>
+                                                <td>
+                                                    <%= contact.position %>
+                                                </td>
+                                                <td>
+                                                    <%= tel_to contact.phone do %>
 
-        										    <i class="fas fa-phone link-icon-sm"></i>
-                                                    <p class="link-text-lg"> <%= contact.phone %></p> 
-                                                   
-                                            	<% end %>
+                                                    <i class="fas fa-phone link-icon-sm"></i>
+                                                    <p class="link-text-lg">
+                                                        <%= contact.phone %>
+                                                    </p>
 
-                                        	</td>
-                                            <td> <%= mail_to(contact.email) do %>
+                                                    <% end %>
 
-                                            	<i class="fas fa-envelope link-icon-sm"></i> 
-                                                <p class="link-text-lg"> <%= contact.email %></p> 
-                                            	<% end %>
-                                            </td>
-                                            <td>
-                                              <i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                                <td>
+                                                    <%= mail_to(contact.email) do %>
 
-                                        <!----------------- MODAL UPDATE CONTACT-------------->
-                                        <%= render "applications/update_contact_modal.html.erb", contact: contact %>
+                                                    <i class="fas fa-envelope link-icon-sm"></i>
+                                                    <p class="link-text-lg">
+                                                        <%= contact.email %>
+                                                    </p>
+                                                    <% end %>
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i>
+                                                </td>
+                                            </tr>
+
+                                            <!----------------- MODAL UPDATE CONTACT-------------->
+                                            <%= render "applications/update_contact_modal.html.erb", contact: contact %>
 
 
-        							<% end %>
+                                            <% end %>
 
-                                </tbody>
-                            </table>
-                        </div> <!-- end table-responsive-->
-                        <%end%>
+                                        </tbody>
+                                    </table>
+                                </div> <!-- end table-responsive-->
+                                <%end%>
                     </div> <!-- end card body-->
-           <div class="row justify-content-center">
-            <button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#create-contact-modal" style="margin-bottom: 20px;">Add Contact</button>
-        </div>
+                    <div class="row justify-content-center">
+                        <button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#create-contact-modal"
+                            style="margin-bottom: 20px;">Add Contact</button>
+                    </div>
                 </div> <!-- end card -->
-             </div> <!-- end col -->
+            </div> <!-- end col -->
         </div> <!-- end row  -->
 
- 
-    </div>  <!-- end container  -->
+
+    </div> <!-- end container  -->
+</div>
 
 
 
-    <!---- MODAL CREATION CONTACT------------->
+<!---- MODAL CREATION CONTACT------------->
 
-   <%= render "applications/new_contact_modal.html.erb" %>
-
-
+<%= render "applications/new_contact_modal.html.erb" %>
