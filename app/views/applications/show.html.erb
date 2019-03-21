@@ -106,6 +106,13 @@
 
 					<% end %>
 
+					<!-------------- Start Button 'Add Step' ---------------------->
+
+					<div class="container text-center pt-2">
+						<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#new-step-modal">Add Step</button>
+					</div>
+					<!-------------- End button 'Add Step' ---------------------->
+
 					<!-------------- Start Card 'steps done' ---------------------->
 
 					<div class="card mb-0" id="past_steps_card" %>
@@ -126,10 +133,7 @@
 					<!-------------- End Card 'steps done' ---------------------->
 
 					<!-- Task Item End -->
-
-					<div class="container text-center pt-2">
-						<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#new-step-modal">Add Step</button>
-					</div>
+					
 				</div>
 				<!-- end company-list-1-->
 			</div>
@@ -160,7 +164,7 @@
 									<div class="form-group text-edit-notes">
 										<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'Click here to write your notes then save your changes', rows: 8  %>
 									</div>
-									<div class="form-group save-changes">
+									<div class="form-group save-changes text-right">
 										<%= submit_tag "Save", class:"btn btn-itmeo btn-alert-success" %>
 									</div>
 									<% end %>
