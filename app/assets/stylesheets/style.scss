@@ -52,10 +52,18 @@
 }
 
 .next-step-header {
-  background-color: #6f7884 !important;
-  color: white;
   justify-content: center!important;
   background-color: rgba(0, 0, 0, 0.3)!important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color:white;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  padding: 0.7rem;
+  margin: 0 -1rem;
+
 }
 
 .task-header {
@@ -97,6 +105,8 @@
 .p-3 {
   padding: 1rem!important;
 }
+
+
 
 /********************SHOW APPLICATION*******************/
 
@@ -142,11 +152,19 @@
 }
 
 .app-show-top {
-  margin-bottom: 30px;
+  margin-bottom: 18px;
 }
 
 .pt-2 {
   padding-bottom: 15px;
+}
+
+.p-2 {
+  padding-top: 28px!important;
+}
+
+.fa-angle-double-down {
+  margin-left: 10px;
 }
 
 /********************INDEX_CONTACTS********************/
