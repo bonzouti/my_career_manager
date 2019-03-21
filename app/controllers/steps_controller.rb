@@ -55,6 +55,7 @@ class StepsController < ApplicationController
         @application = Application.find(params[:application_id])
         @step = Step.find(params[:id])
         @step.destroy
+        @application.update_status
         respond_to do |format|
             format.html {redirect_to application_path(@application)}
             format.js
