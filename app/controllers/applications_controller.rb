@@ -14,8 +14,8 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
-    @next_steps = Step.where(status: "false", application: @application.id)
-    @steps_done = Step.where(status: "true", application: @application.id)
+    @next_steps = Step.where(status: "false", application: @application.id).order("date")
+    @steps_done = Step.where(status: "true", application: @application.id).order("date")
     @step = Step.new
   end
 
