@@ -412,6 +412,10 @@ pointer-events: none; }
   color: #c9c9c9;
 }
  
+.lp-feature-list{
+  margin-top: 10px;
+  font-size: 15px;
+} 
 /******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
 
 a:link {
@@ -429,3 +433,4 @@ a:hover {
 a:active {
   color: #333333;
 }
+
