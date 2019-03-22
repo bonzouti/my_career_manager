@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_174522) do
 
   create_table "applications", force: :cascade do |t|
     t.string "company_name"
-    t.string "position"
+    t.string "jobtitle"
     t.string "status"
     t.string "joboffer_link"
     t.text "joboffer_description"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_174522) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
 

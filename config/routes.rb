@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   	
     resources :contacts, only: [:index, :create, :update, :destroy]
 
+    collection do
+      patch :sort
+    end 
 
     member do
       get 'archive'
@@ -16,11 +19,9 @@ Rails.application.routes.draw do
     end
 
     resources :steps, only: [:new, :create, :update, :destroy] do
-
       member do
         patch 'validate'
       end
-
     end
 
   end

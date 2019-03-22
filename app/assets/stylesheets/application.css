@@ -13,6 +13,7 @@
  *= require_self
  *= require assets/css/app.min
  *= require assets/css/icons.min
+ *= require jquery-ui
  *= require_tree .
  */
 

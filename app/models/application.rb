@@ -5,7 +5,7 @@ class Application < ApplicationRecord
     has_many :contacts
 
     validates :company_name, presence: true
-    validates :position, presence: true
+    validates :jobtitle, presence: true
 
     
     def archive

@@ -21,7 +21,7 @@ RSpec.describe Application, type: :model do
     end
 
     describe "#position" do
-      it { expect(@application).to validate_presence_of(:position) }
+      it { expect(@application).to validate_presence_of(:jobtitle) }
     end
 
   end
