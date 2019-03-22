@@ -105,7 +105,7 @@
                                                     <tr>
                                                         <td>
                                                             <h5 class="font-15 mb-1 font-weight-normal text-white"><%=user.email%></h5>
-                                                            <% if user.applications.count > 0 %> <span class="text-white font-13">Looking for a job as a <%=user.applications.last.position%></span><% end %>
+                                                            <% if user.applications.count > 0 %> <span class="text-white font-13">Looking for a job as a <%=user.applications.last.jobtitle%></span><% end %>
                                                         </td>
                                                         <td class="text-center text-white"><%=user.applications.count%> </td>
                                                         <td class="text-center text-white"><%=user.steps.count%> </td>

@@ -6,9 +6,9 @@ class ApplicationsController < ApplicationController
   def index
     
     @next_steps = Step.where(status: "false").where('date > ?', Date.today).joins(:application).merge(Application.where(user_id: current_user.id))
-    @identified = Application.where(user_id: current_user.id, status: "identified").order("updated_at")
-    @applied = Application.where(user_id: current_user.id, status: "applied").order("updated_at")
-    @in_progress = Application.where(user_id: current_user.id, status: "in_progress").order("updated_at")
+    @identified = Application.where(user_id: current_user.id, status: "identified").order(:position)
+    @applied = Application.where(user_id: current_user.id, status: "applied").order(:position)
+    @in_progress = Application.where(user_id: current_user.id, status: "in_progress").order(:position)
   end
 
 
@@ -52,11 +52,11 @@ class ApplicationsController < ApplicationController
 
   def create
     @application = Application.new(company_name: params[:company_name], 
-      position: params[:position], status: params[:status], 
+      jobtitle: params[:jobtitle], status: params[:status], 
       joboffer_link: params[:joboffer_link], joboffer_description: params[:joboffer_description])
     @application.user = current_user
     if @application.save
-      flash[:success] = "Your application for the position '#{@application.position}' has been created"
+      flash[:success] = "Your application for the position '#{@application.jobtitle}' has been created"
       redirect_to application_path(@application)
     else
       render :new
@@ -68,7 +68,7 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
       @application.status = "archived"
       if @application.save
-        flash[:alert] = "The application for the position '#{@application.position}' has been archived"
+        flash[:alert] = "The application for the position '#{@application.jobtitle}' has been archived"
         redirect_to root_path
       end
   end
@@ -85,5 +85,12 @@ class ApplicationsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def sort
+    params[:application].each_with_index do |id, index|
+      Application.where(id: id).update_all(position: index + 1)
+    end
+    head :ok
+  end 
 
 end

@@ -87,7 +87,7 @@
                     <span>IDENTIFIED (<%= @identified.length %>) <br> <small>Time to send application !</small> </span>
                     <span><button type="button" class="btn btn-itmeo m-0 button-header-2" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
                 </h5>
-                <div id="task-list-two" class="task-list-items">
+                <div id="task-list-two" class="task-list-items" data-url="<%= sort_applications_path%>">
 
                   <%if @identified.count == 0%>
                   <div class="card-body p-3">
@@ -97,7 +97,7 @@
 
                   <!-- Task Item -->
                   <% @identified.each do |application| %>
-                  <div class="card mb-0 task-list-item">
+                  <div class="card mb-0 task-list-item" id="<%=dom_id(application)%>">
                     <div class="card-body p-0">
 
                       <h5 class="mt-2 mb-2">
@@ -120,44 +120,6 @@
 
 
 
-              <!-----SORTABLE --->
-              <div class="tasks mr-1">
-                <h5 class="mt-0 task-header text-left text-uppercase">
-                    <span>TEST SORTABLE 1 </span>
-                    <span><button type="button" class="btn btn-itmeo button-header-3 m-0" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
-                </h5>
-                <div id="sortable-test-1" class="task-list-items">
-
-                  <div class="card mb-0 task-list-item">
-                  TEST 1 
-                  </div>
-                  <div class="card mb-0 task-list-item">
-                  TEST 2 
-                  </div>
-                  <!-- Task Item End -->
-                </div> <!-- end company-list-2-->
-              </div>
-
-                <div class="tasks mr-1">
-                <h5 class="mt-0 task-header text-left text-uppercase">
-                    <span>TEST SORTABLE 2 </span>
-                    <span><button type="button" class="btn btn-itmeo button-header-3 m-0" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
-                </h5>
-                <div id="task-list-two" class="task-list-items">
-
-                  <div class="card mb-0">
-                  TEST 1 
-                  </div>
-                  <div class="card mb-0">
-                  TEST 2 
-                  </div>
-                  <!-- Task Item End -->
-                </div> <!-- end company-list-2-->
-              </div>
-              <!-----END SORTABLE --->
-
-
-
               <!-----START APPLIED --->
               <div class="tasks mr-1">
                 <h5 class="mt-0 task-header text-uppercase text-left">
@@ -165,7 +127,7 @@
                   <span><button type="button" class="btn btn-itmeo button-header-3" data-toggle="modal" data-target="#new-modal-applied"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
-                <div id="task-list-three" class="task-list-items">
+                <div id="task-list-three" class="task-list-items" data-url="<%= sort_applications_path%>">
 
                   <%if @applied.count == 0%>
                   <div class="card-body p-3">
@@ -175,7 +137,7 @@
 
                   <!-- Task Item -->
                   <% @applied.each do |application| %>
-                  <div class="card mb-0 task-list-item">
+                  <div class="card mb-0 task-list-item" id="<%=dom_id(application)%>">
                     <div class="card-body p-0">
 
                       <h5 class="mt-2 mb-2">
@@ -206,7 +168,7 @@
                   <span>In Progress (<%= @in_progress.length %>)<br> <small>Your running processes</small></span>
                   <span><button type="button" class="btn btn-itmeo button-header-4" data-toggle="modal" data-target="#new-modal-in_progress"><i class="fas fa-plus"></i></button></span>
                 </h5>
-                <div id="task-list-four" class="task-list-items">
+                <div id="task-list-four" class="task-list-items" data-url="<%= sort_applications_path%>">
 
                   <%if @in_progress.count == 0%>
                   <div class="card-body p-3">
@@ -216,7 +178,7 @@
 
                   <!-- Task Item -->
                   <% @in_progress.each do |application| %>
-                  <div class="card mb-0 task-list-item">
+                  <div class="card mb-0 task-list-item" id="<%=dom_id(application)%>">
                     <div class="card-body p-0">
 
                       <h5 class="mt-2 mb-2">

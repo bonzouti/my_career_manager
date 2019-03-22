@@ -23,18 +23,46 @@ $(document).ready(function() {
 
     $list = $("#task-list-two");
     console.log($list);
-    $list.sortable();
+    $list.sortable({
+      update: function(e, ui) {
+        console.log($(this).sortable('serialize'));
+        jQuery.ajax({
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          url: $(this).data("url"),
+          type: "PATCH",
+          data: $(this).sortable('serialize')
+        });
+      }
+    });
 
     $list = $("#task-list-three");
     console.log($list);
-    $list.sortable();
+    $list.sortable({
+      update: function(e, ui) {
+        console.log($(this).sortable('serialize'));
+        jQuery.ajax({
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          url: $(this).data("url"),
+          type: "PATCH",
+          data: $(this).sortable('serialize')
+        });
+      }
+    });
 
     $list = $("#task-list-four");
     console.log($list);
-    $list.sortable();
+    $list.sortable({
+      update: function(e, ui) {
+        console.log($(this).sortable('serialize'));
+        jQuery.ajax({
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          url: $(this).data("url"),
+          type: "PATCH",
+          data: $(this).sortable('serialize')
+        });
+      }
+    });
 
-  document.addEventListener("turbolinks:load", function() {
-    alert("ok!")
-   });
+
 
 })

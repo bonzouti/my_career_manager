@@ -9,5 +9,3 @@ class ArchivedController < ApplicationController
   end
 
 end
-
-#OK
