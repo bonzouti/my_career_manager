@@ -6,10 +6,6 @@ Rails.application.routes.draw do
 
     collection do
       patch :sort
-    end 
-
-    member do
-      get 'archive'
     end
 
     member do
