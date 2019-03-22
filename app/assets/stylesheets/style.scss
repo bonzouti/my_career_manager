@@ -273,6 +273,12 @@
   background-color: none;
 }
 
+.btn-guide:hover {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none!important;
+  font-weight: 100!important;
+}
+
 .btn-guide:focus {
   outline: 0;
   -webkit-box-shadow: none!important;
