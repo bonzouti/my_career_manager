@@ -58,6 +58,12 @@
    color: rgba(255, 255, 255, 0.5);
 }
 
+.logo-mycareermanager{
+  background: url(/assets/logo-mycareermanager-small);
+  width: 250px;
+  height: 90px;
+}
+
 .lp-logo{
    color: rgba(255, 255, 255, 0.8);
    border-color: rgba(255, 255, 255, 0.8);
