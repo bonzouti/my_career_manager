@@ -1,15 +1,19 @@
 <!---------------------------------- MODAL UPDATE CONTACT----------------------------------->
 
 
-<div id="update-contact-modal-<%= contact.id %>" class="modal fade" tabindex="-1" role="dialog"
+<div id="update-contact-modal-<%= contact.id %>" class="modal fade" tabindex="-1" role="dialog" style= "display: none;"
   aria-hidden="true">
    <div class="modal-dialog">
-     <div class="modal-content">
-       <div class="modal-body">
-         <div class="text-center mt-2 mb-4">
-           <h3> Update this contact</h3>
-           <i class="fas fa-user-tie"></i>
-         </div>
+   <div class="modal-content">
+     <div class="card-black-form">
+
+        <!-- Logo -->
+        <div class="card-black-form-header pt-4 pb-4 text-center">
+          <h3> Update contact</h3>
+        </div>
+        <!-- End Logo -->
+
+         <div class="p-4">
 
          <%= form_tag(application_contact_path(@application, contact), method: "put", class: 'pl-3 pr-3') do %>
 
@@ -40,18 +44,20 @@
 
          <div class="form-group text-center">
 
-           <%= submit_tag "Update", class: "btn btn-primary", style:"margin-right:20px" %>
+           <%= submit_tag "Update", class: "btn btn-itmeo", style:"margin-right:20px" %>
 
            <%= link_to application_contact_path(@application, contact), method: :delete do %>
 
-           <button type="button" class="btn btn-danger btn-alert-success" style="margin-left: 20px;">Delete</button>
+           <button type="button" class="btn btn-salmon btn-alert-success" style="margin-left: 20px;">Delete</button>
            <% end %>
 
          </div>
 
          <% end %>
+
+         </div>
        </div>
-     </div><!-- /.modal-content -->
+       </div><!-- /.modal-content -->
    </div><!-- /.modal-dialog -->
  </div><!-- /.modal -->
 

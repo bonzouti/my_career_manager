@@ -34,6 +34,13 @@
 
 .nextsteps-userview {
   width: 100%;
+  height: 100%;
+  padding-bottom: 0px;
+}
+
+.notes-userview {
+  width: 100%;
+  height: 100%;
 }
 
 .mt-2 {
@@ -45,10 +52,18 @@
 }
 
 .next-step-header {
-  background-color: #6f7884 !important;
-  color: white;
   justify-content: center!important;
   background-color: rgba(0, 0, 0, 0.3)!important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color:white;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  padding: 0.7rem;
+  margin: 0 -1rem;
+
 }
 
 .task-header {
@@ -58,6 +73,8 @@
   justify-content: space-between;
   color:white;
   background-color: rgba(0, 0, 0, 0.3)!important;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 
 .bg-transparentblack {
@@ -75,7 +92,6 @@
 
 .next-step {
   text-align: center;
-  margin-bottom: 0.75rem!important;
 }
 
 .break-word {
@@ -90,6 +106,8 @@
   padding: 1rem!important;
 }
 
+
+
 /********************SHOW APPLICATION*******************/
 
 /* fixed screen size for show_application*/
@@ -103,11 +121,17 @@
 
 #notes {
   border-style: none;
-}
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  height: 80%;
+ }
+
+.full-height {
+  height: 100%;
+ }
 
 .save-changes {
   margin-bottom: 0px;
-  padding-left: 15px;
 }
 
 .custom-accordion-title {
@@ -127,8 +151,24 @@
   padding-right: 20px;
 }
 
-.app-show-bottom {
-  margin-top: 30px;
+.app-show-top {
+  margin-bottom: 18px;
+}
+
+.pt-2 {
+  padding-bottom: 15px;
+}
+
+.p-2 {
+  padding-top: 28px!important;
+}
+
+.fa-angle-double-down {
+  margin-left: 10px;
+}
+
+.checkbox-step {
+  margin-right: 5px;
 }
 
 /********************INDEX_CONTACTS********************/
@@ -149,9 +189,9 @@
 
 /********************LANDING PAGE********************/ 
 .bg-image-lp{
-  background: image-url("atrium.jpg");
-  background-size: 70%;
-  background-position: left 110% top 82%;
+  background: image-url("sunset_lp.jpeg");
+  background-size: 65%;
+  background-position: left 0% top 52%;
 }
 
  /********************FORMS********************/ 
@@ -191,7 +231,6 @@
  /********************NAVBAR********************/ 
 
 .navbar{
-  border-bottom: 1px solid;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -313,12 +352,20 @@ pointer-events: none; }
     color: #fff;
     background-color: #f09819;
     border:none; }
+
 .bg-note {
   color:white;
   background-color: rgba(0, 0, 0, 0.3) !important;
+  height: 100%;
+  border-radius: 0.25rem;
+  margin-bottom: 0px;
 }
 .job-details {
   margin-left: 15px;
+}
+
+.text-salmon{
+  color: #ff5858;
 }
 
  /******************** NOTIFICATIONS ********************/ 
@@ -377,3 +424,151 @@ pointer-events: none; }
  .footer-main {
    position: relative;
  }
+
+.wrapper {
+  min-height: 85vh;
+}
+/*****************************************/
+
+
+/**********************badge****************/
+
+.badge-info {
+  background-color: #0098FF;
+  color: white;
+}
+
+.badge-info-lighten {
+  background-color: #B1DAFF;
+  color: #0098FF;
+}
+
+.badge-danger {
+  background-color: #FF1044;
+  color: white;
+}
+
+.badge-danger-lighten {
+  background-color: #FFD1F6;
+  color: #FF1044;
+}
+
+.badge-primary {
+  background-color: #309E6D;
+  color: white;
+}
+
+.badge-primary-lighten {
+  background-color: #A2D4A8;
+  color: #309E6D;
+}
+
+.badge-warning {
+  background-color: #0050FF;
+  color: white;
+}
+
+.badge-warning-lighten {
+  background-color: #B2C3FF;
+  color: #0050FF;
+
+}
+
+
+/******************** LANDING PAGE ********************/
+
+.lp-main-container{
+  background-color: rgba(0,0,0,.5);
+}
+
+.logo-container{
+  color: white;
+  margin-top: 10px;  
+}
+
+.logo-mycareermanager {
+  background: image-url("logo-mycareermanager.png");
+  height: 180px;
+  width: 400px;
+  }
+
+.lp-logo{
+  border: solid white 2px;
+  border-radius: 3px;
+  padding: 7px;
+}
+
+.logo-mycareermanager-navbar {
+  background: image-url("logo-mycareermanager-small.png");
+  height: 90px;
+  width: 250px;
+  }
+
+.lp-title-container{
+  flex: 1; 
+  color: white;
+}
+
+.lp-title{
+  font-weight: bold;  
+}
+
+.lp-phrase{
+  font-weight: normal;
+  color: #c9c9c9;
+}
+ 
+.lp-feature-list{
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 1400px) {
+
+.auth-fluid .auth-fluid-form-box{
+  max-width: 800px;
+  }
+
+}
+
+/******************** LINK CONTACT - SHOW_APPLICATIONS ********************/
+
+a:link {
+  color: #FFFFFF;
+}
+
+a:visited {
+  color: #FFFFFF;
+}
+
+a:hover {
+  color: #CCCCCC;
+}
+
+a:active {
+  color: #333333;
+}
+/*************** Background contact **********/
+.bg-contact {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/******************** MODAL STEP - SHOW_APPLICATIONS ********************/
+
+.pb-4, .py-4{
+  padding-bottom: 1rem !important;
+}
+
+.pt-4, .py-4{
+  padding-top: 1rem !important;
+}
+
+/******************** ALL MODALS ********************/
+
+
+.p-4{
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+

@@ -1,4 +1,4 @@
-<!-- NAVBAR PAS TERMINEE-->
+<!-- NAVBAR -->
 
 <% if signed_in? %>
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -14,7 +14,9 @@
 
         <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "My Career Manager", applications_path, class:"navbar-brand text-white" %>
+        <%= link_to applications_path do %>
+        <%= image_tag "logo-mycareermanager-1lineter.png"%>  
+        <%end%>
       </li>
       <li class="nav-item lg-link">
         <%= link_to "Add Application", new_application_path, class:"nav-link d-flex text-white" %>
@@ -38,7 +40,7 @@
             </li>
             
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle d-flex text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle d-flex text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <% if user_signed_in? %> <i class="material-icons text-white">account_circle</i><span class="navbar-email"><%=current_user.email%></span> <%end%>
               </a> 
 

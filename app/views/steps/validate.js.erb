@@ -10,4 +10,4 @@ $textAreaForNotes.replaceWith($replacementText)
 
 $.NotificationApp.send("Yeah !", "Your step has been validated", 'top-right', 'Background color', 'success');
 
-$(".nextsteps-userview").replaceWith("<%= j render 'my_process', application: @application %>")
+$(".nextsteps-userview").replaceWith("<%= j render 'my_process', locals: {next_steps: @next_steps, application: @application, steps_done: @steps_done} %>")

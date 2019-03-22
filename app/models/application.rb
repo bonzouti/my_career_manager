@@ -28,6 +28,9 @@ class Application < ApplicationRecord
                     applied_steps =+1
                 end
             end
+            if applied_steps = 0
+                self.status = "identified"
+            end
             if applied_steps > 0
                 self.status = "applied"
             end

@@ -94,7 +94,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Devise mailer
-  config.action_mailer.default_url_options = { :host => 'mycareermanager-dev.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'mycareermanager.herokuapp.com' }
 
   # Allow images to display
   config.assets.digest = true

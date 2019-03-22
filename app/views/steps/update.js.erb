@@ -1,6 +1,6 @@
 $(".modal-backdrop").remove()
 $("body").removeClass("modal-open")
 
-$(".nextsteps-userview").replaceWith("<%= j render 'my_process', application: @application %>")
+$(".nextsteps-userview").replaceWith("<%= j render 'my_process', locals: {next_steps: @next_steps, application: @application, steps_done: @steps_done} %>")
 
-$.NotificationApp.send("Yeah !", "Your step has been changed", 'top-right', 'Background color', 'success');
+$.NotificationApp.send("Yeah !", "Your step has been changed", 'top-right', 'Background color', 'warning');

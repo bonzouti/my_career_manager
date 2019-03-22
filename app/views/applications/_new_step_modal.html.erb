@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="card-black-form">
         <!-- Title-->
-        <div class="card-black pt-4 pb-4 text-center">
+        <div class="card-black-form-header pt-4 pb-4 text-center">
           <h4 style="color:white">Add Step</h4>
           <h5 style="color:white">(
             <%=@application.jobtitle%> at
@@ -25,7 +25,7 @@
           <br>
           <div class="form-group">
             <%= label_tag 'Date *' %><br />
-            <%= date_field_tag :date, @step.date, class: 'form-control' %>
+            <%= date_field_tag :date, @step.date, class: 'form-control', required: true %>
           </div>
           <div class="form-group">
             <%= label_tag 'Type *' %><br />
@@ -33,11 +33,11 @@
           </div>
           <div class="form-group">
             <%= label_tag 'Title' %><br />
-            <%= text_field_tag :title, @step.title, class: 'form-control', placeholder: 'Write the title here' %>
+            <%= text_field_tag :title, @step.title, class: 'form-control', placeholder: "What's important to know?" %>
           </div>
           <div class="form-group">
             <%= label_tag 'Description' %><br />
-            <%= text_area_tag :description, @step.description, class: 'form-control', placeholder: 'Describe the step here' %>
+            <%= text_area_tag :description, @step.description, class: 'form-control', placeholder: 'Note here anything that could be useful (What are the expectations, goals, of this step ? Who will you talk to, what should you remind of?)' %>
           </div>
           <div class="form-group text-center">
             <%= label_tag '' %><br />
@@ -46,7 +46,7 @@
           <% end %>
         </div> <!-- end card-body -->
       </div>
-      <!-- end card-body -->
+      <!-- end card-black-form -->
     </div>
   </div>
   <!-- /.modal-content -->

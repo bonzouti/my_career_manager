@@ -37,9 +37,41 @@
   .task-list-items:before {
     line-height: 6;
   }
+  .row-card {
+    display: none;
+  }
   /*
   #task-list-one:before {
     line-height: 60px;
   }
   */
+
+/*********************LANDING PAGE****************/
+
+  .bg-image-lp{
+    background-position: left 0% top 0%;
+    background-size: 100%;
+  }
+
+.lp-title{
+  font-weight: 550;
+   color: rgba(255, 255, 255, 0.5);
+}
+
+.lp-logo{
+   color: rgba(255, 255, 255, 0.8);
+   border-color: rgba(255, 255, 255, 0.8);
+}
+
+.lp-phrase{
+   color: rgba(255, 255, 255, 0.5);
+
+}
+
+.lp-features-list{
+  margin-top: 10px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+} 
+
 }
