@@ -20,21 +20,21 @@ $(document).ready(function() {
     console.log("button-4 clicked");
     $("#task-list-four").toggle()
   })
-<<<<<<< HEAD:app/assets/javascripts/application_index.js
 
+    $list = $("#task-list-two");
+    console.log($list);
+    $list.sortable();
 
-  
-    $("sortable-test-1").click(function(){
-    console.log("turbolinks detected");
-    $("#sortable-test-1").sortable();
-  
-  });
+    $list = $("#task-list-three");
+    console.log($list);
+    $list.sortable();
+
+    $list = $("#task-list-four");
+    console.log($list);
+    $list.sortable();
 
   document.addEventListener("turbolinks:load", function() {
     alert("ok!")
    });
 
-=======
-  
->>>>>>> development:app/assets/javascripts/custom_js/application_index.js
 })

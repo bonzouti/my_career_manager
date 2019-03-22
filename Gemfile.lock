@@ -315,7 +315,7 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.5)
   jquery-rails
-  jquery-ui-rails (~> 5.0, <= 5.0.5)
+  jquery-ui-rails
   letter_opener
   listen (>= 3.0.5, < 3.2)
   nyan-cat-formatter

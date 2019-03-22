@@ -97,7 +97,7 @@
 
                   <!-- Task Item -->
                   <% @identified.each do |application| %>
-                  <div class="card mb-0">
+                  <div class="card mb-0 task-list-item">
                     <div class="card-body p-0">
 
                       <h5 class="mt-2 mb-2">
@@ -126,12 +126,12 @@
                     <span>TEST SORTABLE 1 </span>
                     <span><button type="button" class="btn btn-itmeo button-header-3 m-0" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
                 </h5>
-                <div id="sortable-test-1" class="task-list-group">
+                <div id="sortable-test-1" class="task-list-items">
 
-                  <div class="card mb-0 task-list-group-items">
+                  <div class="card mb-0 task-list-item">
                   TEST 1 
                   </div>
-                  <div class="card mb-0 task-list-group-items">
+                  <div class="card mb-0 task-list-item">
                   TEST 2 
                   </div>
                   <!-- Task Item End -->
@@ -175,7 +175,7 @@
 
                   <!-- Task Item -->
                   <% @applied.each do |application| %>
-                  <div class="card mb-0">
+                  <div class="card mb-0 task-list-item">
                     <div class="card-body p-0">
 
                       <h5 class="mt-2 mb-2">
@@ -216,7 +216,7 @@
 
                   <!-- Task Item -->
                   <% @in_progress.each do |application| %>
-                  <div class="card mb-0">
+                  <div class="card mb-0 task-list-item">
                     <div class="card-body p-0">
 
                       <h5 class="mt-2 mb-2">
@@ -259,3 +259,5 @@
 <%= render "new_application_identified_modal" %>
 <%= render "new_application_applied_modal" %>
 <%= render "new_application_in_progress_modal" %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
