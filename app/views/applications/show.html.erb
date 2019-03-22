@@ -124,7 +124,7 @@
 							<% @steps_done.each do |step| %>
 							<a>
 								<%= step.category%> -
-								<%= step.date%> </a> <br>
+								<%= step.date.strftime '%a %m/%d'%> </a> <br>
 							<% end %>
 
 						</div>

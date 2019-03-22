@@ -24,6 +24,9 @@
       <li class="nav-item lg-link">
         <% if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex text-white" %> <%end%>
       </li>
+      <li class="nav-item lg-link">
+        <%= button_tag "Getting Started", class: "nav-link btn btn-guide text-white", 'data-toggle': "modal", 'data-target': "#multiple-one" %>
+      </li>
         </ul>
         </div>
       </div>
@@ -33,11 +36,14 @@
 
           <ul class="navbar-nav mr-auto togglelist">
              <li class="nav-item sm-link">
-                <%= link_to "Create an application", new_application_path, class:"nav-link d-flex text-white" %>
+                <%= link_to "Add Application", new_application_path, class:"nav-link d-flex text-white" %>
             </li>
               <li class="nav-item sm-link">
                 <% if current_user.is_admin == true %> <%= link_to "Admin Dashboard", admin_root_path, class:"nav-link d-flex text-white" %> <%end%>
             </li>
+            <li class="nav-item sm-link">
+                <%= button_tag "Getting Started", class: "nav-link btn btn-guide text-white", 'data-toggle': "modal", 'data-target': "#multiple-one" %>
+      </li>
             
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle d-flex text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

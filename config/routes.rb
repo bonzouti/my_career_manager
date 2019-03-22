@@ -5,12 +5,11 @@ Rails.application.routes.draw do
     resources :contacts, only: [:index, :create, :update, :destroy]
 
     collection do
-      patch :sort
+      patch :sort_identified
+      patch :sort_applied
+      patch :sort_in_progress
     end 
 
-    member do
-      get 'archive'
-    end
 
     member do
       get 'archive'

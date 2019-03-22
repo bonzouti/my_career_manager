@@ -87,7 +87,7 @@
                     <span>IDENTIFIED (<%= @identified.length %>) <br> <small>Time to send application !</small> </span>
                     <span><button type="button" class="btn btn-itmeo m-0 button-header-2" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
                 </h5>
-                <div id="task-list-two" class="task-list-items" data-url="<%= sort_applications_path%>">
+                <div id="task-list-two" class="task-list-items" data-url="<%= sort_identified_applications_path%>">
 
                   <%if @identified.count == 0%>
                   <div class="card-body p-3">
@@ -127,7 +127,7 @@
                   <span><button type="button" class="btn btn-itmeo button-header-3" data-toggle="modal" data-target="#new-modal-applied"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
-                <div id="task-list-three" class="task-list-items" data-url="<%= sort_applications_path%>">
+                <div id="task-list-three" class="task-list-items" data-url="<%= sort_applied_applications_path%>">
 
                   <%if @applied.count == 0%>
                   <div class="card-body p-3">
@@ -168,7 +168,7 @@
                   <span>In Progress (<%= @in_progress.length %>)<br> <small>Your running processes</small></span>
                   <span><button type="button" class="btn btn-itmeo button-header-4" data-toggle="modal" data-target="#new-modal-in_progress"><i class="fas fa-plus"></i></button></span>
                 </h5>
-                <div id="task-list-four" class="task-list-items" data-url="<%= sort_applications_path%>">
+                <div id="task-list-four" class="task-list-items" data-url="<%= sort_in_progress_applications_path%>">
 
                   <%if @in_progress.count == 0%>
                   <div class="card-body p-3">
