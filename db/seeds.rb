@@ -30,7 +30,7 @@ puts('Old steps destroyed')
     "Oxford Nanopores Technologies", "Mu Sigma", "Nextdoor", "Gett", "Hike", "Allbirds", "Warby Parker", "OfferUp", "Postmates", 
     "VivaRepublica", "Tradeshift", "Jumia", "Techstyle Fashion Group", "MarkLogic", "Deliveroo", "JustEat", "Frichti", "Nestor",
     "Revolut", "GraphCore", "Cabify", "Taxify", "Chauffeur-Privé-Kapten", "Accenture", "Facebook", "WeChat", "Bank of China" ].sample, 
-        position: ["Front-end Developer", "Ruby Developer", "Fullstack Developer", "RoR Developer", "Happiness Manager", "Digital Guru and Tech Evangelist"].sample, 
+        jobtitle: ["Front-end Developer", "Ruby Developer", "Fullstack Developer", "RoR Developer", "Happiness Manager", "Digital Guru and Tech Evangelist"].sample, 
         user: User.all.sample, 
         status: "identified",
         notes: Faker::Lorem.paragraph(3),
