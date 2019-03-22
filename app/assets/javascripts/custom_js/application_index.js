@@ -56,8 +56,8 @@ $(document).ready(function() {
     });
 
 //Drag and drop on all 3 columns identified, applied, and in_progress
-$('.draggable').sortable({
-    connectWith: $('.draggable')
+$('.task-list-items').sortable({
+    connectWith: $('.task-list-items')
 });
 
 
