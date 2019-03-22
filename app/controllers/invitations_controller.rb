@@ -8,7 +8,7 @@ class InvitationsController < ApplicationController
 
   def create
     if User.find_by(email: params[:email]) != nil
-      
+
       @guest = User.find_by(email: params[:email])
       @invitation = Invitation.new(guest_id: @guest.id, host_id: current_user.id)
  
@@ -16,9 +16,12 @@ class InvitationsController < ApplicationController
         flash[:success] = "Sent"
         redirect_to user_path(current_user)
       else
+        flash[:error] = "Invitation could not be sent."
         render :new
       end
-    else render :new
+    else 
+      flash[:error] = "Invitation could not be sent."
+      render :new
     end
   end
 
