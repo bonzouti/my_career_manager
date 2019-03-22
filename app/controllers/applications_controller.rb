@@ -76,7 +76,12 @@ class ApplicationsController < ApplicationController
   def destroy
     @application = Application.find(params[:id])
     @application.destroy
-    redirect_to archived_index_path
+
+    if current_user.is_admin != true
+      redirect_to archived_index_path
+    else
+      redirect_to admin_root_path
+    end
   end
 
   def user_match
