@@ -77,3 +77,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'turbolinks', '~> 5.2.0'
+
+
+gem 'mechanize' 
+gem 'nokogiri'
