@@ -1,27 +1,3 @@
-<!--Start part of tabs application && contact-->
-<div class="d-block d-sm-none">
-	<!--visible only on XS-->
-	<div class="container p-3">
-		<div class="row">
-			<div class="col text-center">
-				<ul class="nav bg-note nav-justified">
-					<li class="nav-item bg-contact">
-						<a data-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
-							<span class="d-none d-lg-block">Application</span>
-						</a>
-					</li>
-					<li class="nav-item ">
-						<%= link_to application_contacts_path(@application), class: 'nav-link rounded-0 ', data: { 'data-toggle' => 'tab'} do %>
-						<span class="d-none d-lg-block">Contacts (
-							<%=@application.contacts.count%>)</span>
-						<% end %>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-<!--End part of tabs application && contact-->
 
 <!-- start page title -->
 <div class="row">
@@ -30,6 +6,7 @@
 			<h2 class="text-center display-5 index-title text-transparent-black">
 				<%= @application.jobtitle %> at
 				<%= @application.company_name%>
+				<br> Applicant: <%=@application.user.email%>
 			</h2>
 		</div>
 	</div>
@@ -106,12 +83,6 @@
 
 					<% end %>
 
-					<!-------------- Start Button 'Add Step' ---------------------->
-
-					<div class="container text-center pt-2">
-						<button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#new-step-modal">Add Step</button>
-					</div>
-					<!-------------- End button 'Add Step' ---------------------->
 
 					<!-------------- Start Card 'steps done' ---------------------->
 
@@ -157,20 +128,8 @@
 					</div>
 					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 						<div class="card-body">
-							<div class="row align-items-center">
-
-								<div class="edit-notes text-center">
-									<%= form_tag url_for(action: 'update_notes'), method: "put", remote: true do %>
-									<div class="form-group text-edit-notes">
-										<%= text_area_tag :notes, @application.notes, class: 'form-control', placeholder: 'Write your notes here! Then, save your changes', rows: 8  %>
-									</div>
-									<div class="form-group save-changes text-right">
-										<%= submit_tag "Save", class:"btn btn-itmeo btn-alert-success" %>
-									</div>
-									<% end %>
-								</div>
-
-							</div>
+							<%=@application.notes%>
+						</div>
 
 						</div>
 						<!-- end card-body -->
@@ -194,9 +153,7 @@
 			<div class="card bg-note">
 				<h5 class="text-white mt-0 task-header">
 					<span class="job-details"> JOB DETAILS <i class="fas fa-angle-double-down text-white"></i></span>
-					<span>
-						<button type="button" class="btn btn-itmeo-transparent btn-edit-job-details" data-toggle="modal" data-target="#edit-job-details-modal"><i class="fas fa-edit text-white"></i></button>
-					</span>
+					
 				</h5>
 
 				<div class="card-body collapse-job-details">
@@ -226,9 +183,6 @@
 						<div class="col-12 row-card">
 							<h5 class="text-white mt-0 task-header">
 								<span class="contact"> CONTACTS <i class="fas fa-angle-double-down text-white"></i></span>
-								<span>
-									<button type="button" class="btn btn-itmeo-transparent btn-new-contact" data-toggle="modal" data-target="#create-contact-modal"><i class="fas fa-plus text-white"></i></button>
-								</span>
 							</h5>
 							<div id="collapse-contact" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
 								<div class="card-body">
@@ -246,7 +200,6 @@
 															<th>Position</th>
 															<th>Phone number</th>
 															<th>Email</th>
-															<th>Edit</th>
 														</tr>
 													</thead>
 													<tbody>
@@ -281,9 +234,6 @@
 																</p>
 																<% end %>
 															</td>
-															<td>
-																<i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i>
-															</td>
 														</tr>
 
 														<% end %>
@@ -307,12 +257,6 @@
 
 		<!--End part CONTACTS-->
 
-
-		<!--Start part button archive-->
-		<div class="container text-center p-2">
-			<%= link_to "Archive Application", archive_application_path(@application), method: 'GET', class: 'btn btn-archive' %>
-		</div>
-		<!--End part button archive-->
 	</div>
 </div>
 </div>
