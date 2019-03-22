@@ -63,6 +63,11 @@ $(document).ready(function() {
       }
     });
 
+$('#groupsList').sortable();
+$('.task-list-items').sortable({
+    connectWith: $('.task-list-items')
+});
+
 
 
 })
