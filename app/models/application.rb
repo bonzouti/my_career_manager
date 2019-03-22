@@ -9,6 +9,10 @@ class Application < ApplicationRecord
     validates :company_name, presence: true
     validates :jobtitle, presence: true
 
+    require 'openssl'
+    require 'nokogiri'
+    require 'open-uri'
+
     
     def archive
         @application = Application.find(params[:id])
@@ -62,23 +66,31 @@ class Application < ApplicationRecord
     end
 
     def scrap_job_description
-        puts "*************************************************************start scrapping"
-        require 'openssl'
-        require 'nokogiri'
-        require 'open-uri'
 
-        
         if self.joboffer_link.include?("https://www.jobteaser.com/fr/job-offers/")
-            puts "*************************************************************INCLUDED"
+            begin
             doc = Nokogiri::HTML(open(self.joboffer_link, :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE))
             @scrap = doc.css(".jt-Text--wysiwyg > *")
+            rescue => error
+            end
+
+        elsif self.joboffer_link.include?("https://fr.linkedin.com/jobs/view")
+            begin
+            doc = Nokogiri::HTML(open(self.joboffer_link, :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE))
+            @scrap = doc.xpath("/html/body/main/section[3]/div[1]/section[2]/div") 
+            rescue => error
+            end
+
+        elsif self.joboffer_link.include?("https://www.welcometothejungle.co/companies/")
+            begin
+            doc = Nokogiri::HTML(open(self.joboffer_link, :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE))
+            @scrap = doc.xpath("/html/body/div/div/main/section[2]/div/div/div") 
+            rescue => error
+            end                
         end
 
         self.joboffer_description = @scrap
-        puts "*********************************************SCRAP"
-        puts @scrap
         self.save
-        puts "*****************************************************************end scrapping"
     end
 
 end
