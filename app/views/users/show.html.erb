@@ -201,30 +201,31 @@
                     <!--Start part INVITATIONS -->
 
 
-                    <div class="card-black tilebox-one">
+                    <div class="card-black tilebox-one mt-4">
                         <div class="card-body">
-                            <h2 class=" text-uppercase mt-0">INVITATIONS AS GUEST</h2>
+                            <h4 class=" text-uppercase mt-0">INVITATIONS AS GUEST</h4>
                             <%if @invitations_as_guest.count == 0 %>
 									<a> You have not been invited as viewer to any dashboard. <a>
 											<%else%>
                                                 <ul>
                                                     <% @invitations_as_guest.each do |invitation| %>
-                                                    <li><%= invitation.host.email %> (View)</li>
+                                                    <li><%= invitation.host.email %> <%= link_to "(View)", invitation_path(invitation) %></li>
                                                     <%end%>
                                                 </ul>
                                             <%end%>
                         </div>
                     </div>
 
-                    <div class="card-black tilebox-one">
+                    <div class="card-black tilebox-one mt-4">
                         <div class="card-body">
-                            <h2 class=" text-uppercase mt-0">INVITATIONS AS HOST</h2>
+                            <h4 class=" text-uppercase mt-0">INVITATIONS AS HOST</h4>
+                            <a> <%= link_to "Send invitation", new_invitation_path, class:"btn btn-itmeo" %> <a> <br>
                             <%if @invitations_as_host.count == 0 %>
 									<a> You have not invited anyone to view your dashboard so far. <a>
 											<%else%>
                                                 <ul>
                                                     <% @invitations_as_host.each do |invitation| %>
-                                                    <li><%= invitation.guest.email %> (Cancel invite)</li>
+                                                    <li><%= invitation.guest.email %> <%= link_to "(Cancel invitation)", invitation_path(invitation), method: :delete %> </li>
                                                     <%end%>
                                                 </ul>
                                             <%end%>

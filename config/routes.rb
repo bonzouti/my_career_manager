@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   resources :archived, :only => [:index]
 
-  resources :invitations, only: [:show, :create, :destroy]
+  resources :invitations, only: [:new, :show, :create, :destroy]
   
   namespace :admin do
     root 'dashboards#index'
