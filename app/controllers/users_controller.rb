@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])  
     @archived = Application.where(status: "archived", user_id: current_user.id)
     @unarchived_applications = Application.where('status <> ?', "archived").where(user_id: current_user.id)
+    @steps = Step.all.to_a.select{|x| x.application.user == current_user}.select{|x| x.application.status != "archived"}
   end
 
   def archive
