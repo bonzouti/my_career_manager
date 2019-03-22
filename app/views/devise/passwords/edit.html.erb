@@ -5,7 +5,7 @@
 		<div class="align-items-center d-flex h-100">
 			<div class="card-body">
 					<!-- title-->
-					<h4 class="mt-0">Edit your password</h4>
+					<h3 class="mt-0">Edit your password</h3>
 					<p class="text-muted mb-4">Enter your new password to access your account!</p>
   
             <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %><%= render "devise/shared/error_messages", resource: resource %><%= f.hidden_field :reset_password_token %>
