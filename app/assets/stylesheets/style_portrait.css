@@ -74,4 +74,14 @@
   color: rgba(255, 255, 255, 0.5);
 } 
 
+/******************** MODAL STEP - SHOW_APPLICATIONS ********************/
+
+.pb-4, .py-4{
+  padding-bottom: 1rem !important;
+}
+
+.pt-4, .py-4{
+  padding-top: 1rem !important;
+}
+
 }
