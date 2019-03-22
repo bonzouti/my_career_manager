@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @archived = Application.where(status: "archived", user_id: current_user.id)
     @unarchived_applications = Application.where('status <> ?', "archived").where(user_id: current_user.id)
     @steps = Step.all.to_a.select{|x| x.application.user == current_user}.select{|x| x.application.status != "archived"}
+    @invitations_as_guest = Invitation.where(guest_id: current_user.id)
+    @invitations_as_host = Invitation.where(host_id: current_user.id)
   end
 
   def archive

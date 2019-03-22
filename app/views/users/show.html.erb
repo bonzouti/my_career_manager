@@ -193,7 +193,48 @@
                          <!-- end col -->
 
                     </div>
-                     <!-- end row -->
+                     <!----------------------------------------------------------------------------- END RESUME ----------------------------------------------->
+
+
+
+
+                    <!--Start part INVITATIONS -->
+
+
+                    <div class="card-black tilebox-one">
+                        <div class="card-body">
+                            <h2 class=" text-uppercase mt-0">INVITATIONS AS GUEST</h2>
+                            <%if @invitations_as_guest.count == 0 %>
+									<a> You have not been invited as viewer to any dashboard. <a>
+											<%else%>
+                                                <ul>
+                                                    <% @invitations_as_guest.each do |invitation| %>
+                                                    <li><%= invitation.host.email %> (View)</li>
+                                                    <%end%>
+                                                </ul>
+                                            <%end%>
+                        </div>
+                    </div>
+
+                    <div class="card-black tilebox-one">
+                        <div class="card-body">
+                            <h2 class=" text-uppercase mt-0">INVITATIONS AS HOST</h2>
+                            <%if @invitations_as_host.count == 0 %>
+									<a> You have not invited anyone to view your dashboard so far. <a>
+											<%else%>
+                                                <ul>
+                                                    <% @invitations_as_host.each do |invitation| %>
+                                                    <li><%= invitation.guest.email %> (Cancel invite)</li>
+                                                    <%end%>
+                                                </ul>
+                                            <%end%>
+                        </div>
+                    </div>
+
+
+		<!--End part INVITATIONS-->    
+
+
 
                     </div> <!-- container -->
 

@@ -1,6 +1,7 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_user!
   before_action :user_match, only: [:show] 
+  before_action :guest_match, only: [:guest_access]
   
 
   def index
@@ -106,5 +107,23 @@ class ApplicationsController < ApplicationController
     end
     head :ok
   end 
+
+  def guest_access
+    @application = Application.find(params[:id])
+    @next_steps = Step.where(status: "false", application: @application.id).order("date")
+    @steps_done = Step.where(status: "true", application: @application.id).order("date")
+    @step = Step.new
+  end
+
+  private
+
+  def guest_match
+    @application = Application.find(params[:id])
+    host = @application.user 
+
+    if Invitation.where(guest_id: current_user.id, host_id: host.id).count == 0
+      redirect_to root_path
+    end
+  end
 
 end

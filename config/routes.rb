@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     member do
       get 'archive'
+      get 'guest_access'
       put 'update_job_details'
       put 'update_notes'
     end
@@ -33,6 +34,8 @@ Rails.application.routes.draw do
   end
 
   resources :archived, :only => [:index]
+
+  resources :invitations, only: [:show, :create, :destroy]
   
   namespace :admin do
     root 'dashboards#index'
