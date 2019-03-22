@@ -269,6 +269,15 @@
   border-color: white!important;
 }
 
+.btn-guide {
+  background-color: none;
+}
+
+.btn-guide:focus {
+  outline: 0;
+  -webkit-box-shadow: none!important;
+          box-shadow: none!important;
+}
 
  /********************CARD NEXT STEP - SHOW ********************/ 
 
