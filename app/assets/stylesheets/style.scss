@@ -269,6 +269,15 @@
   border-color: white!important;
 }
 
+.btn-guide {
+  background-color: none;
+}
+
+.btn-guide:focus {
+  outline: 0;
+  -webkit-box-shadow: none!important;
+          box-shadow: none!important;
+}
 
  /********************CARD NEXT STEP - SHOW ********************/ 
 
@@ -558,15 +567,9 @@ a:active {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-/******************** MODAL STEP - SHOW_APPLICATIONS ********************/
 
-.pb-4, .py-4{
-  padding-bottom: 1rem !important;
-}
 
-.pt-4, .py-4{
-  padding-top: 1rem !important;
-}
+
 
 /******************** ALL MODALS ********************/
 

@@ -39,7 +39,7 @@
                                                     <div class="media-body">
 
                                                         <h4 class="mt-1 mb-1 text-white"><%=current_user.email%> <%  if current_user.is_admin == true %> (Admin profile) <% end %></h4> 
-                                                        <p class="font-13 text-white-50"> Member since: <%=current_user.created_at%> </p>
+                                                        <p class="font-13 text-white-50"> Member since: <%=current_user.created_at.strftime ' %m/%d/%y'%> </p>
 
                                                     </div> <!-- end media-body-->
                                                 </div>
