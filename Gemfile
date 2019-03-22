@@ -79,5 +79,4 @@ gem 'acts_as_list'
 gem 'turbolinks', '~> 5.2.0'
 
 
-gem 'mechanize' 
 gem 'nokogiri'
