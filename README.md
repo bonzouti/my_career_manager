@@ -22,7 +22,7 @@ From your application's page, you'll also be able to add a step, to validate it 
 
 ### Archive applications
 
-If you wish to archive an application, click on "Archive" at the bottom of your application's page. You can access all archived applications by going to your profile and clicking on "Archvied applications". From there, you can view them once again and delete them permanently.
+If you wish to archive an application, click on "Archive" at the bottom of your application's page. You can access all archived applications by going to your profile and clicking on "Archived applications". From there, you can view them once again and delete them permanently.
 
 Click on any next step appearing on the dashboard's left column to display the corresponding application.
 
