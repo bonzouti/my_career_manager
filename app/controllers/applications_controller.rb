@@ -86,9 +86,23 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  def sort
+  def sort_identified
     params[:application].each_with_index do |id, index|
-      Application.where(id: id).update_all(position: index + 1)
+      Application.where(id: id).update_all(position: index + 1, status: "identified")
+    end
+    head :ok
+  end 
+
+  def sort_applied
+    params[:application].each_with_index do |id, index|
+      Application.where(id: id).update_all(position: index + 1, status: "applied")
+    end
+    head :ok
+  end 
+
+  def sort_in_progress
+    params[:application].each_with_index do |id, index|
+      Application.where(id: id).update_all(position: index + 1, status: "in_progress")
     end
     head :ok
   end 

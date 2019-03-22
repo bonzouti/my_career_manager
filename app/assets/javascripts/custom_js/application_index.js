@@ -21,6 +21,9 @@ $(document).ready(function() {
     $("#task-list-four").toggle()
   })
 
+
+//-------------- Drag and drop--------------------------
+
     $list = $("#task-list-two");
     console.log($list);
     $list.sortable({
@@ -63,7 +66,7 @@ $(document).ready(function() {
       }
     });
 
-$('#groupsList').sortable();
+//Drag and drop on all 3 columns identified, applied, and in_progress
 $('.task-list-items').sortable({
     connectWith: $('.task-list-items')
 });
