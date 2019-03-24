@@ -34,7 +34,7 @@ We wish you a pleasant, organized job search with My Career Manager. More import
 
 ## Getting Started with My Career Manager
 
-Use mycareermanager online. Here's the url: https://www.mycareermanager.herokuapp.com
+Use mycareermanager online. Here's the url: mycareermanager.herokuapp.com
 
 Get a copy of the project up and running on your local machine for development and testing purposes with the following instructions: 
  
