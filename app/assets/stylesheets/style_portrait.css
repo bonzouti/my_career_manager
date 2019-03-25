@@ -46,6 +46,15 @@
   }
   */
 
+  .mobile {
+    display: inline-block!important;
+  }
+
+  .collapse-job-details {
+    display: none;
+  }
+
+
 /*********************LANDING PAGE****************/
 
   .bg-image-lp{

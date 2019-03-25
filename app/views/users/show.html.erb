@@ -1,254 +1,276 @@
+<!-- Begin page -->
+<div class="wrapper">
 
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
 
-        <!-- Begin page -->
-        <div class="wrapper">
+    <div class="content-page">
+        <div class="content">
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
+            <!-- Start Content-->
+            <div class="container-fluid">
 
-            <div class="content-page">
-                <div class="content">
-
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-                        
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <h4 class="page-title text-transparent-black text-center">
-                                    USER PROFILE
-                                    </h4> 
-                                </div>
-                            </div>
-                        </div>     
-                        <!-- end page title --> 
-
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <!-- Profile -->
-                                <div class="card bg-transparentblack">
-                                    <div class="card-body profile-user-box">
-
-                                        <div class="row">
-                                            <div class="col-sm-8">
-                                                <div class="media">
-                                                    
-                                                    <div class="media-body">
-
-                                                        <h4 class="mt-1 mb-1 text-white"><%=current_user.email%> <%  if current_user.is_admin == true %> (Admin profile) <% end %></h4> 
-                                                        <p class="font-13 text-white-50"> Member since: <%=current_user.created_at.strftime ' %m/%d/%y'%> </p>
-
-                                                    </div> <!-- end media-body-->
-                                                </div>
-                                            </div> <!-- end col-->
-
-                                            <div class="col-sm-4">
-                                                <div class="text-center mt-sm-0 mt-3 text-sm-right">
-                                                    <%= link_to "Edit my account info", edit_user_registration_path, class: "btn btn-itmeo" %>
-                                                </div>
-                                            </div> <!-- end col-->
-                                        </div> <!-- end row -->
-
-                                    </div> <!-- end card-body/ profile-user-box-->
-                                </div><!--end profile/ card -->
-                            </div> <!-- end col-->
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title text-transparent-black text-center">
+                                USER PROFILE
+                            </h4>
                         </div>
-                        <!-- end row -->
+                    </div>
+                </div>
+                <!-- end page title -->
 
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <!-- Personal-Information -->
-                                <div class="card-black upload-item">
-                                    <div class="card-body">
-                                        <h4 class="header-title mt-0 mb-3">YOUR FEEDBACK MATTERS</h4>
-
-                                        <hr/>
-
-                                        <div class="text-left">
-                                            <p><span>Should you encounter any problems while using our platform, please write to our team at          
-                                                <%= link_to "liobe.malogo@gmail.com", "mailto:liobe.malogo@gmail.com", class: "text-white" %>
-                                            </span></p>
-                                    </div>
-                                    </div>
-                                </div>
-                                <!-- Personal-Information -->
-
-                            </div> <!-- end col-->
-
-                            <div class="col-md-8">
-
-
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- Profile -->
+                        <div class="card bg-transparentblack">
+                            <div class="card-body profile-user-box">
 
                                 <div class="row">
-                                    <div class="col-sm-4 upload-item">
-                                        <div class="card-black tilebox-one">
-                                            <div class="card-body">
-                                                <h6 class=" text-uppercase mt-0">Applications</h6>
-                                                <h2 class="m-b-20"><%=@unarchived_applications.count%></h2>
-                                                <%= link_to "Add Application", new_application_path, class: "btn btn-itmeo" %>
-                                            </div> <!-- end card-body-->
-                                        </div> <!--end card-->
-                                    </div><!-- end col -->
+                                    <div class="col-sm-8">
+                                        <div class="media">
 
-                                    <div class="col-sm-4 upload-item">
-                                        <div class="card-black tilebox-one">
-                                            <div class="card-body">
-                                                <h6 class=" text-uppercase mt-0">Steps</h6>
-                                                <h2 class="m-b-20"><span><%=@steps.count%></span></h2>
-                                                <%= link_to "My dashboard", root_path, class: "btn btn-itmeo" %>
-                                            </div> <!-- end card-body-->
-                                        </div> <!--end card-->
-                                    </div><!-- end col -->
+                                            <div class="media-body">
 
-                                    <div class="col-sm-4 upload-item">
-                                        <div class="card-black tilebox-one">
-                                            <div class="card-body">
-                                                <h6 class=" text-uppercase mt-0">Archived applications</h6>
-                                                <h2 class="m-b-20"><%=@archived.count%></h2>
-                                                <%= link_to "View archived", archived_index_path, class: "btn btn-itmeo" %>
-                                            </div> <!-- end card-body-->
-                                        </div> <!--end card-->
-                                    </div><!-- end col -->
+                                                <h4 class="mt-1 mb-1 text-white">
+                                                    <%=current_user.email%>
+                                                    <%  if current_user.is_admin == true %> (Admin profile)
+                                                    <% end %>
+                                                </h4>
+                                                <p class="font-13 text-white-50"> Member since:
+                                                    <%=current_user.created_at.strftime ' %m/%d/%y'%>
+                                                </p>
 
+                                            </div> <!-- end media-body-->
+                                        </div>
+                                    </div> <!-- end col-->
+
+                                    <div class="col-sm-4">
+                                        <div class="text-center mt-sm-0 mt-3 text-sm-right">
+                                            <%= link_to "Edit my account info", edit_user_registration_path, class: "btn btn-itmeo" %>
+                                        </div>
+                                    </div> <!-- end col-->
+                                </div> <!-- end row -->
+
+                            </div> <!-- end card-body/ profile-user-box-->
+                        </div>
+                        <!--end profile/ card -->
+                    </div> <!-- end col-->
+                </div>
+                <!-- end row -->
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- Personal-Information -->
+                        <div class="card-black upload-item">
+                            <div class="card-body">
+                                <h4 class="header-title mt-0 mb-3">YOUR FEEDBACK MATTERS</h4>
+
+                                <hr />
+
+                                <div class="text-left">
+                                    <p><span>Should you encounter any problems while using our platform, please write
+                                            to our team at
+                                            <%= link_to "liobe.malogo@gmail.com", "mailto:liobe.malogo@gmail.com", class: "text-white" %>
+                                        </span></p>
                                 </div>
-                                <!-- end row -->      
-
                             </div>
-                            <!-- end col -->
+                        </div>
+                        <!-- Personal-Information -->
+
+                    </div> <!-- end col-->
+
+                    <div class="col-md-8">
+
+
+
+                        <div class="row">
+                            <div class="col-sm-4 upload-item">
+                                <div class="card-black tilebox-one">
+                                    <div class="card-body">
+                                        <h6 class=" text-uppercase mt-0">Applications</h6>
+                                        <h2 class="m-b-20">
+                                            <%=@unarchived_applications.count%>
+                                        </h2>
+                                        <%= link_to "Add Application", new_application_path, class: "btn btn-itmeo" %>
+                                    </div> <!-- end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div><!-- end col -->
+
+                            <div class="col-sm-4 upload-item">
+                                <div class="card-black tilebox-one">
+                                    <div class="card-body">
+                                        <h6 class=" text-uppercase mt-0">Steps</h6>
+                                        <h2 class="m-b-20"><span>
+                                                <%=@steps.count%></span></h2>
+                                        <%= link_to "My dashboard", root_path, class: "btn btn-itmeo" %>
+                                    </div> <!-- end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div><!-- end col -->
+
+                            <div class="col-sm-4 upload-item">
+                                <div class="card-black tilebox-one">
+                                    <div class="card-body">
+                                        <h6 class=" text-uppercase mt-0">Archived applications</h6>
+                                        <h2 class="m-b-20">
+                                            <%=@archived.count%>
+                                        </h2>
+                                        <%= link_to "View archived", archived_index_path, class: "btn btn-itmeo" %>
+                                    </div> <!-- end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div><!-- end col -->
 
                         </div>
                         <!-- end row -->
 
+                    </div>
+                    <!-- end col -->
 
-                    <!--------------------------- Upload resume---------------------------->
-
-                    <div class="row justify-content-start">
-                        <div class="col-sm-12 col-card-download">
-                            
-                            <div class="card-black">
-                                <div class="card-body">
-
-                                    <%if @user.resume.attached?%>
-
-                                        <div class="row justify-content-center text-center">
-                                                <h3> So cool ! Your CV is already uploaded <br> <small>Download your resume (<%= @user.resume.filename %>) by clicking on the icon below</small> </h3>
-                                        </div>
-
-                                        <div class="row justify-content-center">
-
-                                                     <%= link_to url_for(@user.resume) do %> <br>
-                                                    <i class="fas fa-cloud-download-alt fa-3x"></i>
-                                                    <% end %>
-                                        </div>
-                                        <div class="row justify-content-center upload-item text-center">
-                                                <h3> Want to make an update ? <br> <small>Upload your new resume by clicking on the icon below </small></h3>
-                                        </div>
-
-                                        <div class="row justify-content-center upload-item">
-                                                    <%= form_tag user_resumes_path(@user), multipart: true do %>
-                                                    <div class="image-upload d-flex justify-content-center">
-                                                       <label for="file-input">
-                                                            <i class="fas fa-upload fa-3x upload-item"></i>
-                                                        </label>
-                                                         <%= file_field_tag :resume, id:"file-input" %>
-                                                    </div>
-                                                      <%= submit_tag "Update your resume", class:"btn btn-itmeo upload-item" %>
-                                                    <% end %>
-                                        </div>
+                </div>
+                <!-- end row -->
 
 
-                                                <%else %>
+                <!--------------------------- Upload resume---------------------------->
 
-                                        <div class="row justify-content-center d-flex upload-item">
+                <div class="row justify-content-start">
+                    <div class="col-sm-12 col-card-download">
 
-                                                    <h3 class="text-center">You don't have your CV registered yet.<br> Click on the icon to upload it ! <br> <small>Upload your new resume by clicking on the icon below </small> </h3>
-                                        </div>
+                        <div class="card-black">
+                            <div class="card-body">
 
-                                        <div class="row justify-content-center upload-item">
-                                                    <%= form_tag user_resumes_path(@user), multipart: true do %> 
-                                                    <div class="image-upload d-flex justify-content-center">
-                                                       <label for="file-input">
-                                                            <i class="fas fa-upload fa-2x upload-item"></i>
-                                                        </label>
-                                                         <%= file_field_tag :resume, id:"file-input" %>
-                                                    </div>
-                                                      <%= submit_tag "Upload your resume", class:"btn btn-itmeo upload-item" %>
-                                                    <% end %>
+                                <%if @user.resume.attached?%>
 
-                                        </div>
+                                <div class="row justify-content-center text-center">
+                                    <h3> So cool ! Your CV is already uploaded <br> <small>Download your resume (
+                                            <%= @user.resume.filename %>) by clicking on the icon below</small> </h3>
+                                </div>
 
-                                    <%end%>
+                                <div class="row justify-content-center">
+
+                                    <%= link_to url_for(@user.resume) do %> <br>
+                                    <i class="fas fa-cloud-download-alt fa-3x"></i>
+                                    <% end %>
+                                </div>
+                                <div class="row justify-content-center upload-item text-center">
+                                    <h3> Want to make an update ? <br> <small>Upload your new resume by clicking on the
+                                            icon below </small></h3>
+                                </div>
+
+                                <div class="row justify-content-center upload-item">
+                                    <%= form_tag user_resumes_path(@user), multipart: true do %>
+                                    <div class="image-upload d-flex justify-content-center">
+                                        <label for="file-input">
+                                            <i class="fas fa-upload fa-3x upload-item"></i>
+                                        </label>
+                                        <%= file_field_tag :resume, id:"file-input" %>
+                                    </div>
+                                    <%= submit_tag "Update your resume", class:"btn btn-itmeo upload-item" %>
+                                    <% end %>
+                                </div>
+
+
+                                <%else %>
+
+                                <div class="row justify-content-center d-flex upload-item">
+
+                                    <h3 class="text-center">You don't have your CV registered yet.<br> Click on the
+                                        icon to upload it ! <br> <small>Upload your new resume by clicking on the icon
+                                            below </small> </h3>
+                                </div>
+
+                                <div class="row justify-content-center upload-item">
+                                    <%= form_tag user_resumes_path(@user), multipart: true do %>
+                                    <div class="image-upload d-flex justify-content-center">
+                                        <label for="file-input">
+                                            <i class="fas fa-upload fa-2x upload-item"></i>
+                                        </label>
+                                        <%= file_field_tag :resume, id:"file-input" %>
+                                    </div>
+                                    <%= submit_tag "Upload your resume", class:"btn btn-itmeo upload-item" %>
+                                    <% end %>
 
                                 </div>
-                                <!-- end card body -->
+
+                                <%end%>
 
                             </div>
-                            <!-- end card black -->
+                            <!-- end card body -->
 
                         </div>
-                         <!-- end col -->
+                        <!-- end card black -->
 
                     </div>
-                     <!----------------------------------------------------------------------------- END RESUME ----------------------------------------------->
+                    <!-- end col -->
+
+                </div>
+                <!----------------------------------------------------------------------------- END RESUME ----------------------------------------------->
 
 
 
 
-                    <!--Start part INVITATIONS -->
+                <!--Start part INVITATIONS -->
 
 
-                    <div class="card-black tilebox-one mt-4">
-                        <div class="card-body">
-                            <h4 class=" text-uppercase mt-0">INVITATIONS AS GUEST</h4>
-                            <%if @invitations_as_guest.count == 0 %>
-									<a> You have not been invited as viewer to any dashboard. <a>
-											<%else%>
-                                                <ul>
-                                                    <% @invitations_as_guest.each do |invitation| %>
-                                                    <li><%= invitation.host.email %> <%= link_to "(View)", invitation_path(invitation) %></li>
-                                                    <%end%>
-                                                </ul>
+                <div class="card-black tilebox-one mt-4">
+                    <div class="card-body">
+                        <h4 class=" text-uppercase mt-0">INVITATIONS RECEIVED</h4><br>
+                        <%if @invitations_as_guest.count == 0 %>
+                        <a> You have not been invited as viewer to any dashboard. <a>
+                                <%else%>
+                                <ul>
+                                    <% @invitations_as_guest.each do |invitation| %>
+                                    <li>
+                                        <%= invitation.host.email %>
+                                        <%= link_to "(View)", invitation_path(invitation) %>
+                                    </li>
+                                    <%end%>
+                                </ul>
+                                <%end%>
+                                <br><hr>
+                                <h4 class=" text-uppercase mt-0" style="display:flex; justify-content: space-between">INVITATIONS SENT
+                                    <%= link_to "Send invitation", new_invitation_path, class:"btn btn-itmeo" %>
+                                </h4>
+                                <%if @invitations_as_host.count == 0 %>
+                                <a> You have not invited anyone to view your dashboard so far. <a>
+                                        <%else%>
+                                        <ul>
+                                            <% @invitations_as_host.each do |invitation| %>
+                                            <li>
+                                                <%= invitation.guest.email %>
+                                                <%= link_to "(Cancel invitation)", invitation_path(invitation), method: :delete %>
+                                            </li>
                                             <%end%>
-                        </div>
+                                        </ul>
+                                        <%end%>
                     </div>
-
-                    <div class="card-black tilebox-one mt-4">
-                        <div class="card-body">
-                            <h4 class=" text-uppercase mt-0">INVITATIONS AS HOST</h4>
-                            <a> <%= link_to "Send invitation", new_invitation_path, class:"btn btn-itmeo" %> <a> <br>
-                            <%if @invitations_as_host.count == 0 %>
-									<a> You have not invited anyone to view your dashboard so far. <a>
-											<%else%>
-                                                <ul>
-                                                    <% @invitations_as_host.each do |invitation| %>
-                                                    <li><%= invitation.guest.email %> <%= link_to "(Cancel invitation)", invitation_path(invitation), method: :delete %> </li>
-                                                    <%end%>
-                                                </ul>
-                                            <%end%>
-                        </div>
-                    </div>
-
-
-		<!--End part INVITATIONS-->    
+                </div>
 
 
 
-                    </div> <!-- container -->
-
-                </div> <!-- content -->
-
-                
-
-            </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
+                <!--End part INVITATIONS-->
+            
 
 
-        </div>
-        <!-- END wrapper -->
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->

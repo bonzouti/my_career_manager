@@ -1,38 +1,40 @@
-<div class="account-pages mt-5 mb-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="card-black-form">
+<div class="wrapper">
+    <div class="account-pages mt-5 mb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card-black-form">
 
-                	<!-- Title -->
+                        <!-- Title -->
                         <div class="card-black pt-4 pb-4 text-center">
                             <h4 style="color:white">Send invitation</h4>
                         </div>
-                    <!-- End title -->
+                        <!-- End title -->
 
-                    <div class="card-body p-4">
+                        <div class="card-body p-4">
 
-                        <%= form_tag url_for(action: 'create'), method: "post" do %>
+                            <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-                        <div class="form-group">
-                            <%= label_tag 'Guest email' %><br />
-                            <%= text_field_tag :email, "", class: 'form-control', placeholder: 'Johndoe@email.com', required: true %>
-                        </div>
-                        
-                        <div class="form-group text-center">
-                            <%= label_tag '' %><br />
-                            <%= submit_tag "Send invitation", class:"btn btn-itmeo m-2" %>
-                        </div>
-                        <% end %>
-                    </div> <!-- end card-body -->
-                </div>
-                <!-- end card -->
-                <!-- end row -->
+                            <div class="form-group">
+                                <%= label_tag 'Guest email' %><br />
+                                <%= text_field_tag :email, "", class: 'form-control', placeholder: 'Johndoe@email.com', required: true %>
+                            </div>
 
-            </div> <!-- end col -->
+                            <div class="form-group text-center">
+                                <%= label_tag '' %><br />
+                                <%= submit_tag "Confirm", class:"btn btn-itmeo m-2" %>
+                            </div>
+                            <% end %>
+                        </div> <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+                    <!-- end row -->
+
+                </div> <!-- end col -->
+            </div>
+            <!-- end row -->
         </div>
-        <!-- end row -->
+        <!-- end container -->
     </div>
-    <!-- end container -->
+    <!-- end page -->
 </div>
-<!-- end page -->
