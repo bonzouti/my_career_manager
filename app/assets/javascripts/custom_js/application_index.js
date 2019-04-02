@@ -1,7 +1,7 @@
 $(document).ready(function() {
   
   $(".task-header").click(function() {
-    $(this).next().toggle(0)
+    $(this).nextAll().toggle(0)
   })
   
   $(".button-header-2").click(function() {
@@ -42,11 +42,9 @@ $(document).ready(function() {
         if ($listIdentified.children().length > 0 ){
 
           $explicativeTextIdentified.remove()
-          console.log('je cache le texte')
 
         }
         else{
-          console.log('je dois montrer le texte')
           $cardTextIdentified.append($explicativeTextIdentified)
 
         } 
@@ -79,11 +77,9 @@ $(document).ready(function() {
         if ($listApplied.children().length > 0 ){
 
           $explicativeTextApplied.remove()
-          console.log('je cache le texte')
 
         }
         else{
-          console.log('je dois montrer le texte')
           $cardTextApplied.append($explicativeTextApplied)
 
         } 
@@ -115,11 +111,9 @@ $(document).ready(function() {
         if ($listInProgress.children().length > 0 ){
 
           $explicativeTextInProgress.remove()
-          console.log('je cache le texte')
 
         }
         else{
-          console.log('je dois montrer le texte')
           $cardTextInProgress.append($explicativeTextInProgress)
 
         } 
