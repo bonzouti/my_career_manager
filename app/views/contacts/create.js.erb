@@ -1,0 +1,5 @@
+$('#create-contact-modal').modal('hide')
+
+$("#collapse-contact").replaceWith("<%= j render 'contacts', locals: {application: @application} %>")
+
+$.NotificationApp.send("Yeah !", "Your contact has been created", 'top-right', 'Background color', 'success');
