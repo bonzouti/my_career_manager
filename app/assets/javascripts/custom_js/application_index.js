@@ -19,7 +19,10 @@ $(document).ready(function() {
 
 //-------------- Drag and drop--------------------------
 
+
+    $textTohideIdentified = $('#explicative-text-identified')
     $list = $("#task-list-two");
+
     $list.sortable({
       update: function(e, ui) {
         jQuery.ajax({
@@ -28,10 +31,14 @@ $(document).ready(function() {
           type: "PATCH",
           data: $(this).sortable('serialize')
         });
+        $textTohideIdentified.hide()
       }
     });
 
+
+    $textTohideApplied = $('#explicative-text-applied')
     $list = $("#task-list-three");
+
     $list.sortable({
       update: function(e, ui) {
         jQuery.ajax({
@@ -40,9 +47,11 @@ $(document).ready(function() {
           type: "PATCH",
           data: $(this).sortable('serialize')
         });
+        $textTohideApplied.hide()
       }
     });
 
+    $textTohideInProgress = $('#explicative-text-in-progress')
     $list = $("#task-list-four");
     $list.sortable({
       update: function(e, ui) {
@@ -52,6 +61,7 @@ $(document).ready(function() {
           type: "PATCH",
           data: $(this).sortable('serialize')
         });
+        $textTohideInProgress.hide()
       }
     });
 
