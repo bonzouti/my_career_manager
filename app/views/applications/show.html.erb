@@ -195,7 +195,7 @@
 		<div class="col-12">
 			<div class="card bg-note">
 				<h5 class="text-white mt-0 task-header">
-					<span class="job-details"> JOB DETAILS <i class="fas fa-angle-double-down text-white"></i></span>
+					<span class="job-details"> JOB DETAILS <i class="fas fa-angle-double-down text-white mobile"></i></span>
 					<span>
 						<button type="button" class="btn btn-guide btn-itmeo-transparent btn-edit-job-details" data-toggle="modal" data-target="#edit-job-details-modal"><i class="fas fa-edit text-white"></i></button>
 					</span>
@@ -204,9 +204,9 @@
 				<div class="card-body collapse-job-details">
 					<%if @application.has_no_joboffer_details == true %> <a> No job offer link or description.</a>
 					<%else %>
-					<h5 class="text-transparent-black">Link of application</h5>
+					<h5 class="text-transparent-black">Link of application :</h5>
 					<%= link_to @application.joboffer_link, @application.joboffer_link,:target => "_blank" %><br><br>
-					<h5 class="text-transparent-black"> Description </h5>
+					<h5 class="text-transparent-black"> Description : </h5>
 					<%= simple_format(@application.joboffer_description) %>
 					<%end %>
 				</div>
@@ -228,7 +228,7 @@
 					<div class="row align-items-center">
 						<div class="col-12 row-card">
 							<h5 class="text-white mt-0 task-header">
-								<span class="contact"> CONTACTS <i class="fas fa-angle-double-down text-white"></i></span>
+								<span class="contact"> CONTACTS </span>
 								<span>
 									<button type="button" class="btn btn-guide btn-itmeo-transparent btn-new-contact" data-toggle="modal" data-target="#create-contact-modal"><i class="fas fa-plus text-white"></i></button>
 								</span>
@@ -297,6 +297,7 @@
 											</div> <!-- end table-responsive-->
 											<%end%>
 								</div> <!-- end card body-->
+							</div>
 							<!-- end row-->
 						</div>
 						<!-- end card-body -->

@@ -16,8 +16,12 @@ class ContactsController < ApplicationController
 				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
 				redirect_to application_contacts_path(@application)
 			else
-				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
-				redirect_to application_path(@application)
+				respond_to do |format|
+					format.html {redirect_to application_path(@application)}
+					format.js
+				end
+				#flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
+				#redirect_to application_path(@application)
 			end
 		end
   end

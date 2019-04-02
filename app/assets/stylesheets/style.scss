@@ -108,6 +108,9 @@
   margin-bottom: 40px;
 }
 
+.mobile {
+  display: none!important;
+}
 
 /********************SHOW APPLICATION*******************/
 
@@ -173,7 +176,7 @@
 }
 
 .btn-archive {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /********************INDEX_CONTACTS********************/
