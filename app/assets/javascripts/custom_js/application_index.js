@@ -22,10 +22,18 @@ $(document).ready(function() {
 
     /*-------------------Column identified -----------------*/
     $explicativeTextIdentified = $("<p id='explicative-text-identified' class='text-white'> No identified job opportunity ! <br> You may want to check offers on your favourite job boards and 'Add' the most interesting here.</p>")
-    $cardTextIdentified = $('.card-text-identified')
-    $textTohideIdentified = $('#explicative-text-identified')
+    $cardTextIdentified = $("<div class='card-body p-3'></div>")
+    $cardTextIdentified.append($explicativeTextIdentified)
+    $headerIdentified = $('.header-identified')
 
     $list = $("#task-list-two");
+
+    if ($list.children().length == 0 ){
+
+      $cardTextIdentified.insertAfter($headerIdentified)
+
+    }
+
     $list.sortable({
       update: function(e, ui) {
         jQuery.ajax({
@@ -35,17 +43,17 @@ $(document).ready(function() {
           data: $(this).sortable('serialize')
         });
 
-        $textTohideIdentified.hide()
+ //       $textTohideIdentified.hide()
 
         $listIdentified = $("#task-list-two");
 
         if ($listIdentified.children().length > 0 ){
 
-          $explicativeTextIdentified.remove()
+          $cardTextIdentified.remove()
 
         }
         else{
-          $cardTextIdentified.append($explicativeTextIdentified)
+          $cardTextIdentified.insertAfter($headerIdentified)
 
         } 
       }
@@ -55,10 +63,18 @@ $(document).ready(function() {
 
     /*-------------------Column Applied -----------------*/
     $explicativeTextApplied = $("<p id='explicative-text-applied' class='text-white'> You haven't applied to any offer. <br> Check applications on the 'identified' column and kick your ass ;).</p>")
-    $cardTextApplied = $('.card-text-applied')
-    $textTohideApplied = $('#explicative-text-applied')
+    $cardTextApplied = $("<div class='card-body p-3'></div>")
+    $cardTextApplied.append($explicativeTextApplied)
+    $headerApplied = $('.header-applied')
 
     $list = $("#task-list-three");
+
+
+    if ($list.children().length == 0 ){
+
+      $cardTextApplied.insertAfter($headerApplied)
+
+    }
 
     $list.sortable({
       update: function(e, ui) {
@@ -69,19 +85,17 @@ $(document).ready(function() {
           data: $(this).sortable('serialize')
         });
 
-        $textTohideApplied.hide()
 
 
         $listApplied = $("#task-list-three");
 
         if ($listApplied.children().length > 0 ){
 
-          $explicativeTextApplied.remove()
+          $cardTextApplied.remove()
 
         }
         else{
-          $cardTextApplied.append($explicativeTextApplied)
-
+          $cardTextApplied.insertAfter($headerApplied)
         } 
 
       }
@@ -91,10 +105,18 @@ $(document).ready(function() {
     /*-------------------Column In Progress -----------------*/
 
     $explicativeTextInProgress = $("<p id='explicative-text-in-progress' class='text-white'> No running processes <br> It may be time to identify new opportunities.</p>")
-    $cardTextInProgress = $('.card-text-in-progress')
-    $textTohideInProgress = $('#explicative-text-in-progress')
+    $cardTextInProgress = $("<div class='card-body p-3'></div>")
+    $cardTextInProgress.append($explicativeTextInProgress)
+    $headerInProgress = $('.header-in-progress')
 
     $list = $("#task-list-four");
+
+    if ($list.children().length == 0 ){
+
+      $cardTextInProgress.insertAfter($headerInProgress)
+
+    }    
+
     $list.sortable({
       update: function(e, ui) {
         jQuery.ajax({
@@ -104,17 +126,15 @@ $(document).ready(function() {
           data: $(this).sortable('serialize')
         });
 
-        $textTohideInProgress.hide()
-
         $listInProgress = $("#task-list-four");
 
         if ($listInProgress.children().length > 0 ){
 
-          $explicativeTextInProgress.remove()
+          $cardTextInProgress.remove()
 
         }
         else{
-          $cardTextInProgress.append($explicativeTextInProgress)
+          $cardTextInProgress.insertAfter($headerInProgress)
 
         } 
 

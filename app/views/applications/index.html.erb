@@ -83,21 +83,10 @@
 
               <!-----IDENTIFIED --->
               <div class="tasks mr-1">
-                <h5 class="mt-0 task-header text-left text-uppercase">
+                <h5 class="mt-0 task-header text-left text-uppercase header-identified">
                     <span>IDENTIFIED (<%= @identified.length %>) <i class="fas fa-angle-double-down text-white mobile"> </i><br> <small>Time to send application !</small> </span>
                     <span><button type="button" class="btn btn-itmeo m-0 button-header-2" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
                 </h5>
-
-
-                  <div class="card-body p-3 card-text-identified ">
-
-                    <%if @identified.count == 0%>
-
-                    <p id="explicative-text-identified" class = "text-white"> No identified job opportunity ! <br> You may want to check offers on your favourite job boards and 'Add' the most interesting here.</p>
-
-                    <%end%>
-
-                  </div>
 
                 <div id="task-list-two" class="task-list-items" data-url="<%= sort_identified_applications_path%>">
 
@@ -128,22 +117,13 @@
 
               <!-----START APPLIED --->
               <div class="tasks mr-1">
-                <h5 class="mt-0 task-header text-uppercase text-left">
+
+                <h5 class="mt-0 task-header text-uppercase text-left header-applied">
                   <span>Applied (<%= @applied.length %>) <i class="fas fa-angle-double-down text-white mobile"></i><br> <small>Waiting for a call</small> </span>
                   <span><button type="button" class="btn btn-itmeo button-header-3" data-toggle="modal" data-target="#new-modal-applied"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
-              
-
-                  <div class="card-body p-3 card-text-applied">
-
-                  <%if @applied.count == 0%>
-                    <p id="explicative-text-applied" class = "text-white"> You haven't applied to any offer. <br> Check applications on the 'identified' column and kick your ass ;).</p>
-                  <%end%>
-
-                    </div>
-
-                  <div id="task-list-three" class="task-list-items" data-url="<%= sort_applied_applications_path%>">
+                <div id="task-list-three" class="task-list-items" data-url="<%= sort_applied_applications_path%>">
 
                   <!-- Task Item -->
                   <% @applied.each do |application| %>
@@ -174,19 +154,11 @@
               <!-----START IN PROGRESS --->
 
               <div class="tasks">
-                <h5 class="mt-0 task-header text-uppercase text-left">
+                <h5 class="mt-0 task-header text-uppercase text-left header-in-progress">
                   <span>In Progress (<%= @in_progress.length %>) <i class="fas fa-angle-double-down text-white mobile"></i><br> <small>Your running processes</small></span>
                   <span><button type="button" class="btn btn-itmeo button-header-4" data-toggle="modal" data-target="#new-modal-in_progress"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
-
-                  <div class="card-body p-3 card-text-in-progress">
-
-                  <%if @in_progress.count == 0%>
-                    <p id="explicative-text-in-progress" class = "text-white"> No running processes <br> It may be time to identify new opportunities.</p>
-                  <%end%>
-
-                   </div>
 
                   <div id="task-list-four" class="task-list-items" data-url="<%= sort_in_progress_applications_path%>">
 
