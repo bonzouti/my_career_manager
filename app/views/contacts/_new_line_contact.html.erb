@@ -1,0 +1,36 @@
+
+              <tr id="line-contact-<%= contact.id %>">
+                <td>
+                  <%= contact.first_name %>
+                  <%= contact.last_name %>
+                </td>
+                <td>
+                  <%= contact.position %>
+                </td>
+                <td>
+                  <%= tel_to contact.phone do %>
+
+                  <i class="fas fa-phone link-icon-sm"></i>
+                  <p class="link-text-lg">
+                    <%= contact.phone %>
+                  </p>
+
+                  <% end %>
+
+                </td>
+                <td>
+                  <%= mail_to(contact.email) do %>
+
+                  <i class="fas fa-envelope link-icon-sm"></i>
+                  <p class="link-text-lg">
+                    <%= contact.email %>
+                  </p>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "", create_modal_application_contact_path(@application, contact), method: 'GET', class: 'fas fa-edit', remote: true %>
+
+               <!--   <i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i> -->
+                </td>
+              </tr>
+

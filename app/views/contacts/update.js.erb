@@ -1,0 +1,16 @@
+console.log("salut update")
+
+console.log("<%= @contact.first_name %>")
+$("#line-contact-<%= @contact.id %> td:nth-child(1)").html("<%= @contact.first_name %>" + " " + "<%= @contact.last_name %>")
+$("#line-contact-<%= @contact.id %> td:nth-child(2)").html("<%= @contact.position %>")
+$("#line-contact-<%= @contact.id %> td:nth-child(3)").html("<%= @contact.phone %>")
+$("#line-contact-<%= @contact.id %> td:nth-child(4)").html("<%= @contact.email %>")
+
+
+
+$('#update-contact-modal').remove();
+$('body').removeClass('modal-open')
+$('.modal-backdrop').remove()
+
+
+$.NotificationApp.send("Done !", "Your contact has been updated", 'top-right', 'Background color', 'warning');

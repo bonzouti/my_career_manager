@@ -1,9 +1,9 @@
 <!---------------------------------- MODAL UPDATE CONTACT----------------------------------->
 
 
-<div id="update-contact-modal-<%= contact.id %>" class="modal fade" tabindex="-1" role="dialog" style= "display: none;"
+<div id="update-contact-modal" class="modal fade show" tabindex="-1" role="dialog" style= "display: block;"
   aria-hidden="true">
-   <div class="modal-dialog">
+   <div class="modal-dialog modal-contact">
    <div class="modal-content">
      <div class="card-black-form">
 
@@ -15,7 +15,7 @@
 
          <div class="p-4">
 
-         <%= form_tag(application_contact_path(@application, contact), method: "put", class: 'pl-3 pr-3') do %>
+         <%= form_tag(application_contact_path(@application, contact), method: "put", remote: true, class: 'pl-3 pr-3') do %>
 
          <div class="form-group">
            <%= label_tag(:first_name, "First name") %>
@@ -47,9 +47,8 @@
            <%= submit_tag "Update", class: "btn btn-itmeo", style:"margin-right:20px" %>
 
            <%= link_to application_contact_path(@application, contact), method: :delete do %>
-
-           <button type="button" class="btn btn-salmon btn-alert-success" style="margin-left: 20px;">Delete</button>
-           <% end %>
+            <button type="button" class="btn btn-salmon btn-alert-success" style="margin-left: 20px;">Delete</button>
+            <% end %>
 
          </div>
 

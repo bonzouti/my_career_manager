@@ -1,0 +1,24 @@
+console.log("salut");
+
+
+//Insert the modal in the HTML when the icon is clicked
+$("#row-contact-container").append("<%=j render partial: 'applications/update_contact_modal', locals: {contact: @contact} %>");
+
+// Add the class to create a scroll only on the modal and to make the background less visible
+$('body').addClass('modal-open');
+$('body').append('<div class="modal-backdrop fade show"></div>');
+
+
+//Make the modal disappear when the click is outside of the modal
+$( "#update-contact-modal" ).click(function() {
+
+  $target = $(event.target);
+
+  if(!$target.closest('.modal-contact').length) {
+
+  	$('#update-contact-modal').remove();
+	$('body').removeClass('modal-open');
+	$('.modal-backdrop').remove();
+
+  };    
+});

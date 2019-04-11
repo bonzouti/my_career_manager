@@ -2,7 +2,13 @@ Rails.application.routes.draw do
 
   resources :applications do
   	
-    resources :contacts, only: [:index, :create, :update, :destroy]
+    resources :contacts, only: [:index, :create, :update, :destroy] do 
+
+      member do 
+        get 'create_modal'
+      end
+
+    end
 
     collection do
       patch :sort_identified
