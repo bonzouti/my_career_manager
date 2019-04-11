@@ -1,16 +1,46 @@
-console.log("salut update")
 
-console.log("<%= @contact.first_name %>")
+//------------------- CONTENT REPLACEMENT IN THE TABLE CELLS-------------------------------------------
+
 $("#line-contact-<%= @contact.id %> td:nth-child(1)").html("<%= @contact.first_name %>" + " " + "<%= @contact.last_name %>")
 $("#line-contact-<%= @contact.id %> td:nth-child(2)").html("<%= @contact.position %>")
-$("#line-contact-<%= @contact.id %> td:nth-child(3)").html("<%= @contact.phone %>")
-$("#line-contact-<%= @contact.id %> td:nth-child(4)").html("<%= @contact.email %>")
 
 
+
+// for contact.phone the js displays a clickable icon on mobile and a normal phone number on desktop
+
+//<%  if mobile_device? && @contact.phone.empty? %>
+	$("#line-contact-<%= @contact.id %> td:nth-child(3)").append("<a href='<%= @contact.phone %>'></a>")
+	$("#line-contact-<%= @contact.id %> td:nth-child(3) a").append("<i class='fas fa-phone link-icon-sm'></i>")
+	/*
+<% else %>
+	$("#line-contact-<%= @contact.id %> td:nth-child(3) p").html("<%= @contact.phone %>")
+
+//<%  if mobile_device? && @contact.email.empty? %>
+	$("#line-contact-<%= @contact.id %> td:nth-child(4)").append("<a href='mailto: <%= @contact.email %>' ></a>")
+	$("#line-contact-<%= @contact.id %> td:nth-child(4) a").append("<i class='fas fa-envelope link-icon-sm'></i>")
+//<% else %>
+//	$("#line-contact-<%= @contact.id %> td:nth-child(4) p").html("<%= @contact.email %>")
+//<% end %>
+<% end %>
+*/
+
+//<%  if mobile_device? && @contact.email.empty? %>
+	$("#line-contact-<%= @contact.id %> td:nth-child(4)").append("<a href='mailto:<%= @contact.email %>'></a>")
+	$("#line-contact-<%= @contact.id %> td:nth-child(4) a").append("<i class='fas fa-envelope link-icon-sm'></i>")
+//<% else %>
+//	$("#line-contact-<%= @contact.id %> td:nth-child(4) p").html("<%= @contact.email %>")
+//<% end %>
+
+
+
+
+//------------------- REMOVAL OF THE MODAL ON CLICK---------------------------------------------------
 
 $('#update-contact-modal').remove();
 $('body').removeClass('modal-open')
 $('.modal-backdrop').remove()
 
+
+//------------------- -----------------NOTIFICATION---------------------------------------------------
 
 $.NotificationApp.send("Done !", "Your contact has been updated", 'top-right', 'Background color', 'warning');

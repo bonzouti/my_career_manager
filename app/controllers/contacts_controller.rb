@@ -10,20 +10,20 @@ class ContactsController < ApplicationController
   def create
   	@contact = Contact.new(application: @application, first_name: params[:first_name], last_name: params[:last_name],
      position: params[:position], email: params[:email], phone: params[:phone])
-  		puts "c'est pas save"
-  		pp @contact
 		if @contact.save
-			puts "ça a été save"
 			if mobile_device?
 				flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
 				redirect_to application_contacts_path(@application)
 			else
 				respond_to do |format|
-					format.html {redirect_to application_path(@application)}
+
+					format.html {
+						flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
+						redirect_to application_path(@application)
+					}
 					format.js
 				end
-				#flash[:success] = "Your contact #{@contact.first_name} #{@contact.last_name} has been created"
-				#redirect_to application_path(@application)
+
 			end
 		end
   end
@@ -32,23 +32,38 @@ class ContactsController < ApplicationController
 
   	@contact = Contact.find(params[:id])
 
-  	@contact.update(first_name: params[:first_name], last_name: params[:last_name], position: params[:position],
-     email: params[:email], phone: params[:phone])
+  	@contact.first_name = params[:first_name]
+  	@contact.last_name = params[:last_name]
+  	@contact.position = params[:position]
+  	@contact.email = params[:email]
+  	@contact.phone = params[:phone]
+
+  	if @contact.save
 
 		respond_to do |format|
-			format.html {redirect_to application_path(@application)}
+
+			format.html { 
+
+			if mobile_device?
+				flash[:alert] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
+				redirect_to application_contacts_path(@application)
+			else
+				flash[:alert] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
+				redirect_to application_path(@application)
+			end 
+			}
+
 			format.js
 		end
 
-=begin
-		if mobile_device?
-			flash[:alert] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
-			redirect_to application_contacts_path(@application)
-		else
-			flash[:alert] = "Your contact #{@contact.first_name} #{@contact.last_name} has been updated"
-			redirect_to application_path(@application)
-		end 
-=end
+	else 
+
+		flash[:danger] = "Your contact has not been updated"
+		redirect_to application_path(@application)
+
+	end
+
+
   end
 
   def destroy

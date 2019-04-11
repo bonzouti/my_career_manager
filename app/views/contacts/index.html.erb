@@ -49,46 +49,11 @@
                                                 <th>Edit</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="row-contact-container">
 
                                             <% @contacts.each do |contact| %>
 
-                                            <tr>
-                                                <td>
-                                                    <%= contact.first_name %>
-                                                    <%= contact.last_name %>
-                                                </td>
-                                                <td>
-                                                    <%= contact.position %>
-                                                </td>
-                                                <td>
-                                                    <%= tel_to contact.phone do %>
-
-                                                    <i class="fas fa-phone link-icon-sm"></i>
-                                                    <p class="link-text-lg">
-                                                        <%= contact.phone %>
-                                                    </p>
-
-                                                    <% end %>
-
-                                                </td>
-                                                <td>
-                                                    <%= mail_to(contact.email) do %>
-
-                                                    <i class="fas fa-envelope link-icon-sm"></i>
-                                                    <p class="link-text-lg">
-                                                        <%= contact.email %>
-                                                    </p>
-                                                    <% end %>
-                                                </td>
-                                                <td>
-                                                    <i class="fas fa-edit" data-toggle="modal" data-target="#update-contact-modal-<%= contact.id %>"></i>
-                                                </td>
-                                            </tr>
-
-                                            <!----------------- MODAL UPDATE CONTACT-------------->
-                                            <%= render "applications/update_contact_modal.html.erb", contact: contact %>
-
+                                                <%= render "contacts/new_line_contact", contact: contact %>
 
                                             <% end %>
 

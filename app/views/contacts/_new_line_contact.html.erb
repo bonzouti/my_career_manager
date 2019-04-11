@@ -19,13 +19,19 @@
 
                 </td>
                 <td>
-                  <%= mail_to(contact.email) do %>
 
-                  <i class="fas fa-envelope link-icon-sm"></i>
-                  <p class="link-text-lg">
-                    <%= contact.email %>
-                  </p>
+                  <% unless contact.email.empty? %>
+
+                    <%= mail_to(contact.email) do %>
+
+                    <i class="fas fa-envelope link-icon-sm"></i>
+                    <p class="link-text-lg">
+                      <%= contact.email %>
+                    </p>
+                    <% end %>
+
                   <% end %>
+
                 </td>
                 <td>
                   <%= link_to "", create_modal_application_contact_path(@application, contact), method: 'GET', class: 'fas fa-edit', remote: true %>
