@@ -33,34 +33,37 @@
                 <div class="bg-note">
                     <div class="card-body">
 
-                        <%if @application.contacts.count == 0 %>
-                        <a> No contact saved for now. <a>
-                                <%else%>
+                        <div class="table-sm">
 
-                                <div class="table-sm">
+                            <table class="table table-sm table-centered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Phone number</th>
+                                        <th>Email</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="row-contact-container">
 
-                                    <table class="table table-sm table-centered mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Phone number</th>
-                                                <th>Email</th>
-                                                <th>Edit</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="row-contact-container">
+                                    <%if @application.contacts.count == 0 %>
+                                        <tr id="row-no-contact"> 
+                                            <td colspan="5" class="message-no-contact"> No contact saved for now. </td> 
+                                        </tr>
+                                    <%else%>
 
-                                            <% @contacts.each do |contact| %>
 
-                                                <%= render "contacts/new_line_contact", contact: contact %>
+                                        <% @application.contacts.each do |contact| %>
 
-                                            <% end %>
+                                        <%= render "contacts/new_line_contact", contact: contact %>
 
-                                        </tbody>
-                                    </table>
-                                </div> <!-- end table-responsive-->
-                                <%end%>
+                                        <% end %>
+
+                                    <%end%>
+                                </tbody>
+                            </table>
+                        </div> <!-- end table-responsive-->
                     </div> <!-- end card body-->
                     <div class="row justify-content-center">
                         <button type="button" class="btn btn-itmeo" data-toggle="modal" data-target="#create-contact-modal"

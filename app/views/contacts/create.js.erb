@@ -2,4 +2,6 @@ $('#create-contact-modal').modal('hide')
 
 $("#row-contact-container").append("<%=j render partial: 'new_line_contact', locals: {contact: @contact} %>")
 
+$("#row-no-contact").hide()
+
 $.NotificationApp.send("Yeah !", "Your contact has been created", 'top-right', 'Background color', 'success');
