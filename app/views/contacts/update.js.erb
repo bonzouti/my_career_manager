@@ -6,9 +6,8 @@ $("#line-contact-<%= @contact.id %> td:nth-child(2)").html("<%= @contact.positio
 
 var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
+//Because icons instead of text are displayed on mobile , the update action is different 
 if (isMobile) {
-
-    console.log("salut le mobile")
 
     if ( $("#line-contact-<%= @contact.id %> td:nth-child(3)").children().length == 0 ) {
 
@@ -26,17 +25,11 @@ if (isMobile) {
 }
 
 else {
-	console.log("salut le desktop")
 
 	$("#line-contact-<%= @contact.id %> td:nth-child(3)").html("<%= @contact.phone %>")
 	$("#line-contact-<%= @contact.id %> td:nth-child(4)").html("<%= @contact.email %>")
 
 }
-
-
-
-
-
 
 
 
