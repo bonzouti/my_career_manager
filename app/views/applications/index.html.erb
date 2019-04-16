@@ -84,7 +84,7 @@
               <!-----IDENTIFIED --->
               <div class="tasks mr-1">
                 <h5 class="mt-0 task-header text-left text-uppercase header-identified">
-                    <span>IDENTIFIED (<%= @identified.length %>) <i class="fas fa-angle-double-down text-white mobile"> </i><br> <small>Time to send application !</small> </span>
+                    <span>IDENTIFIED <span id="count-identified">(<%= @identified.length %>)</span> <i class="fas fa-angle-double-down text-white mobile"> </i><br> <small>Time to send application !</small> </span>
                     <span><button type="button" class="btn btn-itmeo m-0 button-header-2" data-toggle="modal" data-target="#new-modal-identified"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
@@ -119,7 +119,7 @@
               <div class="tasks mr-1">
 
                 <h5 class="mt-0 task-header text-uppercase text-left header-applied">
-                  <span>Applied (<%= @applied.length %>) <i class="fas fa-angle-double-down text-white mobile"></i><br> <small>Waiting for a call</small> </span>
+                  <span>Applied <span id="count-applied">(<%= @applied.length %>)</span> <i class="fas fa-angle-double-down text-white mobile"></i><br> <small>Waiting for a call</small> </span>
                   <span><button type="button" class="btn btn-itmeo button-header-3" data-toggle="modal" data-target="#new-modal-applied"><i class="fas fa-plus"></i></button></span>
                 </h5>
 
@@ -155,7 +155,7 @@
 
               <div class="tasks">
                 <h5 class="mt-0 task-header text-uppercase text-left header-in-progress">
-                  <span>In Progress (<%= @in_progress.length %>) <i class="fas fa-angle-double-down text-white mobile"></i><br> <small>Your running processes</small></span>
+                  <span>In Progress <span id="count-in-progress">(<%= @in_progress.length %>)</span> <i class="fas fa-angle-double-down text-white mobile"></i><br> <small>Your running processes</small></span>
                   <span><button type="button" class="btn btn-itmeo button-header-4" data-toggle="modal" data-target="#new-modal-in_progress"><i class="fas fa-plus"></i></button></span>
                 </h5>
 

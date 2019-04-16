@@ -43,11 +43,15 @@ $(document).ready(function() {
           data: $(this).sortable('serialize')
         });
 
- //       $textTohideIdentified.hide()
-
         $listIdentified = $("#task-list-two");
+        $lengthIdentified = $listIdentified.children().length
 
-        if ($listIdentified.children().length > 0 ){
+        //increment or decrement the number displayed according to the drag and drop
+        $countIdentified = $('#count-identified')
+        $countIdentified.html('(' + $lengthIdentified + ')')
+
+        //handles the explicative text appearance and disappearance while drag and dropping
+        if ($lengthIdentified > 0 ){
 
           $cardTextIdentified.remove()
 
@@ -85,11 +89,15 @@ $(document).ready(function() {
           data: $(this).sortable('serialize')
         });
 
-
-
         $listApplied = $("#task-list-three");
+        $lengthApplied = $listApplied.children().length
 
-        if ($listApplied.children().length > 0 ){
+        //increment or decrement the number displayed according to the drag and drop
+        $countApplied = $('#count-applied')
+        $countApplied.html('(' + $lengthApplied + ')')
+
+        //handles the explicative text appearance and disappearance while drag and dropping
+        if ($lengthApplied > 0 ){
 
           $cardTextApplied.remove()
 
@@ -127,8 +135,14 @@ $(document).ready(function() {
         });
 
         $listInProgress = $("#task-list-four");
+        $lengthInProgress = $listInProgress.children().length
 
-        if ($listInProgress.children().length > 0 ){
+        //increment or decrement the number displayed according to the drag and drop
+        $countInProgress = $('#count-in-progress')
+        $countInProgress.html('(' + $lengthInProgress + ')')
+
+        //handles the explicative text appearance and disappearance while drag and dropping
+        if ($lengthInProgress > 0 ){
 
           $cardTextInProgress.remove()
 
