@@ -2,7 +2,7 @@
 
 # My Career Manager
 
-My Career Manager helps you organize your job search by keeping track of your job applications.
+My Career Manager helps you organize your job search by keeping track of your job applications. https://mycareermanager.herokuapp.com
 
 ### Your dashboard
 
